@@ -76,29 +76,27 @@ function getIsoTimestamp(dateString) {
 function getTimestamp(option, nMonths = 1) {
   const now = new Date();
 
-  if (option === 'week') {
+  if (option == 'week') {
     const dayOfWeek = now.getDay();
     const daysSinceLastMonday = (dayOfWeek + 6) % 7;
     const startOfLastMonday = new Date(now.getFullYear(), now.getMonth(), now.getDate() - daysSinceLastMonday);
     return startOfLastMonday.toISOString();
   }
 
-  if (option === 'lastWeek') {
+  if (option == 'lastWeek') {
     const mondayOfLastWeek = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 7 - ((now.getDay() + 6) % 7));
     return mondayOfLastWeek.toISOString();
   }
 
-  if (option === 'month') {
-    const startOfPreviousMonth = new Date(now.getFullYear(), now.getMonth() - 1, 1);
-    return startOfPreviousMonth.toISOString();
-  }
+  // if (option == 'month') {
+  //   const startOfPreviousMonth = new Date(now.getFullYear(), now.getMonth() - 1, 1);
+  //   return startOfPreviousMonth.toISOString();
+  // }
 
-  if (option === 'months') {
+  if (option == 'month') {
     const startOfNMonthsAgo = new Date(now.getFullYear(), now.getMonth() - nMonths, 1);
     return startOfNMonthsAgo.toISOString();
   }
-
-  return null; // Invalid option
 }
 
 /**
