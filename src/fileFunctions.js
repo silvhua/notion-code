@@ -33,3 +33,19 @@ module.exports = {
   loadJsonFile, 
   getCurrentTimestamp 
 }
+
+async function saveResponseJson(data, jsonFileName, appendTimestamp) {
+    var {getCurrentTimestamp} = require('../src/fileFunctions');
+    const fs = require('fs');
+    try {
+        if (appendTimestamp) {
+        const timestamp = getCurrentTimestamp();
+        jsonFileName = `${jsonFileName}_${timestamp}`
+        }
+        await fs.promises.writeFile(`${jsonFileName}.json`, JSON.stringify(data, null, 2));
+        console.log(`Saved response to ${jsonFileName}.json`);
+    } catch (error) {
+        console.error(error);
+        throw error;
+    }
+}
