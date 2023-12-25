@@ -1,4 +1,6 @@
 const {getCurrentTimestamp, loadJsonFile} = require('./fileFunctions')
+const { Client } = require('@notionhq/client');
+const fs = require('fs');
 
 console.log(`Current time stamp: ${getCurrentTimestamp()}`);
 
