@@ -4,6 +4,15 @@ const fs = require('fs');
 
 console.log(`Current time stamp: ${getCurrentTimestamp()}`);
 
+/**
+ * Queries Notion and saves the response as a JSON file.
+ *
+ * @param {string} period - The period to filter the query by. Default is 'week'.
+ * @param {string} jsonFileName - The name of the JSON file to save the response to. Default is '../data/notion_time_tracking'.
+ * @param {boolean} save - Indicates whether to save the response as a JSON file. Default is true.
+ * @param {boolean} appendTimestamp - Indicates whether to append a timestamp to the JSON file name. Default is true.
+ * @return {Promise<object>} The response from the Notion API.
+ */
 async function queryNotionAndSaveResponse(
   period='week', jsonFileName='../data/notion_time_tracking', save = true, appendTimestamp = true) {
   let notionApiKey = process.env.notion_secret;
@@ -53,8 +62,6 @@ async function queryNotionAndSaveResponse(
   }
   return response
 }
-  
-
 
 /**
  * Converts a given date string to an ISO timestamp.
@@ -123,6 +130,15 @@ function addTimeDelta(timestamp=new Date().toISOString(), period='week', nPeriod
   return date.toISOString();
 }
 
+/**
+ * Retrieves a page from Notion using the page ID and returns the response.
+ *
+ * @param {string} pageId - The ID of the page to retrieve.
+ * @param {string} jsonFileName - The name of the JSON file to save the response to. Defaults to '../data/notion_page'.
+ * @param {boolean} save - Indicates whether to save the response to a JSON file. Defaults to false.
+ * @param {boolean} appendTimestamp - Indicates whether to append a timestamp to the JSON file name. Defaults to true.
+ * @return {Promise<Object>} The response object from Notion.
+ */
 async function retrievePage(
     pageId, jsonFileName='../data/notion_page', save = false, appendTimestamp = true
   ) {
@@ -142,6 +158,13 @@ async function retrievePage(
       }
   }
 
+  /**
+   * Parses a page and retrieves specific data from it.
+   *
+   * @param {string} pageId - The ID of the page to parse.
+   * @param {string} [database='tasks'] - The name of the database to retrieve the data from.
+   * @return {object} - The parsed data from the page.
+   */
   async function parsePage(pageId, database='tasks') {
     let multi_select_rollups = [];
     let relations = [];
@@ -183,6 +206,15 @@ async function retrievePage(
     };
 }
 
+/**
+ * Parses the time tracking data.
+ *
+ * @param {Array} data - The time tracking data to be parsed.
+ * @param {boolean} [save=false] - Indicates whether to save the parsed data.
+ * @param {string} [jsonFileName='../data/notion_time_tracking_parsed'] - The file name to save the parsed data.
+ * @param {boolean} [appendTimestamp=true] - Indicates whether to append a timestamp to the file name.
+ * @return {Object} - The parsed time tracking data.
+ */
 async function parseTimeTracking(
   data, save = false, jsonFileName='../data/notion_time_tracking_parsed', appendTimestamp = true
 ) {
