@@ -7,9 +7,10 @@ const fs = require('fs');
  * @param {string} [path='../private'] - The path to the directory containing the JSON file. Defaults to '../private'.
  * @return {object} The parsed JSON data from the file, or null if there was an error.
  */
-function loadJsonFile(filename, path = '../private') {
+function loadJsonFile(filename, path = '') {
   try {
-    const filePath = `${path}/${filename}`;
+    const filePath = `${path}${filename}`;
+    console.log(`Loading JSON file: ${filePath}`);
     const jsonData = fs.readFileSync(filePath, 'utf8');
     const data = JSON.parse(jsonData);
     return data;
