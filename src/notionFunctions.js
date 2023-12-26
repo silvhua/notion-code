@@ -124,50 +124,63 @@ function addTimeDelta(timestamp=new Date().toISOString(), period='week', nPeriod
 }
 
 async function retrievePage(
-  pageId, jsonFileName='../data/notion_page', save = true, appendTimestamp = true
-) {
-  const { Client } = require('@notionhq/client');
-  const fs = require('fs');
-  let notionApiKey = process.env.notion_secret;
-  let notion = new Client({ auth: notionApiKey });
-    try {
-      const response = await notion.pages.retrieve({ page_id: pageId });
-      if (save) {
-        await saveResponseJson(response, jsonFileName, appendTimestamp);
+    pageId, jsonFileName='../data/notion_page', save = false, appendTimestamp = true
+  ) {
+    const { Client } = require('@notionhq/client');
+    const fs = require('fs');
+    let notionApiKey = process.env.notion_secret;
+    let notion = new Client({ auth: notionApiKey });
+      try {
+        const response = await notion.pages.retrieve({ page_id: pageId });
+        if (save) {
+          await saveResponseJson(response, jsonFileName, appendTimestamp);
+        }
+        return response;
+      } catch (error) {
+        console.error(error);
+        throw error;
       }
-      return response;
-    } catch (error) {
-      console.error(error);
-      throw error;
-    }
-}
+  }
 
-async function parsePage(response) {
-  try {
-      const data = await response;
-      const parsed_data = {};
-      parsed_data['Name'] = data['properties']['Name']['title'][0]['plain_text'];
-      const multi_select_rollups = [
-          'Project tags', 
-      ]
-      for (let i = 0; i < multi_select_rollups.length; i++) {
-          const rollup = multi_select_rollups[i];
-          parsed_data[rollup] = data['properties'][rollup]['rollup']['array'][0]['multi_select'].map(item => item['name']);
-      }
-      const relations = ['Project', 'Parent-task', 'Sub-tasks'];
-      for (let i = 0; i < relations.length; i++) {
-          const relation = relations[i];
-          //  Only parse relation if it is greater than 0
-          if (data['properties'][relation]['relation'].length === 0) {
-              parsed_data[relation] = null;
-          } else {
-              parsed_data[relation] = data['properties'][relation]['relation'][0]['id'];
-          };
-      }
-      return parsed_data
-  } catch (error) {
-      console.log(`Error: ${error}`);
-  };
+  async function parsePage(pageId, database='tasks') {
+    let multi_select_rollups = [];
+    let relations = [];
+    try {
+        const data = await retrievePage(pageId);
+        const parsed_data = {};
+        if (database === 'tasks') {
+            parsed_data['Name'] = data['properties']['Name']['title'][0]['plain_text'];
+            multi_select_rollups = [
+                'Project tags', 
+            ]
+            relations = ['Project', 'Parent-task', 'Sub-tasks'];
+        } else if (database === 'projects') {
+          
+          parsed_data['Name'] = data['properties']['Project name']['title'][0]['plain_text'];
+          multi_select_rollups = [];
+          relations = [];
+        } 
+        if (multi_select_rollups.length > 0) {
+            for (let i = 0; i < multi_select_rollups.length; i++) {
+                const rollup = multi_select_rollups[i];
+                parsed_data[rollup] = data['properties'][rollup]['rollup']['array'][0]['multi_select'].map(item => item['name']);
+            }            
+        }
+        if (relations.length > 0) {
+            for (let i = 0; i < relations.length; i++) {
+                const relation = relations[i];
+                //  Only parse relation if it is greater than 0
+                if (data['properties'][relation]['relation'].length === 0) {
+                    parsed_data[relation] = null;
+                } else {
+                    parsed_data[relation] = data['properties'][relation]['relation'][0]['id'];
+                };
+            }
+        }
+        return parsed_data
+    } catch (error) {
+        console.log(`Error for database ${database}: ${error}`);
+    };
 }
 
 function parseTimeTracking(
