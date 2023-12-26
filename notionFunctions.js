@@ -288,3 +288,13 @@ async function parseTimeTracking(
 
   return parsed_data;
 }
+
+module.exports = {
+  queryNotionAndSaveResponse,
+  getIsoTimestamp,
+  getTimestamp,
+  addTimeDelta,
+  retrievePage,
+  parsePage,
+  parseTimeTracking
+}
