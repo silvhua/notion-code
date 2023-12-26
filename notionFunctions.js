@@ -1,6 +1,7 @@
 const {getCurrentTimestamp, loadJsonFile, saveResponseJson} = require('./fileFunctions')
 const { Client } = require('@notionhq/client');
 const fs = require('fs');
+// const fsPromises = require('fs').promises;
 
 console.log(`Current time stamp: ${getCurrentTimestamp()}`);
 
@@ -49,15 +50,16 @@ async function queryNotionAndSaveResponse(
 
 
   if (save) {
+    let fileName = jsonFileName;
     // Add timestamp to the file name if appendTimestamp is true
     if (appendTimestamp) {
       const timestamp = getCurrentTimestamp();
-      jsonFileName = `${jsonFileName}_${timestamp}`;
+      fileName = `${jsonFileName}_${timestamp}`;
     }
 
     // Save the response as a JSON file
-    await fs.writeFile(`${jsonFileName}.json`, JSON.stringify(response, null, 2));
-
+    await fs.promises.writeFile(`${fileName}.json`, JSON.stringify(response, null, 2));
+    
     console.log(`Response saved to ${jsonFileName}.json`);
   }
   return response
@@ -216,9 +218,10 @@ async function retrievePage(
  * @return {Object} - The parsed time tracking data.
  */
 async function parseTimeTracking(
-  data, save = false, jsonFileName='../data/notion_time_tracking_parsed', appendTimestamp = true
+  raw_data, save = false, jsonFileName='../data/notion_time_tracking_parsed', appendTimestamp = true
 ) {
   const parsed_data = {};
+  const data = raw_data['results'];
   const relations_list = ['Tasks'];
   const array_types = ['multi_select', 'relation'];
   let properties = Object.keys(data[0]['properties']);
