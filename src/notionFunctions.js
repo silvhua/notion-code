@@ -183,85 +183,108 @@ async function retrievePage(
     };
 }
 
-function parseTimeTracking(
+async function parseTimeTracking(
   data, save = false, jsonFileName='../data/notion_time_tracking_parsed', appendTimestamp = true
-  ) {
+) {
   const parsed_data = {};
   const relations_list = ['Tasks'];
-  const array_types = ['multi_select', 'relation']
-  let properties =  Object.keys(data[0]['properties'])
-  const to_ignore = [
-          'Created time', 'Start min', 'summary', 'End min', 'follow up task', 'URL', 'End hr', 
-          'Start hr', 'Name', 'Projects', 'Project tag', 'Project (Rollup)'
-      ]
-  properties = properties.filter(item => !to_ignore.includes(item))
-  for (let i = 0; i < 3; i++) {
-  // for (let i = 0; i < data.length; i++) {
-      const item = data[i];
-      const id = item['id']
-      record = {};
-      for (let j = 0; j < properties.length; j++) {
-          const property = properties[j];
-          const property_dict = data[i]['properties'][property];
-          // console.log(property_dict)
-          const property_type = property_dict['type'];
-          // console.log(property)
-          if (property_type == 'relation') {
-              //  Only parse relation if it is greater than 0
-              if (property_dict[property_type].length === 0) {
-                  record[property] = null;
-              } else {
-                  record[property] = property_dict[property_type].map(item => item['id']);
-                  if (property == 'Tasks') {
-                      console.log('Parsing task details');
-                      // record['Task details'] = property_dict[property_type].map(item => parsePage(item['id']));
-                      //  Convert Promise object to string
-                      record['Task details'] = property_dict[property_type].map(async item => await parsePage(item['id']));
-                      
-                  }
+  const array_types = ['multi_select', 'relation'];
+  let properties = Object.keys(data[0]['properties']);
+  const to_ignore = ['Created time', 'Start min', 'summary', 'End min', 'follow up task', 'URL', 'End hr', 'Start hr', 'Name', 'Projects', 'Project tag', 'Project (Rollup)'];
+  properties = properties.filter(item => !to_ignore.includes(item));
+
+  // for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < data.length; i++) {
+    const item = data[i];
+    const id = item['id'];
+    const record = {};
+
+    for (let j = 0; j < properties.length; j++) {
+      const property = properties[j];
+      const property_dict = data[i]['properties'][property];
+      const property_type = property_dict['type'];
+
+      if (property_type === 'relation') {
+        if (property_dict[property_type].length === 0) {
+          record[property] = null;
+        } else {
+          const relationValues = property_dict[property_type];
+      
+      
+          if (property === 'Tasks') {
+            const taskProjects = [];
+            const taskProjectTags = [];
+      
+            for (let k = 0; k < relationValues.length; k++) {
+              const task_details = await parsePage(relationValues[k]['id'], database='tasks');
+              
+              const attributes = Object.keys(task_details);
+              const attribute_dict = {};
+              for (let attribute = 0;attribute < attributes.length; attribute++) {
+                const attribute_list = [];
+                attribute_list.push(task_details[attributes[attribute]]);
+                attribute_dict[attributes[attribute]] = attribute_list;
               };
-          } else if (property_type == 'rollup') {
-              rollup_type = property_dict[property_type]['type'];
-              if (rollup_type == 'array' && property_dict[property_type]['array'].length > 0) {
-                  var array_type = property_dict[property_type]['array'][0]['type'];
-                  if (array_type == 'multi_select' || array_type == 'relation') {
-                      record[property] = property_dict[property_type]['array'][0][array_type].map(item => item['name']);
-                  } else {
-                      record[property] = null
-                  };
-              } else {
-                  record[property] = null
-              }
-          } else if (property_type == 'rich_text') {
-              if (property_dict[property_type].length > 0) {
-                  record[property] = property_dict[property_type][0]['text']['content'];
-              } else {
-                  record[property] = null;
+              const projectId = task_details['Project'];
+              const project = await parsePage(projectId, 'projects');
+              
+              let project_attributes = Object.keys(project);
+              // console.log(project_attributes);
+              for (let c = 0; c < project_attributes.length; c++) {
+                const attribute_list = [];
+                attribute_list.push(project[project_attributes[c]]);
+                if (project_attributes[c] === 'Name') {
+                  project_attributes[c] = 'Project name';
+                };
+                attribute_dict[project_attributes[c]] = attribute_list;
               };
-          } else if (property_type == 'rich_text') {
-              if (property_dict[property_type].length > 0) {
-                  record[property] = property_dict[property_type][0]['text']['content'];
-              } else {
-                  record[property] = null;
+              const task_attributes = Object.keys(attribute_dict)
+              for (let c = 0; c < task_attributes.length; c++) {
+                record[`Task ${task_attributes[c]}`] = attribute_dict[task_attributes[c]]; // task attributes
               };
-          } else if (property_type == 'formula') {
-              formula_type = property_dict[property_type]['type'];
-              record[property] = property_dict[property_type][formula_type];
-          } else if (property_type == 'multi_select') {
-              if (property_dict[property_type].length > 0) {
-                  record[property] = property_dict[property_type].map(item => item);
-              } else {
-                  record[property] = null;
-              }
-          } else {
-              console.log(`Property of type ${property_type} was not parsed: ${property}`);
+            }
           }
-          
-      parsed_data[id] = record
+        }
+      } else if (property_type === 'rollup') {
+        rollup_type = property_dict[property_type]['type'];
+
+        if (rollup_type === 'array' && property_dict[property_type]['array'].length > 0) {
+          const array_type = property_dict[property_type]['array'][0]['type'];
+
+          if (array_type === 'multi_select' || array_type === 'relation') {
+            record[property] = property_dict[property_type]['array'][0][array_type].map(item => item['name']);
+          } else {
+            record[property] = null;
+          }
+        } else {
+          record[property] = null;
+        }
+      } else if (property_type === 'rich_text') {
+        if (property_dict[property_type].length > 0) {
+          record[property] = property_dict[property_type][0]['text']['content'];
+        } else {
+          record[property] = null;
+        }
+      } else if (property_type === 'formula') {
+        formula_type = property_dict[property_type]['type'];
+        record[property] = property_dict[property_type][formula_type];
+      } else if (property_type === 'multi_select') {
+        if (property_dict[property_type].length > 0) {
+          record[property] = property_dict[property_type].map(item => item);
+        } else {
+          record[property] = null;
+        }
+      } else {
+        console.log(`Property of type ${property_type} was not parsed: ${property}`);
       }
+    }
+
+    parsed_data[id] = record;
   }
+
   if (save) {
-      saveResponseJson(parsed_data, jsonFileName, appendTimestamp);
-  };
+    saveResponseJson(parsed_data, jsonFileName, appendTimestamp);
+  }
+
   return parsed_data;
 }
