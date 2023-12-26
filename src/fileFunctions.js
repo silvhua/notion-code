@@ -1,5 +1,12 @@
 const fs = require('fs');
 
+/**
+ * Loads a JSON file from the specified path and returns the parsed data.
+ *
+ * @param {string} filename - The name of the JSON file to load.
+ * @param {string} [path='../private'] - The path to the directory containing the JSON file. Defaults to '../private'.
+ * @return {object} The parsed JSON data from the file, or null if there was an error.
+ */
 function loadJsonFile(filename, path = '../private') {
   try {
     const filePath = `${path}/${filename}`;
@@ -28,6 +35,14 @@ function getCurrentTimestamp() {
   var formattedTimestamp = year + "-" + month + "-" + day + "_" + hours + minutes;
   return formattedTimestamp;
 }
+/**
+ * Saves the given data object as a JSON file.
+ *
+ * @param {object} data - The data object to be saved as JSON.
+ * @param {string} jsonFileName - The name of the JSON file to be saved.
+ * @param {boolean} appendTimestamp - Whether to append a timestamp to the file name.
+ * @return {Promise<void>} - A Promise that resolves when the data is successfully saved.
+ */
 async function saveResponseJson(data, jsonFileName, appendTimestamp) {
     var {getCurrentTimestamp} = require('../src/fileFunctions');
     const fs = require('fs');
