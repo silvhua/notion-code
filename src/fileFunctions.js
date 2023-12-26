@@ -28,12 +28,6 @@ function getCurrentTimestamp() {
   var formattedTimestamp = year + "-" + month + "-" + day + "_" + hours + minutes;
   return formattedTimestamp;
 }
-
-module.exports = { 
-  loadJsonFile, 
-  getCurrentTimestamp 
-}
-
 async function saveResponseJson(data, jsonFileName, appendTimestamp) {
     var {getCurrentTimestamp} = require('../src/fileFunctions');
     const fs = require('fs');
@@ -48,4 +42,10 @@ async function saveResponseJson(data, jsonFileName, appendTimestamp) {
         console.error(error);
         throw error;
     }
+}
+
+module.exports = { 
+  loadJsonFile, 
+  getCurrentTimestamp,
+  saveResponseJson
 }
