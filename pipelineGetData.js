@@ -8,8 +8,8 @@ async function main() {
   const jsonFileName = `./data/notionTimeTracking_${period}`;
   const parsedJsonFileName = `./data/notion_time_tracking_parsed_${period}`;
 
-  console.log(`path ${__dirname}`)
-  console.log(`path ${path.resolve(jsonFileName)}`)
+//   console.log(`path ${__dirname}`)
+//   console.log(`path ${path.resolve(jsonFileName)}`)
   const response = await nf.queryNotionAndSaveResponse(
     period, path.resolve(jsonFileName), save=true, appendTimestamp=false
     );
