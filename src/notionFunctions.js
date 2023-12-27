@@ -241,94 +241,99 @@ async function parseTimeTracking(
 
   // for (let i = 0; i < 3; i++) {
   for (let i = 0; i < data.length; i++) {
-    const item = data[i];
-    const id = item['id'];
-    const record = {};
-    console.log(`\trecord ${i}, id ${id}`);
-    record['url'] = item['url'];
-    record['created_time'] = item['created_time'];
+    try {
+      const item = data[i];
+      const id = item['id'];
+      const record = {};
+      console.log(`\trecord ${i}, id ${id}`);
+      record['url'] = item['url'];
+      record['created_time'] = item['created_time'];
 
-    for (let j = 0; j < properties.length; j++) {
-      const property = properties[j];
-      const property_dict = data[i]['properties'][property];
-      const property_type = property_dict['type'];
+      for (let j = 0; j < properties.length; j++) {
+        const property = properties[j];
+        const property_dict = data[i]['properties'][property];
+        const property_type = property_dict['type'];
 
-      if (property_type === 'relation') {
-        if (property_dict[property_type].length === 0) {
-          record[property] = null;
-        } else {
-          const relationValues = property_dict[property_type];
-      
-      
-          if (property === 'Tasks') {
-            const taskProjects = [];
-            const taskProjectTags = [];
-      
-            for (let k = 0; k < relationValues.length; k++) {
-              const task_details = await parsePage(relationValues[k]['id'], database='tasks');
-              
-              const attributes = Object.keys(task_details);
-              const attribute_dict = {};
-              for (let attribute = 0;attribute < attributes.length; attribute++) {
-                const attribute_list = [];
-                attribute_list.push(task_details[attributes[attribute]]);
-                attribute_dict[attributes[attribute]] = attribute_list;
-              };
-              const projectId = task_details['Project'];
-              const project = await parsePage(projectId, 'projects');
-              
-              let project_attributes = Object.keys(project);
-              // console.log(project_attributes);
-              for (let c = 0; c < project_attributes.length; c++) {
-                const attribute_list = [];
-                attribute_list.push(project[project_attributes[c]]);
-                if (project_attributes[c] === 'Name') {
-                  project_attributes[c] = 'Project name';
+        if (property_type === 'relation') {
+          if (property_dict[property_type].length === 0) {
+            record[property] = null;
+          } else {
+            const relationValues = property_dict[property_type];
+        
+        
+            if (property === 'Tasks') {
+              const taskProjects = [];
+              const taskProjectTags = [];
+        
+              for (let k = 0; k < relationValues.length; k++) {
+                const task_details = await parsePage(relationValues[k]['id'], database='tasks');
+                
+                const attributes = Object.keys(task_details);
+                const attribute_dict = {};
+                for (let attribute = 0;attribute < attributes.length; attribute++) {
+                  const attribute_list = [];
+                  attribute_list.push(task_details[attributes[attribute]]);
+                  attribute_dict[attributes[attribute]] = attribute_list;
                 };
-                attribute_dict[project_attributes[c]] = attribute_list;
-              };
-              const task_attributes = Object.keys(attribute_dict)
-              for (let c = 0; c < task_attributes.length; c++) {
-                record[`Task ${task_attributes[c]}`] = attribute_dict[task_attributes[c]]; // task attributes
-              };
+                const projectId = task_details['Project'];
+                const project = await parsePage(projectId, 'projects');
+                
+                let project_attributes = Object.keys(project);
+                // console.log(project_attributes);
+                for (let c = 0; c < project_attributes.length; c++) {
+                  const attribute_list = [];
+                  attribute_list.push(project[project_attributes[c]]);
+                  if (project_attributes[c] === 'Name') {
+                    project_attributes[c] = 'Project name';
+                  };
+                  attribute_dict[project_attributes[c]] = attribute_list;
+                };
+                const task_attributes = Object.keys(attribute_dict)
+                for (let c = 0; c < task_attributes.length; c++) {
+                  record[`Task ${task_attributes[c]}`] = attribute_dict[task_attributes[c]]; // task attributes
+                };
+              }
             }
           }
-        }
-      } else if (property_type === 'rollup') {
-        rollup_type = property_dict[property_type]['type'];
+        } else if (property_type === 'rollup') {
+          rollup_type = property_dict[property_type]['type'];
 
-        if (rollup_type === 'array' && property_dict[property_type]['array'].length > 0) {
-          const array_type = property_dict[property_type]['array'][0]['type'];
+          if (rollup_type === 'array' && property_dict[property_type]['array'].length > 0) {
+            const array_type = property_dict[property_type]['array'][0]['type'];
 
-          if (array_type === 'multi_select' || array_type === 'relation') {
-            record[property] = property_dict[property_type]['array'][0][array_type].map(item => item['name']);
+            if (array_type === 'multi_select' || array_type === 'relation') {
+              record[property] = property_dict[property_type]['array'][0][array_type].map(item => item['name']);
+            } else {
+              record[property] = null;
+            }
+          } else {
+            record[property] = null;
+          }
+        } else if (property_type === 'rich_text' || property_type === 'title') {
+          if (property_dict[property_type].length > 0) {
+            record[property] = property_dict[property_type][0]['text']['content'];
+          } else {
+            record[property] = null;
+          }
+        } else if (property_type === 'formula') {
+          formula_type = property_dict[property_type]['type'];
+          record[property] = property_dict[property_type][formula_type];
+        } else if (property_type === 'multi_select') {
+          if (property_dict[property_type].length > 0) {
+            record[property] = property_dict[property_type].map(item => item);
           } else {
             record[property] = null;
           }
         } else {
-          record[property] = null;
+          console.log(`\t\tProperty of type ${property_type} was not parsed: ${property}`);
         }
-      } else if (property_type === 'rich_text' || property_type === 'title') {
-        if (property_dict[property_type].length > 0) {
-          record[property] = property_dict[property_type][0]['text']['content'];
-        } else {
-          record[property] = null;
-        }
-      } else if (property_type === 'formula') {
-        formula_type = property_dict[property_type]['type'];
-        record[property] = property_dict[property_type][formula_type];
-      } else if (property_type === 'multi_select') {
-        if (property_dict[property_type].length > 0) {
-          record[property] = property_dict[property_type].map(item => item);
-        } else {
-          record[property] = null;
-        }
-      } else {
-        console.log(`\t\tProperty of type ${property_type} was not parsed: ${property}`);
       }
-    }
 
-    parsed_data[id] = record;
+      parsed_data[id] = record;
+    } catch (error) {
+      console.error(error);
+      break;
+    }
   }
 
   if (save) {
