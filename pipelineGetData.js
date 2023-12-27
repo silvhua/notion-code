@@ -2,6 +2,7 @@ console.log(`Running pipelineGetData.js`);
 const {loadJsonFile, saveResponseJson, getCurrentTimestamp} = require('./fileFunctions');
 const nf = require('./notionFunctions');
 const path = require('path');
+const fs = require('fs');
 
 async function main() {
   const period = process.argv[2];
@@ -19,6 +20,8 @@ async function main() {
     data, save=true, path.resolve(parsedJsonFileName),
     appendTimestamp = false
     );
+  fs.writeFileSync(`${root_path}/filename.txt`, parsedJsonFileName, 'utf-8');
+  console.log(`Filename saved to ${root_path}/filenames.txt`);
 }
 
 main().catch(error => {
