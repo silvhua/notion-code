@@ -233,15 +233,16 @@ async function parseTimeTracking(
   const relations_list = ['Tasks'];
   const array_types = ['multi_select', 'relation'];
   let properties = Object.keys(data[0]['properties']);
-  const to_ignore = ['Created time', 'Start min', 'summary', 'End min', 'follow up task', 'URL', 'End hr', 'Start hr', 'Name', 'Projects', 'Project tag', 'Project (Rollup)'];
+  const to_ignore = ['Created time', 'Start min', 'summary', 'End min', 'follow up task', 'URL', 'End hr', 'Start hr', 'Projects', 'Project tag', 'Project (Rollup)'];
   properties = properties.filter(item => !to_ignore.includes(item));
+  console.log(`Parsing...`);
 
   // for (let i = 0; i < 3; i++) {
   for (let i = 0; i < data.length; i++) {
     const item = data[i];
     const id = item['id'];
     const record = {};
-    console.log(`Parsing record ${i}`);
+    console.log(`\trecord ${i}`);
 
     for (let j = 0; j < properties.length; j++) {
       const property = properties[j];
@@ -303,7 +304,7 @@ async function parseTimeTracking(
         } else {
           record[property] = null;
         }
-      } else if (property_type === 'rich_text') {
+      } else if (property_type === 'rich_text' || property_type === 'title') {
         if (property_dict[property_type].length > 0) {
           record[property] = property_dict[property_type][0]['text']['content'];
         } else {
