@@ -18,7 +18,16 @@ async function queryNotionAndSaveResponse(
   let notionApiKey = process.env.notion_secret;
   let notion = new Client({ auth: notionApiKey });
 
-  if (period == 'past_week') {
+  if (period === 'today') {
+    const startOfToday = getTimestamp('today');
+    date_filter = {
+      and: [
+        { property: 'Created time', date: { on_or_after: startOfToday } },
+        { property: 'Elapsed', number: { greater_than: 0 } },
+        { property: 'Tasks', relation: { is_not_empty: true } },
+      ],
+    };
+  } else if (period == 'past_week') {
     date_filter = {
       and: [
         {property: 'Elapsed', number: {greater_than: 0}},
