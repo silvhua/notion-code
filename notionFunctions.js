@@ -1,7 +1,6 @@
 const {getCurrentTimestamp, loadJsonFile, saveResponseJson} = require('./fileFunctions')
 const { Client } = require('@notionhq/client');
 const fs = require('fs');
-// const fsPromises = require('fs').promises;
 
 console.log(`Current time stamp: ${getCurrentTimestamp()}`);
 
@@ -42,11 +41,21 @@ async function queryNotionAndSaveResponse(
         ]
       };
   };
-  
-  let response = await notion.databases.query({
-    database_id: process.env.notion_database,
-    filter: date_filter
-  });
+  const pages = [];
+  let cursor = undefined;
+  while (true) {
+    const {results, next_cursor} = await notion.databases.query({
+      database_id: process.env.notion_database,
+      filter: date_filter,
+      start_cursor: cursor
+    });
+    pages.push(...results);
+    if (!next_cursor) {
+      break
+    };
+    cursor = next_cursor
+  }
+  await console.log(`${pages.length} issues successfully fetched.`)
 
 
   if (save) {
@@ -58,11 +67,11 @@ async function queryNotionAndSaveResponse(
     }
 
     // Save the response as a JSON file
-    await fs.promises.writeFile(`${fileName}.json`, JSON.stringify(response, null, 2));
+    await fs.promises.writeFile(`${fileName}.json`, JSON.stringify(pages, null, 2));
     
-    console.log(`Response saved to ${jsonFileName}.json`);
+    console.log(`Response saved to ${fileName}.json`);
   }
-  return response
+  return pages
 }
 
 /**
@@ -218,10 +227,9 @@ async function retrievePage(
  * @return {Object} - The parsed time tracking data.
  */
 async function parseTimeTracking(
-  raw_data, save = false, jsonFileName='../data/notion_time_tracking_parsed', appendTimestamp = true
+  data, save = false, jsonFileName='../data/notion_time_tracking_parsed', appendTimestamp = true
 ) {
   const parsed_data = {};
-  const data = raw_data['results'];
   const relations_list = ['Tasks'];
   const array_types = ['multi_select', 'relation'];
   let properties = Object.keys(data[0]['properties']);
@@ -233,6 +241,7 @@ async function parseTimeTracking(
     const item = data[i];
     const id = item['id'];
     const record = {};
+    console.log(`Parsing record ${i}`);
 
     for (let j = 0; j < properties.length; j++) {
       const property = properties[j];
