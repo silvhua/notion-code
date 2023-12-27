@@ -5,10 +5,10 @@ const path = require('path');
 
 async function main() {
   const period = process.argv[2];
-  const root_path = './'
+  const root_path = './data'
   const timeStamp = getCurrentTimestamp();
-  const jsonFileName = `${root_path}data/notionTimeTracking_${period}_${timeStamp}`;
-  const parsedJsonFileName = `${root_path}data/notion_time_tracking_parsed_${period}_${timeStamp}`;
+  const jsonFileName = `${root_path}/raw/notionTimeTracking_${period}_${timeStamp}`;
+  const parsedJsonFileName = `${root_path}/notion_time_tracking_parsed_${period}_${timeStamp}`;
 
   const response = await nf.queryNotionAndSaveResponse(
     period, path.resolve(jsonFileName), save=true, appendTimestamp=false
