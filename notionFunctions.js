@@ -20,8 +20,10 @@ async function queryNotionAndSaveResponse(
 
   if (period == 'past_week') {
     date_filter = {
-      property: 'Created time',
-      date: {past_week: {}},
+      and: [
+        {property: 'Elapsed', number: {greater_than: 0}},
+        {property: 'Created time', date: {past_week: {}}},
+      ]
     };
   } else if (period == 'quarter') {
     let start = getTimestamp('month', nMonths = 3);
@@ -29,7 +31,8 @@ async function queryNotionAndSaveResponse(
     date_filter = {
       and: [
         {property: 'Created time', date: {on_or_after: start}},
-        {property: 'Created time', date: {before: addTimeDelta(start, period='month', nPeriod=3)}}
+        {property: 'Created time', date: {before: addTimeDelta(start, period='month', nPeriod=3)}},
+        {property: 'Elapsed', number: {greater_than: 0}}
       ]
     };
   } else if (period == 'month' || period == 'week') {
@@ -37,7 +40,8 @@ async function queryNotionAndSaveResponse(
       date_filter = {
         and: [
           {property: 'Created time', date: {on_or_after: start}},
-          {property: 'Created time', date: {before: addTimeDelta(start, period=period, nPeriod=1)}}
+          {property: 'Created time', date: {before: addTimeDelta(start, period=period, nPeriod=1)}},
+          {property: 'Elapsed', number: {greater_than: 0}}
         ]
       };
   };
@@ -107,11 +111,6 @@ function getTimestamp(option, nMonths = 1) {
     const mondayOfLastWeek = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 7 - ((now.getDay() + 6) % 7));
     return mondayOfLastWeek.toISOString();
   }
-
-  // if (option == 'month') {
-  //   const startOfPreviousMonth = new Date(now.getFullYear(), now.getMonth() - 1, 1);
-  //   return startOfPreviousMonth.toISOString();
-  // }
 
   if (option == 'month') {
     const startOfNMonthsAgo = new Date(now.getFullYear(), now.getMonth() - nMonths, 1);
@@ -233,7 +232,7 @@ async function parseTimeTracking(
   const relations_list = ['Tasks'];
   const array_types = ['multi_select', 'relation'];
   let properties = Object.keys(data[0]['properties']);
-  const to_ignore = ['Created time', 'Start min', 'summary', 'End min', 'follow up task', 'URL', 'End hr', 'Start hr', 'Projects', 'Project tag', 'Project (Rollup)'];
+  const to_ignore = ['Notes', 'Created time', 'Start min', 'summary', 'End min', 'follow up task', 'URL', 'End hr', 'Start hr', 'Projects', 'Project tag', 'Project (Rollup)'];
   properties = properties.filter(item => !to_ignore.includes(item));
   console.log(`Parsing...`);
 
@@ -242,7 +241,7 @@ async function parseTimeTracking(
     const item = data[i];
     const id = item['id'];
     const record = {};
-    console.log(`\trecord ${i}`);
+    console.log(`\trecord ${i}, id ${id}`);
 
     for (let j = 0; j < properties.length; j++) {
       const property = properties[j];
