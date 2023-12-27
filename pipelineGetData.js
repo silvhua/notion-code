@@ -4,7 +4,10 @@ const nf = require('./notionFunctions');
 const path = require('path');
 
 async function main() {
-  const period = 'month';
+//   const period = 'month';
+//   const period = 'week';
+//   const period = 'quarter';
+  const period = process.argv[2];
   const jsonFileName = `./data/notionTimeTracking_${period}`;
   const parsedJsonFileName = `./data/notion_time_tracking_parsed_${period}`;
 
