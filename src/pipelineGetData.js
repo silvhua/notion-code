@@ -8,18 +8,17 @@ async function main() {
 //   const period = 'week';
 //   const period = 'quarter';
   const period = process.argv[2];
-  const jsonFileName = `./data/notionTimeTracking_${period}`;
-  const parsedJsonFileName = `./data/notion_time_tracking_parsed_${period}`;
+  const root_path = './'
+  const jsonFileName = `${root_path}data/notionTimeTracking_${period}`;
+  const parsedJsonFileName = `${root_path}data/notion_time_tracking_parsed_${period}`;
 
-//   console.log(`path ${__dirname}`)
-//   console.log(`path ${path.resolve(jsonFileName)}`)
   const response = await nf.queryNotionAndSaveResponse(
     period, path.resolve(jsonFileName), save=true, appendTimestamp=false
     );
   console.log('Response saved')
   const data = loadJsonFile(`${jsonFileName}.json`);
   const parsedData = nf.parseTimeTracking(data, save=true, path.resolve(parsedJsonFileName));
-  console.log(`Done!`);
+  await console.log(`Done!`);
 
 }
 
