@@ -1,3 +1,20 @@
+import sys
+sys.path.append(r"/home/silvhua/custom_python")
+from silvhua import *
+
+def create_notion_df(filename, filepath):
+    data = load_json(filename, filepath)
+    df = pd.DataFrame(data).transpose()
+    columns = df.columns.tolist()
+    # Remove 'Name' from columns
+    columns.remove('Name')
+    # make 'Name' the first column
+    df.index.name = 'id'
+    columns = ['Name'] + columns + ['id']
+    # Turn the index into a column
+    df = df.reset_index()
+    return df[columns]
+
 def notion_df(filename, filepath):
 
     def parse_property(property_dict, property):
