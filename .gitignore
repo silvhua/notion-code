@@ -1,5 +1,5 @@
 node_modules
 .ipynb_checkpoints
 private
-data
+data/raw
 src/__pycache__/
