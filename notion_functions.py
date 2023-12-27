@@ -2,18 +2,35 @@ import sys
 sys.path.append(r"/home/silvhua/custom_python")
 from silvhua import *
 
-def create_notion_df(filename, filepath):
+def create_notion_df(
+    filename, filepath, split_columns=['Task Name', 'Task Project name']
+    ):
+    """
+    Create a pandas DataFrame from a JSON file. 
+    Used after `pipelineGetData.js` is run.
+    
+    Parameters:
+        filename (str): The name of the JSON file.
+        filepath (str): The path to the JSON file.
+        split_columns (list, optional): The columns to split the DataFrame on. Defaults to ['Task Name', 'Task Project name'].
+    
+    Returns:
+        pandas.DataFrame: The resulting DataFrame.
+    """
     data = load_json(filename, filepath)
     df = pd.DataFrame(data).transpose()
+    for split_column in split_columns:
+        df = df.explode(split_column)
+    
     columns = df.columns.tolist()
-    # Remove 'Name' from columns
     columns.remove('Name')
-    # make 'Name' the first column
+    columns.remove('Task Project')
     df.index.name = 'id'
     columns = ['Name'] + columns + ['id']
-    # Turn the index into a column
     df = df.reset_index()
-    return df[columns]
+    df = df[columns]
+    df = df.drop_duplicates(subset=['id', 'Task Project name', 'Task Name'])   
+    return df
 
 def notion_df(filename, filepath):
 
