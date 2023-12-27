@@ -2,3 +2,4 @@ node_modules
 .ipynb_checkpoints
 private
 data
+src/__pycache__/
