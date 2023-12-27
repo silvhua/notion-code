@@ -23,6 +23,7 @@ async function queryNotionAndSaveResponse(
       and: [
         {property: 'Elapsed', number: {greater_than: 0}},
         {property: 'Created time', date: {past_week: {}}},
+        {property: 'Tasks', relation: {is_not_empty: true}}
       ]
     };
   } else if (period == 'quarter') {
@@ -32,7 +33,8 @@ async function queryNotionAndSaveResponse(
       and: [
         {property: 'Created time', date: {on_or_after: start}},
         {property: 'Created time', date: {before: addTimeDelta(start, period='month', nPeriod=3)}},
-        {property: 'Elapsed', number: {greater_than: 0}}
+        {property: 'Elapsed', number: {greater_than: 0}},
+        {property: 'Tasks', relation: {is_not_empty: true}}
       ]
     };
   } else if (period == 'month' || period == 'week') {
@@ -41,7 +43,8 @@ async function queryNotionAndSaveResponse(
         and: [
           {property: 'Created time', date: {on_or_after: start}},
           {property: 'Created time', date: {before: addTimeDelta(start, period=period, nPeriod=1)}},
-          {property: 'Elapsed', number: {greater_than: 0}}
+          {property: 'Elapsed', number: {greater_than: 0}},
+          {property: 'Tasks', relation: {is_not_empty: true}}
         ]
       };
   };
@@ -232,7 +235,7 @@ async function parseTimeTracking(
   const relations_list = ['Tasks'];
   const array_types = ['multi_select', 'relation'];
   let properties = Object.keys(data[0]['properties']);
-  const to_ignore = ['Notes', 'Created time', 'Start min', 'summary', 'End min', 'follow up task', 'URL', 'End hr', 'Start hr', 'Projects', 'Project tag', 'Project (Rollup)'];
+  const to_ignore = ['Notes', 'Last edited', 'Created time', 'Start min', 'summary', 'End min', 'follow up task', 'URL', 'End hr', 'Start hr', 'Projects', 'Project tag', 'Project (Rollup)'];
   properties = properties.filter(item => !to_ignore.includes(item));
   console.log(`Parsing...`);
 
@@ -242,6 +245,8 @@ async function parseTimeTracking(
     const id = item['id'];
     const record = {};
     console.log(`\trecord ${i}, id ${id}`);
+    record['url'] = item['url'];
+    record['created_time'] = item['created_time'];
 
     for (let j = 0; j < properties.length; j++) {
       const property = properties[j];
@@ -319,7 +324,7 @@ async function parseTimeTracking(
           record[property] = null;
         }
       } else {
-        console.log(`Property of type ${property_type} was not parsed: ${property}`);
+        console.log(`\t\tProperty of type ${property_type} was not parsed: ${property}`);
       }
     }
 
