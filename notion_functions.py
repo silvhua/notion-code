@@ -1,36 +1,33 @@
 import sys
 sys.path.append(r"/home/silvhua/custom_python")
 from silvhua import *
+from wrangling import filter_df_all_conditions
 
 def create_notion_df(
     filename, filepath, split_columns=['Task Name', 'Task Project name']
     ):
-    """
-    Create a pandas DataFrame from a JSON file. 
-    Used after `pipelineGetData.js` is run.
-    
-    Parameters:
-        filename (str): The name of the JSON file.
-        filepath (str): The path to the JSON file.
-        split_columns (list, optional): The columns to split the DataFrame on. Defaults to ['Task Name', 'Task Project name'].
-    
-    Returns:
-        pandas.DataFrame: The resulting DataFrame.
-    """
     data = load_json(filename, filepath)
     df = pd.DataFrame(data).transpose()
     for split_column in split_columns:
+        # Explode the rows based on the values in the split_column
         df = df.explode(split_column)
     
     columns = df.columns.tolist()
+    columns.remove('url')
     columns.remove('Name')
     columns.remove('Task Project')
     df.index.name = 'id'
-    columns = ['Name'] + columns + ['id']
+    columns = ['Name'] + columns + ['url', 'id']
     df = df.reset_index()
     df = df[columns]
-    df = df.drop_duplicates(subset=['id', 'Task Project name', 'Task Name'])   
-    return df
+    df = df.drop_duplicates(subset=['id', 'Task Project name', 'Task Name']) 
+    print(f'Shape before applying filter: {df.shape}')
+    filters = {
+        'Elapsed': '> 0'
+    }
+    df['created_time'] = pd.to_datetime(df['created_time']).dt.tz_convert('America/Vancouver')
+
+    return filter_df_all_conditions(df, filters)  
 
 def notion_df(filename, filepath):
 
