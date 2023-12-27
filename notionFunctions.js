@@ -96,31 +96,37 @@ function getIsoTimestamp(dateString) {
 /**
  * Returns a timestamp based on the given option.
  *
- * @param {string} option - The option to determine the timestamp. Possible values are 'week', 'lastWeek', 'month', 'months'.
+ * @param {string} option - The option to determine the timestamp. Possible values are 'week', 'lastWeek', 'month', 'months', 'today'.
  * @param {number} [nMonths=1] - The number of months to go back if the option is 'months'.
  * @return {string|null} - The timestamp in ISO string format if the option is valid, otherwise null.
  */
 function getTimestamp(option, nMonths = 1) {
   const now = new Date();
 
-  if (option == 'week') {
+  if (option === 'week') {
     const dayOfWeek = now.getDay();
     const daysSinceLastMonday = (dayOfWeek + 6) % 7;
     const startOfLastMonday = new Date(now.getFullYear(), now.getMonth(), now.getDate() - daysSinceLastMonday);
     return startOfLastMonday.toISOString();
   }
 
-  if (option == 'lastWeek') {
+  if (option === 'lastWeek') {
     const mondayOfLastWeek = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 7 - ((now.getDay() + 6) % 7));
     return mondayOfLastWeek.toISOString();
   }
 
-  if (option == 'month') {
+  if (option === 'month') {
     const startOfNMonthsAgo = new Date(now.getFullYear(), now.getMonth() - nMonths, 1);
     return startOfNMonthsAgo.toISOString();
   }
-}
 
+  if (option === 'today') {
+    const startOfToday = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    return startOfToday.toISOString();
+  }
+  // Handle invalid options
+  return null;
+}
 /**
  * Adds a time delta to a given timestamp and returns the updated timestamp.
  *
