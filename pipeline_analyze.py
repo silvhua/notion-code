@@ -1,4 +1,7 @@
 import sys
+sys.path.append(r"/home/silvhua/repositories/notion/src")
+from notion_functions import *
+from data_viz import *
 
 print('start of Python script')
 
