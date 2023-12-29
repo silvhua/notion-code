@@ -1,0 +1,314 @@
+{
+  "8c737381-6fdf-4034-9d0d-25cef0db1eba": {
+    "url": "https://www.notion.so/2023-12-27-14-41-8c7373816fdf40349d0d25cef0db1eba",
+    "created_time": "2023-12-27T22:48:00.000Z",
+    "Task Tag": [
+      "Ginkgo"
+    ],
+    "Flag": null,
+    "Elapsed": 0.133333333333,
+    "Task Name": [
+      "sprint planning"
+    ],
+    "Task Project tags": [
+      [
+        "Ginkgo work"
+      ]
+    ],
+    "Task Project": [
+      "caf14c08-d7fb-4a73-80b5-58041af446a2"
+    ],
+    "Task Parent-task": [
+      null
+    ],
+    "Task Sub-tasks": [
+      null
+    ],
+    "Task Project name": [
+      "Ginkgo Admin"
+    ],
+    "start time": "14:41",
+    "end time": "14:49",
+    "Roadmap Item": [],
+    "Name": "2023-12-27 14:41"
+  },
+  "053a06d1-8b32-467d-8529-490e117d598d": {
+    "url": "https://www.notion.so/2023-12-27-14-32-053a06d18b32467d8529490e117d598d",
+    "created_time": "2023-12-27T22:32:00.000Z",
+    "Task Tag": [
+      "life"
+    ],
+    "Flag": null,
+    "Elapsed": 0.15,
+    "Task Name": [
+      "Integrate chatbot with Facebook Messenger"
+    ],
+    "Task Project tags": [
+      [
+        "portfolio"
+      ]
+    ],
+    "Task Project": [
+      "bedda674-2425-4390-a238-c100da992535"
+    ],
+    "Task Parent-task": [
+      null
+    ],
+    "Task Sub-tasks": [
+      null
+    ],
+    "Task Project name": [
+      "GHL Chatbot"
+    ],
+    "start time": "14:32",
+    "end time": "14:41",
+    "Roadmap Item": [],
+    "Name": "2023-12-27 14:32"
+  },
+  "77f0a228-69f8-4d09-9dab-2c9fe11da09a": {
+    "url": "https://www.notion.so/2023-12-27-14-21-77f0a22869f84d099dab2c9fe11da09a",
+    "created_time": "2023-12-27T22:21:00.000Z",
+    "Task Tag": [
+      "life"
+    ],
+    "Flag": [
+      {
+        "id": "d9fc9e36-3e3c-49b4-8332-5f9fff407c10",
+        "name": "do not bill",
+        "color": "pink"
+      }
+    ],
+    "Elapsed": 0.183333333333,
+    "Task Name": [
+      "chatbot project: check webhook data and cloudwatch logs"
+    ],
+    "Task Project tags": [
+      [
+        "portfolio"
+      ]
+    ],
+    "Task Project": [
+      "bedda674-2425-4390-a238-c100da992535"
+    ],
+    "Task Parent-task": [
+      null
+    ],
+    "Task Sub-tasks": [
+      null
+    ],
+    "Task Project name": [
+      "GHL Chatbot"
+    ],
+    "start time": "14:21",
+    "end time": "14:32",
+    "Roadmap Item": [],
+    "Name": "2023-12-27 14:21"
+  },
+  "896c1eb1-6859-4fd3-aada-01820528f669": {
+    "url": "https://www.notion.so/2023-12-27-14-01s-896c1eb168594fd3aada01820528f669",
+    "created_time": "2023-12-27T22:01:00.000Z",
+    "Task Tag": [
+      "life"
+    ],
+    "Flag": null,
+    "Elapsed": 0.316666666667,
+    "Task Name": [
+      "Solarathon: add video to README"
+    ],
+    "Task Project tags": [
+      [
+        "portfolio"
+      ]
+    ],
+    "Task Project": [
+      "1be846c5-ddbf-4823-8c5e-ebed5aa1ac31"
+    ],
+    "Task Parent-task": [
+      null
+    ],
+    "Task Sub-tasks": [
+      null
+    ],
+    "Task Project name": [
+      "Solarathon"
+    ],
+    "start time": "14:01",
+    "end time": "14:20",
+    "Roadmap Item": [],
+    "Name": "2023-12-27 14:01s"
+  },
+  "8c8375eb-ef3b-46d4-b46f-864b415a7210": {
+    "url": "https://www.notion.so/2023-12-27-11-49-8c8375ebef3b46d4b46f864b415a7210",
+    "created_time": "2023-12-27T19:49:00.000Z",
+    "Task Tag": [
+      "Ginkgo"
+    ],
+    "Flag": null,
+    "Elapsed": 1.15,
+    "Task Name": [
+      "Checking Exercises Post Publishing"
+    ],
+    "Task Project tags": [
+      [
+        "Ginkgo work"
+      ]
+    ],
+    "Task Project": [
+      "8ae55237-e37d-4c4c-a9f0-38aeb1925987"
+    ],
+    "Task Parent-task": [
+      null
+    ],
+    "Task Sub-tasks": [
+      null
+    ],
+    "Task Project name": [
+      "Ginkgo app testing"
+    ],
+    "start time": "11:49",
+    "end time": "12:58",
+    "Roadmap Item": [],
+    "Name": "2023-12-27 11:49"
+  },
+  "c3abc473-082b-468d-a427-df8c0dee4140": {
+    "url": "https://www.notion.so/2023-12-27-11-27-c3abc473082b468da427df8c0dee4140",
+    "created_time": "2023-12-27T19:27:00.000Z",
+    "Task Tag": [
+      "life"
+    ],
+    "Flag": null,
+    "Elapsed": 0.283333333333,
+    "Task Name": [
+      "MASS Research Review video"
+    ],
+    "Task Project tags": [
+      [
+        "Defy Time Fitness",
+        "life"
+      ]
+    ],
+    "Task Project": [
+      "75789aa0-2d72-4ee4-84f0-eac5e27bc6ea"
+    ],
+    "Task Parent-task": [
+      null
+    ],
+    "Task Sub-tasks": [
+      null
+    ],
+    "Task Project name": [
+      "kinesiology continuing education"
+    ],
+    "start time": "11:27",
+    "end time": "11:44",
+    "Roadmap Item": [],
+    "Name": "2023-12-27 11:27"
+  },
+  "aad915d9-d064-4f6a-a9d9-e1c29bc20475": {
+    "url": "https://www.notion.so/2023-12-27-11-00-aad915d9d0644f6aa9d9e1c29bc20475",
+    "created_time": "2023-12-27T18:35:00.000Z",
+    "Task Tag": [
+      "Ginkgo"
+    ],
+    "Flag": null,
+    "Elapsed": 0.233333333333,
+    "Task Name": [
+      "Ginkgo daily stand up meeting"
+    ],
+    "Task Project tags": [
+      [
+        "Ginkgo work"
+      ]
+    ],
+    "Task Project": [
+      "dfa60122-de42-401d-9d4d-fb010c170aae"
+    ],
+    "Task Parent-task": [
+      null
+    ],
+    "Task Sub-tasks": [
+      null
+    ],
+    "Task Project name": [
+      "Ginkgo meetings"
+    ],
+    "start time": "11:00",
+    "end time": "11:14",
+    "Roadmap Item": [],
+    "Name": "2023-12-27 11:00"
+  },
+  "0974cecd-2f90-4188-8bb2-fb95bade6048": {
+    "url": "https://www.notion.so/2023-12-27-09-58-0974cecd2f9041888bb2fb95bade6048",
+    "created_time": "2023-12-27T17:58:00.000Z",
+    "Task Tag": [
+      "Ginkgo"
+    ],
+    "Flag": [
+      {
+        "id": "pBGI",
+        "name": "flag",
+        "color": "red"
+      }
+    ],
+    "Elapsed": 0.783333333333,
+    "Task Name": [
+      "Checking Exercises Post Publishing"
+    ],
+    "Task Project tags": [
+      [
+        "Ginkgo work"
+      ]
+    ],
+    "Task Project": [
+      "8ae55237-e37d-4c4c-a9f0-38aeb1925987"
+    ],
+    "Task Parent-task": [
+      null
+    ],
+    "Task Sub-tasks": [
+      null
+    ],
+    "Task Project name": [
+      "Ginkgo app testing"
+    ],
+    "start time": "10:00",
+    "end time": "10:47",
+    "Roadmap Item": [],
+    "Name": "2023-12-27 09:58"
+  },
+  "d3a87f23-abb6-40d0-85ed-965a85541dc8": {
+    "url": "https://www.notion.so/2023-12-27-00-00-d3a87f23abb640d085ed965a85541dc8",
+    "created_time": "2023-12-27T08:51:00.000Z",
+    "Task Tag": [
+      "life"
+    ],
+    "Flag": null,
+    "Elapsed": 1,
+    "Task Name": [
+      "Wrangle time tracking data"
+    ],
+    "Task Project tags": [
+      [
+        "life",
+        "tech ed",
+        "admin"
+      ]
+    ],
+    "Task Project": [
+      "3d90e406-46c9-4468-b70d-e9e3bf2653f9"
+    ],
+    "Task Parent-task": [
+      null
+    ],
+    "Task Sub-tasks": [
+      null
+    ],
+    "Task Project name": [
+      "Notion analytics"
+    ],
+    "start time": "00:00",
+    "end time": "01:00",
+    "Roadmap Item": [],
+    "Name": "2023-12-27 00:00"
+  }
+}
