@@ -41,7 +41,7 @@ def update_df_attributes(
     json_file = load_json(f'{json_filename}.json', path)
     newest_created_time = df[timestamp_column].max().isoformat()
     oldest_created_time = df[timestamp_column].min().isoformat()
-    json_file[df_filename] = {
+    json_file[df_filename.split('.')[0]] = {
         'newest_created_time': newest_created_time,
         'oldest_created_time': oldest_created_time
     }
