@@ -4,59 +4,21 @@ const fs = require('fs');
 
 console.log(`Current time stamp: ${getCurrentTimestamp()}`);
 
-/**
- * Queries Notion and saves the response as a JSON file.
- *
- * @param {string} period - The period to filter the query by. Default is 'week'.
- * @param {string} jsonFileName - The name of the JSON file to save the response to. Default is '../data/notion_time_tracking'.
- * @param {boolean} save - Indicates whether to save the response as a JSON file. Default is true.
- * @param {boolean} appendTimestamp - Indicates whether to append a timestamp to the JSON file name. Default is true.
- * @return {Promise<object>} The response from the Notion API.
- */
-async function queryNotionAndSaveResponse(
-  period='week', jsonFileName='../data/notion_time_tracking', save = true, appendTimestamp = true) {
+async function getNewNotionData(
+  df_key='notion_df', df_attributes_file='../data/df_attributes.json',
+  jsonFileName='data/notion_time_tracking', save = true, appendTimestamp = false) {
   let notionApiKey = process.env.notion_secret;
   let notion = new Client({ auth: notionApiKey });
-
-  if (period === 'today') {
-    const startOfToday = getTimestamp('today');
-    date_filter = {
+  const newestCreatedTime = loadJsonFile(df_attributes_file, '')[df_key]['newest_created_time']
+  console.log(`Newest record created_time (2): ${ newestCreatedTime }`)
+  date_filter = {
       and: [
-        { property: 'Created time', date: { on_or_after: startOfToday } },
-        { property: 'Elapsed', number: { greater_than: 0 } },
-        { property: 'Tasks', relation: { is_not_empty: true } },
+          { property: 'Created time', date: { after: newestCreatedTime } },
+          { property: 'Elapsed', number: { greater_than: 0 } },
+          { property: 'Tasks', relation: { is_not_empty: true } },
       ],
-    };
-  } else if (period == 'past_week') {
-    date_filter = {
-      and: [
-        {property: 'Elapsed', number: {greater_than: 0}},
-        {property: 'Created time', date: {past_week: {}}},
-        {property: 'Tasks', relation: {is_not_empty: true}}
-      ]
-    };
-  } else if (period == 'quarter') {
-    let start = getTimestamp('month', nMonths = 3);
-    console.log(`Start date: ${start}. Period: ${period}`);
-    date_filter = {
-      and: [
-        {property: 'Created time', date: {on_or_after: start}},
-        {property: 'Created time', date: {before: addTimeDelta(start, period='month', nPeriod=3)}},
-        {property: 'Elapsed', number: {greater_than: 0}},
-        {property: 'Tasks', relation: {is_not_empty: true}}
-      ]
-    };
-  } else if (period == 'month' || period == 'week') {
-      start = getTimestamp(period)
-      date_filter = {
-        and: [
-          {property: 'Created time', date: {on_or_after: start}},
-          {property: 'Created time', date: {before: addTimeDelta(start, period=period, nPeriod=1)}},
-          {property: 'Elapsed', number: {greater_than: 0}},
-          {property: 'Tasks', relation: {is_not_empty: true}}
-        ]
-      };
   };
+  
   const pages = [];
   let cursor = undefined;
   while (true) {
@@ -75,18 +37,14 @@ async function queryNotionAndSaveResponse(
 
 
   if (save) {
-    let fileName = jsonFileName;
-    // Add timestamp to the file name if appendTimestamp is true
-    if (appendTimestamp) {
-      const timestamp = getCurrentTimestamp();
-      fileName = `${jsonFileName}_${timestamp}`;
-    }
-
-    // Save the response as a JSON file
-    await fs.promises.writeFile(`${fileName}.json`, JSON.stringify(pages, null, 2));
-    
-    console.log(`Response saved to ${fileName}.json`);
+      try {
+          await saveResponseJson(pages, `${jsonFileName}_${newestCreatedTime}`, appendTimestamp);
+      } catch (error) {
+          console.error(error);
+          return pages
+      }   
   }
+  
   return pages
 }
 
@@ -358,12 +316,99 @@ async function parseTimeTracking(
   return parsed_data;
 }
 
+/**
+ * Queries Notion and saves the response as a JSON file.
+ *
+ * @param {string} period - The period to filter the query by. Default is 'week'.
+ * @param {string} jsonFileName - The name of the JSON file to save the response to. Default is '../data/notion_time_tracking'.
+ * @param {boolean} save - Indicates whether to save the response as a JSON file. Default is true.
+ * @param {boolean} appendTimestamp - Indicates whether to append a timestamp to the JSON file name. Default is true.
+ * @return {Promise<object>} The response from the Notion API.
+ */
+async function queryNotionAndSaveResponse(
+  period='week', jsonFileName='../data/notion_time_tracking', save = true, appendTimestamp = true) {
+  let notionApiKey = process.env.notion_secret;
+  let notion = new Client({ auth: notionApiKey });
+
+  if (period === 'today') {
+    const startOfToday = getTimestamp('today');
+    date_filter = {
+      and: [
+        { property: 'Created time', date: { on_or_after: startOfToday } },
+        { property: 'Elapsed', number: { greater_than: 0 } },
+        { property: 'Tasks', relation: { is_not_empty: true } },
+      ],
+    };
+  } else if (period == 'past_week') {
+    date_filter = {
+      and: [
+        {property: 'Elapsed', number: {greater_than: 0}},
+        {property: 'Created time', date: {past_week: {}}},
+        {property: 'Tasks', relation: {is_not_empty: true}}
+      ]
+    };
+  } else if (period == 'quarter') {
+    let start = getTimestamp('month', nMonths = 3);
+    console.log(`Start date: ${start}. Period: ${period}`);
+    date_filter = {
+      and: [
+        {property: 'Created time', date: {on_or_after: start}},
+        {property: 'Created time', date: {before: addTimeDelta(start, period='month', nPeriod=3)}},
+        {property: 'Elapsed', number: {greater_than: 0}},
+        {property: 'Tasks', relation: {is_not_empty: true}}
+      ]
+    };
+  } else if (period == 'month' || period == 'week') {
+      start = getTimestamp(period)
+      date_filter = {
+        and: [
+          {property: 'Created time', date: {on_or_after: start}},
+          {property: 'Created time', date: {before: addTimeDelta(start, period=period, nPeriod=1)}},
+          {property: 'Elapsed', number: {greater_than: 0}},
+          {property: 'Tasks', relation: {is_not_empty: true}}
+        ]
+      };
+  };
+  const pages = [];
+  let cursor = undefined;
+  while (true) {
+    const {results, next_cursor} = await notion.databases.query({
+      database_id: process.env.notion_database,
+      filter: date_filter,
+      start_cursor: cursor
+    });
+    pages.push(...results);
+    if (!next_cursor) {
+      break
+    };
+    cursor = next_cursor
+  }
+  await console.log(`${pages.length} issues successfully fetched.`)
+
+
+  if (save) {
+    let fileName = jsonFileName;
+    // Add timestamp to the file name if appendTimestamp is true
+    if (appendTimestamp) {
+      const timestamp = getCurrentTimestamp();
+      fileName = `${jsonFileName}_${timestamp}`;
+    }
+
+    // Save the response as a JSON file
+    await fs.promises.writeFile(`${fileName}.json`, JSON.stringify(pages, null, 2));
+    
+    console.log(`Response saved to ${fileName}.json`);
+  }
+  return pages
+}
+
 module.exports = {
-  queryNotionAndSaveResponse,
+  getNewNotionData,
   getIsoTimestamp,
   getTimestamp,
   addTimeDelta,
   retrievePage,
   parsePage,
-  parseTimeTracking
+  parseTimeTracking,
+  queryNotionAndSaveResponse
 }

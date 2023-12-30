@@ -7,22 +7,37 @@ from silvhua import *
 print('start of Python script')
 
 def main():
+    print(f'Number of system arguments: {len(sys.argv)}')
     # Access filenames from command line arguments
     if len(sys.argv) > 1:
-        filename = sys.argv[1:][0]
-        notion_filename = sys.argv[1:][1] if len(sys.argv) > 2 else 'notion_df'
+        json_filename = sys.argv[1]
+        notion_filename = sys.argv[2] if len(sys.argv) > 2 else 'notion_df'
         attributes_filename = 'df_attributes'
-        print("File name:", filename)
-        
+        print(f'Parsed JSON filename: {json_filename}')
+        print(f'Notion DataFrame filename: {notion_filename}')
+        print(f'DataFrame attributes filename: {attributes_filename}')
+
         path = '/home/silvhua/repositories/notion/data/'
-        df = create_notion_df(filename, path)
+        original_df = loadpickle(
+            f'{notion_filename}.sav', path
+        )
+        new_df = create_notion_df(json_filename, path)
+        print(f'New Rows DataFrame shape: {new_df.shape}')
+
+        df = pd.concat([original_df, new_df])
+        df = df.sort_values(by=['created_time'])
+        df = df.reset_index(drop=True)
+        print(f'\nUpdated DataFrame shape: {df.shape}\n')
         savepickle(
             df, notion_filename, path=path, append_version=False,
         )
         update_df_attributes(
             df, df_filename=f'{notion_filename}.sav', json_filename=attributes_filename,
-            path='/home/silvhua/repositories/notion/data'
+            path=path
             )
+        print('end of Python script')
+    else:
+        print('Please provide a JSON filename as an argument.')
 
 
 if __name__ == "__main__":

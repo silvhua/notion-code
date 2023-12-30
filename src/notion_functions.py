@@ -27,6 +27,7 @@ def create_notion_df(
         'Elapsed': '> 0'
     }
     df['created_time'] = pd.to_datetime(df['created_time']).dt.tz_convert('America/Vancouver')
+    print(f'Removing rows with negative elapsed time...')
     filtered_df = filter_df_all_conditions(df, filters, verbose=False, show_indices=False)
     if original_length != filtered_df.shape:
         print(f'\n**Shape after applying filter: {filtered_df.shape}**\n')
