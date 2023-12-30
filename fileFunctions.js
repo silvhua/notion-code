@@ -45,12 +45,12 @@ function getCurrentTimestamp() {
  * @return {Promise<void>} - A Promise that resolves when the data is successfully saved.
  */
 async function saveResponseJson(data, jsonFileName, appendTimestamp) {
-    var {getCurrentTimestamp} = require('../src/fileFunctions');
     const fs = require('fs');
     try {
         if (appendTimestamp) {
-        const timestamp = getCurrentTimestamp();
-        jsonFileName = `${jsonFileName}_${timestamp}`
+          var {getCurrentTimestamp} = require('../src/fileFunctions');
+          const timestamp = getCurrentTimestamp();
+          jsonFileName = `${jsonFileName}_${timestamp}`
         }
         await fs.promises.writeFile(`${jsonFileName}.json`, JSON.stringify(data, null, 2));
         console.log(`Saved response to ${jsonFileName}.json`);
