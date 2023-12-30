@@ -32,10 +32,32 @@ def create_notion_df(
         print(f'\n**Shape after applying filter: {filtered_df.shape}**\n')
     else:
         print('No change in DataFrame shape after applying filter.')
-    return 
+    return filtered_df
+
+def update_df_attributes(
+    df, timestamp_column='created_time', df_filename='notion_df.sav', json_filename='df_attributes',
+    path='/home/silvhua/repositories/notion/data'
+    ):
+    json_file = load_json(f'{json_filename}.json', path)
+    newest_created_time = df[timestamp_column].max().isoformat()
+    oldest_created_time = df[timestamp_column].min().isoformat()
+    json_file[df_filename] = {
+        'newest_created_time': newest_created_time,
+        'oldest_created_time': oldest_created_time
+    }
+    save_to_json(
+        json_file, json_filename, description=None, 
+        append_version=False, path=path
+        )
+    print(f'Oldest created time: {oldest_created_time}')
+    print(f'Newest created time: {newest_created_time}')
+    print(f'Success! {json_filename} updated with data from {df_filename}.')
 
 def notion_df(filename, filepath):
-
+    """
+    Out of date. Replaced with create_notion_df.
+    Originally created to process raw JSON from Notion API.
+    """
     def parse_property(property_dict, property):
         value = None
         # print(property_dict.keys())
