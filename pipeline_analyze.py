@@ -14,9 +14,15 @@ def main():
         
         path = '/home/silvhua/repositories/notion/data/'
         df = create_notion_df(filename, path)
+        notion_filename = 'notion_df'
         savepickle(
-            df, 'notion_df', path=path, append_version=False,
+            df, notion_filename, path=path, append_version=False,
         )
+        update_df_attributes(
+            df, df_filename=notion_filename, json_filename='df_attributes',
+            path='/home/silvhua/repositories/notion/data'
+            )
+
 
 if __name__ == "__main__":
     main()
