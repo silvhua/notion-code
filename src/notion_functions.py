@@ -21,13 +21,18 @@ def create_notion_df(
     df = df.reset_index()
     df = df[columns]
     df = df.drop_duplicates(subset=['id', 'Task Project name', 'Task Name']) 
+    original_length = df.shape
     print(f'Shape before applying filter: {df.shape}')
     filters = {
         'Elapsed': '> 0'
     }
     df['created_time'] = pd.to_datetime(df['created_time']).dt.tz_convert('America/Vancouver')
-
-    return filter_df_all_conditions(df, filters)  
+    filtered_df = filter_df_all_conditions(df, filters, verbose=False, show_indices=False)
+    if original_length != filtered_df.shape:
+        print(f'\n**Shape after applying filter: {filtered_df.shape}**\n')
+    else:
+        print('No change in DataFrame shape after applying filter.')
+    return 
 
 def notion_df(filename, filepath):
 
