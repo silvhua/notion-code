@@ -10,8 +10,12 @@ async function main() {
   
     const root_path = 'data'
 
+
     let jsonFileName = `${root_path}/raw/notionTimeTracking_quarter_2023-12-27_0045`;
     const parsedJsonFileName = `${root_path}/notion_time_tracking_parsed_quarter_2023-12-27_0045`;
+
+    // let jsonFileName = `${root_path}/raw/notionTimeTracking_quarter_2023-12-27_0045`;
+    // const parsedJsonFileName = `${root_path}/notion_time_tracking_parsed_quarter_2023-12-27_0045`;
 
     // let jsonFileName = `${root_path}/raw/NewNotionTimeTracking_2023-12-30T17:22:00-08:00`;
     // const parsedJsonFileName = `${root_path}/NewNotionTimeTracking_parsed_2023-12-30T17:22:00-08:00_v2`;

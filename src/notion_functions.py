@@ -4,13 +4,18 @@ from silvhua import *
 from wrangling import filter_df_all_conditions
 
 def create_notion_df(
-    filename, filepath, split_columns=['Task Name', 'Task Project name']
+    filename, filepath, split_columns=['Task Name', 'Task Project name', 'Task Project tags'],
+    split_twice=['Task Project name']
     ):
     data = load_json(filename, filepath)
     df = pd.DataFrame(data).transpose()
     for split_column in split_columns:
         # Explode the rows based on the values in the split_column
         df = df.explode(split_column)
+    for split_column in split_twice:
+        # Explode the rows based on the values in the split_column
+        df = df.explode(split_column)
+    df = df.reset_index(drop=True)
     
     columns = df.columns.tolist()
     columns.remove('url')
@@ -20,7 +25,7 @@ def create_notion_df(
     columns = ['Name'] + columns + ['url', 'id']
     df = df.reset_index()
     df = df[columns]
-    df = df.drop_duplicates(subset=['id', 'Task Project name', 'Task Name']) 
+    df = df.drop_duplicates(subset=['id', 'Task Name', 'Task Project name']) 
     original_length = df.shape
     print(f'Shape before applying filter: {df.shape}')
     filters = {
