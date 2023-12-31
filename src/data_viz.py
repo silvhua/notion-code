@@ -62,7 +62,7 @@ def plot_by_category(
     classified_df = classify_projects(df)
     aggregate_df = classified_df[[sort_column, category_column]].groupby(
         category_column
-        ).sum().sort_values(by=[sort_column], ascending=True)
+        ).sum().sort_values(by=[sort_column], ascending=False)
 
     plot_int_hist(
         classified_df, 
