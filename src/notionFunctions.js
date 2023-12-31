@@ -217,7 +217,8 @@ async function parseTimeTracking(
   console.log(`Parsing...`);
 
   // for (let i = 0; i < 3; i++) {
-  for (let i = 0; i < data.length; i++) { 
+  // for (let i = 0; i < data.length; i++) { 
+  for (let i = data.length - 1; i >= 0; i--) { // Iterate in reverse to parse oldest records first
     try {
       const item = data[i];
       const id = item['id'];
