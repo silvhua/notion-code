@@ -10,7 +10,7 @@ def main():
     print(f'Number of system arguments: {len(sys.argv)}')
     # Access filenames from command line arguments
     if len(sys.argv) > 1:
-        json_filename = sys.argv[1]
+        json_filename = f'{sys.argv[1]}.json'
         notion_filename = sys.argv[2] if len(sys.argv) > 2 else 'notion_df'
         attributes_filename = 'df_attributes'
         print(f'Parsed JSON filename: {json_filename}')
@@ -21,7 +21,7 @@ def main():
         original_df = loadpickle(
             f'{notion_filename}.sav', path
         )
-        new_df = create_notion_df(json_filename, path)
+        new_df = create_notion_df(json_filename, filepath='.')
         print(f'New Rows DataFrame shape: {new_df.shape}')
 
         df = pd.concat([original_df, new_df])
