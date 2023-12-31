@@ -25,9 +25,11 @@ def main():
         print(f'New Rows DataFrame shape: {new_df.shape}')
 
         df = pd.concat([original_df, new_df])
+        print(f'DataFrame shape after concatenation and before duplicate removal: {df.shape}')
         df = df.sort_values(by=['created_time'])
         df = df.reset_index(drop=True)
-        print(f'\nUpdated DataFrame shape: {df.shape}\n')
+        df = df.drop_duplicates(subset=['id', 'created_time']) 
+        print(f'\nFinal updated DataFrame shape: {df.shape}\n')
         savepickle(
             df, notion_filename, path=path, append_version=False,
         )
