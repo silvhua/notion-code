@@ -383,7 +383,7 @@ async function queryNotionAndSaveResponse(
     };
     cursor = next_cursor
   }
-  await console.log(`${pages.length} issues successfully fetched.`)
+  await console.log(`${pages.length} records successfully fetched.`)
 
 
   if (save) {
