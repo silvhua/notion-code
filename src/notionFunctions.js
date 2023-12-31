@@ -216,8 +216,8 @@ async function parseTimeTracking(
   properties = properties.filter(item => !to_ignore.includes(item));
   console.log(`Parsing...`);
 
-  for (let i = 0; i < 3; i++) {
-  // for (let i = 0; i < data.length; i++) { 
+  // for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < data.length; i++) { 
     try {
       const item = data[i];
       const id = item['id'];
@@ -243,8 +243,6 @@ async function parseTimeTracking(
               const taskProjectTags = [];
         
               for (let k = 0; k < relationValues.length; k++) {
-                // console.log(`relationValues keys: ${Object.keys(relationValues[k])}`);
-                // console.log(`page id: ${relationValues[k]['id']}`);
                 const task_details = await parsePage(relationValues[k]['id'], database='tasks');
                 
                 const attributes = Object.keys(task_details);
@@ -255,15 +253,10 @@ async function parseTimeTracking(
                   attribute_dict[attributes[attribute]] = attribute_list;
                 };
                 const projectList = task_details['Project'];
-                // const projectList = taskToProjectRelation['relation'];
-                // console.log(`task keys: ${Object.keys(task_details)}`);
-                // console.log(`taskToProjectRelation: ${taskToProjectRelation}`);
-                console.log(`projectList: ${projectList}`);
                 const projectArray = [];
                 for (let p = 0; p < projectList.length; p++) {
-                  console.log(`Project index: ${p}`)
                   const projectId = projectList[p];
-                  console.log(`Project id: ${projectId}`)
+                  console.log(`\t\tProject ${p}, id ${projectId}`)
                   const project = await parsePage(projectId, 'projects');
                   let project_attributes = Object.keys(project);
                   for (let c = 0; c < project_attributes.length; c++) {
