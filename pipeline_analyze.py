@@ -1,3 +1,4 @@
+import os
 import sys
 sys.path.append(r"/home/silvhua/repositories/notion/src")
 from notion_functions import *
@@ -18,10 +19,18 @@ def main():
         print(f'DataFrame attributes filename: {attributes_filename}')
 
         path = '/home/silvhua/repositories/notion/data/'
-        original_df = loadpickle(
-            f'{notion_filename}.sav', path
-        )
-        new_df = create_notion_df(json_filename, filepath='.')
+        # check if f'{notion_filename}.sav' exists in the `path`
+        if f'{notion_filename}.sav' not in os.listdir(path):
+            print(f'** {notion_filename}.sav does not exist in {path}. Creating blank DataFrame.')
+            original_df = pd.DataFrame()
+        else:
+            original_df = loadpickle(
+                f'{notion_filename}.sav', path
+            )
+        new_df = create_notion_df(
+            json_filename, filepath='.',
+            # split_columns=['Task Name', 'Task Project tags']
+            )
         print(f'New Rows DataFrame shape: {new_df.shape}')
 
         df = pd.concat([original_df, new_df])
