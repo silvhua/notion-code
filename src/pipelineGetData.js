@@ -11,7 +11,7 @@ async function main() {
   console.log(`df_key: ${df_key}`)
 
   console.log(`Newest record created_time (1): ${ newest_created_time }`)
-  const root_path = './data'
+  const root_path = 'data'
   let jsonFileName = `${root_path}/raw/NewNotionTimeTracking`;
   const parsedJsonFileName = `${root_path}/NewNotion_time_tracking_parsed_${newest_created_time}`;
   const notionResponse = await nf.getNewNotionData(

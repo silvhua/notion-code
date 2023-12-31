@@ -9,8 +9,8 @@ echo newest_created_time: $newest_created_time
 # Run Node.js script to create files
 node src/pipelineGetData.js $newest_created_time notion_df
 
-# Capture filenames in a variable (modify this based on how your Node.js script logs filenames)
-file_name=$(data/filename.txt)
+# # Capture filenames in a variable (modify this based on how your Node.js script logs filenames)
+file_name=$(cat data/filename.txt)
 
 # Run Python script with filenames as arguments
 python src/pipeline_analyze.py $file_name notion_df
