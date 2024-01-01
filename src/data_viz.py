@@ -60,9 +60,30 @@ def plot_by_category(
     agg='sum', sort_column='Elapsed', date_column='created_time', height=None,
     period='past_month', start_date=None, end_date=None
     ):
+    """
+    Plot the data by category and return an aggregated DataFrame.
+
+    Parameters:
+        df (DataFrame): The input DataFrame.
+        category_column (str, optional): The column name for the category. Defaults to 'Category'.
+        classification (str, optional): The classification for filtering the data. Defaults to 'Unbilled'.
+        label (bool, optional): Whether to label the plot. Defaults to True.
+        agg (str, optional): The aggregation method. Defaults to 'sum'.
+        sort_column (str, optional): The column name for sorting. Defaults to 'Elapsed'.
+        date_column (str, optional): The column name for the date. Defaults to 'created_time'.
+        height (int, optional): The height of the plot. Defaults to None.
+        period (str, optional): The period for filtering the data. Defaults to 'past_month'.
+        start_date (str, optional): The start date for filtering the data. Defaults to None.
+        end_date (str, optional): The end date for filtering the data. Defaults to None.
+
+    Returns:
+        DataFrame: An aggregated DataFrame grouped by the category and sorted by the sort column.
+    """
     print(f'Total rows: {len(df)}')
     classified_df = classify_projects(df)
     filtered_df = filter_by_period(classified_df, column=date_column, period=period, start_date=start_date, end_date=end_date)
+    min_date = filtered_df[date_column].min()
+    max_date = filtered_df[date_column].max()
     print(f'Data based on {len(filtered_df)} rows')
     aggregate_df = filtered_df[[sort_column, category_column]].groupby(
         category_column
@@ -75,6 +96,7 @@ def plot_by_category(
         agg=agg,
         label=label,
         y_order=True,
+        title=f'{"".join([word.title()+" " for word in period.split("_")]).strip()+": " if period else None}{min_date} to {max_date}',
         height=height
     )
     return aggregate_df
