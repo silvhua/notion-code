@@ -57,15 +57,18 @@ def classify_projects(df, column='Task Project name', tag_column='Task Project t
 
 def plot_by_category(
     df, category_column='Category', classification='Unbilled', label=True,
-    agg='sum', sort_column='Elapsed', height=None
+    agg='sum', sort_column='Elapsed', date_column='created_time', height=None,
+    period='past_month', start_date=None, end_date=None
     ):
+    print(f'Total rows: {len(df)}')
     classified_df = classify_projects(df)
-    aggregate_df = classified_df[[sort_column, category_column]].groupby(
+    filtered_df = filter_by_period(classified_df, column=date_column, period=period, start_date=start_date, end_date=end_date)
+    print(f'Data based on {len(filtered_df)} rows')
+    aggregate_df = filtered_df[[sort_column, category_column]].groupby(
         category_column
         ).sum().sort_values(by=[sort_column], ascending=False)
-
     plot_int_hist(
-        classified_df, 
+        filtered_df, 
         groupby=category_column,
         columns=[sort_column],
         classification=classification,
