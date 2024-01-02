@@ -25,7 +25,7 @@ def create_notion_df(
     columns = ['Name'] + columns + ['url', 'id']
     df = df.reset_index()
     df = df[columns]
-    df = df.drop_duplicates(subset=['id', 'Task Name', 'Task Project name']) 
+    df = df.drop_duplicates(subset=['Name', 'url', 'Task Name', 'Task Project name']) 
     original_length = df.shape
     print(f'Shape before applying filter: {df.shape}')
     filters = {
