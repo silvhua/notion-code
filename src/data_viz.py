@@ -77,6 +77,7 @@ def plot_by_category(
         end_date (str, optional): The end date for filtering the data. Defaults to None.
 
     Returns:
+        Figure: A plot of the data grouped by the category.
         DataFrame: An aggregated DataFrame grouped by the category and sorted by the sort column.
     """
     print(f'Total rows: {len(df)}')
@@ -88,7 +89,7 @@ def plot_by_category(
     aggregate_df = filtered_df[[sort_column, category_column]].groupby(
         category_column
         ).sum().sort_values(by=[sort_column], ascending=False)
-    plot_int_hist(
+    fig = plot_int_hist(
         filtered_df, 
         groupby=category_column,
         columns=[sort_column],
@@ -99,7 +100,7 @@ def plot_by_category(
         title=f'{"".join([word.title()+" " for word in period.split("_")]).strip()+": " if period else None}{min_date} to {max_date}',
         height=height
     )
-    return aggregate_df
+    return fig, aggregate_df
 
 def create_bar_chart(
     df, values_column='Elapsed', agg_function='sum', groupby_column='Task Project name'
