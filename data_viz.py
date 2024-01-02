@@ -79,9 +79,10 @@ def classify_projects(df, column='Task Project name', tag_column='Task Project t
     return classified_df
 
 def plot_by_category(
-    classified_df, category_column='Category', classification='Unbilled', label=True,
+    classified_df, category_column='Category', period='past_month', 
+    classification='Unbilled', label=True,
     agg='sum', sort_column='Elapsed', date_column='created_time', height=None,
-    period='past_month', start_date=None, end_date=None
+    start_date=None, end_date=None
     ):
     """
     Plot the data by category and return an aggregated DataFrame.
