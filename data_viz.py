@@ -3,6 +3,18 @@ from wrangling import *
 from silvhua_plot import *
 
 def classify_unbilled(df, column='Flag', flag_name='do not bill'):
+    """
+    Parses the JSON data in the `Flag` column and 
+    classifies the unbilled items in a DataFrame based on a specified column and flag name.
+
+    Parameters:
+        - df (pandas.DataFrame): The DataFrame containing the items to be classified.
+        - column (str, optional): The name of the column containing the flag JSON data. Defaults to 'Flag'.
+        - flag_name (str, optional): The name of the flag used for classification. Defaults to 'do not bill'.
+
+    Returns:
+        - pandas.DataFrame: A copy of the input DataFrame with an additional 'Unbilled' column indicating whether each item is unbilled or not.
+    """
 
     def parse_flag(row, flag_name=flag_name):
         if row[column]:
@@ -20,6 +32,17 @@ def classify_unbilled(df, column='Flag', flag_name='do not bill'):
 
     
 def classify_projects(df, column='Task Project name', tag_column='Task Project tags'):
+    """
+    Classifies projects and updates the 'Unbilled' column based on certain conditions. 
+
+    Args:
+        df (pandas.DataFrame): The input DataFrame containing project data.
+        column (str, optional): The column name for project names. Defaults to 'Task Project name'.
+        tag_column (str, optional): The column name for project tags. Defaults to 'Task Project tags'.
+
+    Returns:
+        pandas.DataFrame: The classified DataFrame with added 'Category' and 'Unbilled' columns.
+    """
     def classify(row):
         tag_set = set(row[tag_column]) if len(row[tag_column]) > 0 else {row[tag_column]}
         if ('ginkgo' in row[column].lower()) | ('ginkgo work' in [tag.lower() for tag in row[tag_column]]):
@@ -56,7 +79,7 @@ def classify_projects(df, column='Task Project name', tag_column='Task Project t
     return classified_df
 
 def plot_by_category(
-    df, category_column='Category', classification='Unbilled', label=True,
+    classified_df, category_column='Category', classification='Unbilled', label=True,
     agg='sum', sort_column='Elapsed', date_column='created_time', height=None,
     period='past_month', start_date=None, end_date=None
     ):
@@ -64,7 +87,7 @@ def plot_by_category(
     Plot the data by category and return an aggregated DataFrame.
 
     Parameters:
-        df (DataFrame): The input DataFrame.
+        classified_df (DataFrame): The input DataFrame that has been classified using `classify_projects` function.
         category_column (str, optional): The column name for the category. Defaults to 'Category'.
         classification (str, optional): The classification for filtering the data. Defaults to 'Unbilled'.
         label (bool, optional): Whether to label the plot. Defaults to True.
@@ -80,8 +103,7 @@ def plot_by_category(
         Figure: A plot of the data grouped by the category.
         DataFrame: An aggregated DataFrame grouped by the category and sorted by the sort column.
     """
-    print(f'Total rows: {len(df)}')
-    classified_df = classify_projects(df)
+    print(f'Total rows: {len(classified_df)}')
     filtered_df = filter_by_period(classified_df, column=date_column, period=period, start_date=start_date, end_date=end_date)
     min_date = filtered_df[date_column].min()
     max_date = filtered_df[date_column].max()
