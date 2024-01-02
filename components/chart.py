@@ -12,7 +12,6 @@ filename = 'notion_df.sav'
 path = '/home/silvhua/repositories/notion/data/'
 df = loadpickle(filename, path)
 classified_df = classify_projects(df)
-print(classified_df.columns)
 
 @solara.component
 def ElapsedTimeChart(**kwargs):
