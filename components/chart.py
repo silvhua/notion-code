@@ -17,3 +17,12 @@ print(classified_df.columns)
 @solara.component
 def ElapsedTimeChart(**kwargs):
     fig = plot_by_category(classified_df, **kwargs)
+
+@solara.component
+def ChartsPerPeriod(category_column):
+    periods = ['week', 'past_week', 'past_month', 'past_quarter']
+    for period in periods:
+        ElapsedTimeChart(
+            category_column=category_column, classification='Unbilled', period=period, 
+            agg='sum', sort_column='Elapsed', date_column='created_time'
+            )
