@@ -15,6 +15,9 @@ file_name=$(cat data/filename.txt)
 # Run Python script with filenames as arguments
 python src/pipeline_analyze.py $file_name notion_df
 
+# Show the dashboard
+solara run src/pages
+
 # # ### TEST VERSION
 
 # # This should be run from the root directory of the project
