@@ -114,7 +114,7 @@ def plot_by_category(
         label=label,
         y_order=True,
         title=f'{"".join([word.title()+" " for word in period.split("_")]).strip()+": " if period else None}{min_date} to {max_date}',
-        height=height
+        height=height, showlegend=True
     )
     return fig, aggregate_df
 
