@@ -31,18 +31,10 @@ def classify_unbilled(df, column='Flag', flag_name='do not bill'):
     return classified_df
 
     
-def classify_projects(df, column='Task Project name', tag_column='Task Project tags'):
-    """
-    Classifies projects and updates the 'Unbilled' column based on certain conditions. 
-
-    Args:
-        df (pandas.DataFrame): The input DataFrame containing project data.
-        column (str, optional): The column name for project names. Defaults to 'Task Project name'.
-        tag_column (str, optional): The column name for project tags. Defaults to 'Task Project tags'.
-
-    Returns:
-        pandas.DataFrame: The classified DataFrame with added 'Category' and 'Unbilled' columns.
-    """
+def classify_projects(
+        df, column='Task Project name', tag_column='Task Project tags',
+        verbose=False
+        ):
     def classify(row):
         tag_set = set(row[tag_column]) if len(row[tag_column]) > 0 else {row[tag_column]}
         if ('ginkgo' in row[column].lower()) | ('ginkgo work' in [tag.lower() for tag in row[tag_column]]):
@@ -68,21 +60,21 @@ def classify_projects(df, column='Task Project name', tag_column='Task Project t
             row['Category'] = 'volunteer'
             row['Unbilled'] = True
         else:
-            row['Category'] = 'Other'
+            row['Category'] = 'other'
             row['Unbilled'] = True
 
         return row
     
     classified_df = classify_unbilled(df).apply(lambda x: classify(x), axis=1)
     unique_categories = classified_df['Category'].unique()
-    print(f'There are {len(unique_categories)} categories: {[category for category in unique_categories]}')
+    if verbose:
+        print(f'There are {len(unique_categories)} categories: {[category for category in unique_categories]}')
     return classified_df
 
 def plot_by_category(
-    classified_df, category_column='Category', period='past_month', 
-    classification='Unbilled', label=True,
+    classified_df, category_column='Category', classification='Unbilled', label=True,
     agg='sum', sort_column='Elapsed', date_column='created_time', height=None,
-    start_date=None, end_date=None
+    period='past_month', start_date=None, end_date=None, verbose=False
     ):
     """
     Plot the data by category and return an aggregated DataFrame.
@@ -104,11 +96,12 @@ def plot_by_category(
         Figure: A plot of the data grouped by the category.
         DataFrame: An aggregated DataFrame grouped by the category and sorted by the sort column.
     """
-    print(f'Total rows: {len(classified_df)}')
     filtered_df = filter_by_period(classified_df, column=date_column, period=period, start_date=start_date, end_date=end_date)
     min_date = filtered_df[date_column].min()
     max_date = filtered_df[date_column].max()
-    print(f'Data based on {len(filtered_df)} rows')
+    if verbose:
+        print(f'Total rows: {len(df)}')
+        print(f'Data based on {len(filtered_df)} rows')
     aggregate_df = filtered_df[[sort_column, category_column]].groupby(
         category_column
         ).sum().sort_values(by=[sort_column], ascending=False)
