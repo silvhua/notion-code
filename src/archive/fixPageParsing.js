@@ -1,7 +1,7 @@
 
 console.log(`\nRunning fixPageParsing.js`);
-const {loadJsonFile, saveResponseJson, getCurrentTimestamp} = require('./fileFunctions');
-const nf = require('./notionFunctions');
+const {loadJsonFile, saveResponseJson, getCurrentTimestamp} = require('../fileFunctions');
+const nf = require('../notionFunctions');
 const path = require('path');
 const fs = require('fs');
 async function main() {
