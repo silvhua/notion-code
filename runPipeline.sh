@@ -16,7 +16,7 @@ file_name=$(cat data/filename.txt)
 python src/pipeline_analyze.py $file_name notion_df
 
 # Show the dashboard
-solara run src/pages
+solara run src/pages --no-open
 
 # # ### TEST VERSION
 
