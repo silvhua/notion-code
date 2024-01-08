@@ -100,7 +100,7 @@ def plot_by_category(
     min_date = filtered_df[date_column].min()
     max_date = filtered_df[date_column].max()
     if verbose:
-        print(f'Total rows: {len(df)}')
+        print(f'Total rows: {len(filtered_df)}')
         print(f'Data based on {len(filtered_df)} rows')
     aggregate_df = filtered_df[[sort_column, category_column]].groupby(
         category_column
