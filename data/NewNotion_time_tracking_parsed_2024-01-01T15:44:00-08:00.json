@@ -1,0 +1,684 @@
+{
+  "c64f5325-d604-421b-ba56-10bd44a6cc7f": {
+    "url": "https://www.notion.so/2024-01-01-17-34-c64f5325d604421bba5610bd44a6cc7f",
+    "created_time": "2024-01-01T23:59:00.000Z",
+    "Task Tag": [
+      "life"
+    ],
+    "Flag": null,
+    "Elapsed": 0.55,
+    "Task Name": [
+      "Wrangle time tracking data"
+    ],
+    "Task Project tags": [
+      [
+        "tech ed",
+        "admin"
+      ]
+    ],
+    "Task Project": [
+      [
+        "3d90e406-46c9-4468-b70d-e9e3bf2653f9"
+      ]
+    ],
+    "Task Parent-task": [
+      null
+    ],
+    "Task Sub-tasks": [
+      null
+    ],
+    "Task Project name": [
+      [
+        "Notion analytics"
+      ]
+    ],
+    "start time": "17:34",
+    "end time": "18:07",
+    "Roadmap Item": [],
+    "Name": "2024-01-01 17:34"
+  },
+  "a2bb9dd8-1baa-4083-9468-53eafe07189c": {
+    "url": "https://www.notion.so/2024-01-01-18-07-a2bb9dd81baa4083946853eafe07189c",
+    "created_time": "2024-01-02T02:46:00.000Z",
+    "Task Tag": [
+      "life"
+    ],
+    "Flag": null,
+    "Elapsed": 0.65,
+    "Task Name": [
+      "time tracking data visualization"
+    ],
+    "Task Project tags": [
+      [
+        "tech ed",
+        "admin"
+      ]
+    ],
+    "Task Project": [
+      [
+        "3d90e406-46c9-4468-b70d-e9e3bf2653f9"
+      ]
+    ],
+    "Task Parent-task": [
+      null
+    ],
+    "Task Sub-tasks": [
+      null
+    ],
+    "Task Project name": [
+      [
+        "Notion analytics"
+      ]
+    ],
+    "start time": "18:07",
+    "end time": "18:46",
+    "Roadmap Item": [],
+    "Name": "2024-01-01 18:07"
+  },
+  "2724e206-4aad-43b0-88d1-a2b09abed584": {
+    "url": "https://www.notion.so/2024-01-01-19-40-2724e2064aad43b088d1a2b09abed584",
+    "created_time": "2024-01-02T03:40:00.000Z",
+    "Task Tag": [
+      "life"
+    ],
+    "Flag": null,
+    "Elapsed": 0.15,
+    "Task Name": [
+      "Get help to set chatbot workflow to only apply to leads"
+    ],
+    "Task Project tags": [
+      [
+        "portfolio"
+      ]
+    ],
+    "Task Project": [
+      [
+        "bedda674-2425-4390-a238-c100da992535"
+      ]
+    ],
+    "Task Parent-task": [
+      null
+    ],
+    "Task Sub-tasks": [
+      null
+    ],
+    "Task Project name": [
+      [
+        "GHL Chatbot"
+      ]
+    ],
+    "start time": "19:40",
+    "end time": "19:49",
+    "Roadmap Item": [],
+    "Name": "2024-01-01 19:40"
+  },
+  "832bf477-8508-4e8f-b49a-606935f9e3ff": {
+    "url": "https://www.notion.so/2024-01-01-20-13-832bf47785084e8fb49a606935f9e3ff",
+    "created_time": "2024-01-02T04:13:00.000Z",
+    "Task Tag": [
+      "life"
+    ],
+    "Flag": null,
+    "Elapsed": 0.316666666667,
+    "Task Name": [
+      "invoicing OIF"
+    ],
+    "Task Project tags": [
+      [
+        "admin"
+      ]
+    ],
+    "Task Project": [
+      [
+        "feb21887-2f05-462f-b1af-760a358e7ca0"
+      ]
+    ],
+    "Task Parent-task": [
+      null
+    ],
+    "Task Sub-tasks": [
+      null
+    ],
+    "Task Project name": [
+      [
+        "Admin"
+      ]
+    ],
+    "start time": "20:13",
+    "end time": "20:32",
+    "Roadmap Item": [],
+    "Name": "2024-01-01 20:13"
+  },
+  "64d6b64b-fd9a-41cb-a749-6230ef5787a6": {
+    "url": "https://www.notion.so/2024-01-01-20-49-64d6b64bfd9a41cba7496230ef5787a6",
+    "created_time": "2024-01-02T04:49:00.000Z",
+    "Task Tag": [
+      "life"
+    ],
+    "Flag": null,
+    "Elapsed": 0.116666666667,
+    "Task Name": [
+      "Watch FitPro University Charli AI video from Brian"
+    ],
+    "Task Project tags": [
+      [
+        "portfolio"
+      ]
+    ],
+    "Task Project": [
+      [
+        "bedda674-2425-4390-a238-c100da992535"
+      ]
+    ],
+    "Task Parent-task": [
+      null
+    ],
+    "Task Sub-tasks": [
+      null
+    ],
+    "Task Project name": [
+      [
+        "GHL Chatbot"
+      ]
+    ],
+    "start time": "20:49",
+    "end time": "20:56",
+    "Roadmap Item": [],
+    "Name": "2024-01-01 20:49"
+  },
+  "c50e44d8-8288-4cda-8955-173d000a32bf": {
+    "url": "https://www.notion.so/2024-01-01-20-58-c50e44d882884cda8955173d000a32bf",
+    "created_time": "2024-01-02T04:58:00.000Z",
+    "Task Tag": [
+      "life"
+    ],
+    "Flag": null,
+    "Elapsed": 0.15,
+    "Task Name": [
+      "gather lead conversation examples: Coach McLoone"
+    ],
+    "Task Project tags": [
+      [
+        "portfolio"
+      ]
+    ],
+    "Task Project": [
+      [
+        "bedda674-2425-4390-a238-c100da992535"
+      ]
+    ],
+    "Task Parent-task": [
+      null
+    ],
+    "Task Sub-tasks": [
+      null
+    ],
+    "Task Project name": [
+      [
+        "GHL Chatbot"
+      ]
+    ],
+    "start time": "20:59",
+    "end time": "21:08",
+    "Roadmap Item": [],
+    "Name": "2024-01-01 20:58"
+  },
+  "812d3113-34ea-45b3-97b9-0dd3b526f562": {
+    "url": "https://www.notion.so/2024-01-01-21-20-812d311334ea45b397b90dd3b526f562",
+    "created_time": "2024-01-02T05:20:00.000Z",
+    "Task Tag": [
+      "life"
+    ],
+    "Flag": null,
+    "Elapsed": 1.9,
+    "Task Name": [
+      "annual/quarterly reflection"
+    ],
+    "Task Project tags": [
+      [
+        "life"
+      ]
+    ],
+    "Task Project": [
+      [
+        "c90b2ad0-e51b-4d1a-8d51-82d9b37a1290"
+      ]
+    ],
+    "Task Parent-task": [
+      null
+    ],
+    "Task Sub-tasks": [
+      null
+    ],
+    "Task Project name": [
+      [
+        "Inner work"
+      ]
+    ],
+    "start time": "21:21",
+    "end time": "23:15",
+    "Roadmap Item": [],
+    "Name": "2024-01-01 21:20"
+  },
+  "d3fd90fc-b460-4158-8efd-ce56b5f19d9b": {
+    "url": "https://www.notion.so/2024-01-01-23-23-d3fd90fcb46041588efdce56b5f19d9b",
+    "created_time": "2024-01-02T07:23:00.000Z",
+    "Task Tag": [
+      "life"
+    ],
+    "Flag": null,
+    "Elapsed": 0.35,
+    "Task Name": [
+      "Get help to set chatbot workflow to only apply to leads"
+    ],
+    "Task Project tags": [
+      [
+        "portfolio"
+      ]
+    ],
+    "Task Project": [
+      [
+        "bedda674-2425-4390-a238-c100da992535"
+      ]
+    ],
+    "Task Parent-task": [
+      null
+    ],
+    "Task Sub-tasks": [
+      null
+    ],
+    "Task Project name": [
+      [
+        "GHL Chatbot"
+      ]
+    ],
+    "start time": "23:23",
+    "end time": "23:44",
+    "Roadmap Item": [],
+    "Name": "2024-01-01 23:23"
+  },
+  "ac6534b5-c153-4b3c-a5e3-6e0a0fccbdef": {
+    "url": "https://www.notion.so/2024-01-02-09-41-ac6534b5c1534b3ca5e36e0a0fccbdef",
+    "created_time": "2024-01-02T17:41:00.000Z",
+    "Task Tag": [
+      "Ginkgo"
+    ],
+    "Flag": null,
+    "Elapsed": 0.766666666667,
+    "Task Name": [
+      "Checking Exercises Post Publishing"
+    ],
+    "Task Project tags": [
+      [
+        "Ginkgo work"
+      ]
+    ],
+    "Task Project": [
+      [
+        "8ae55237-e37d-4c4c-a9f0-38aeb1925987"
+      ]
+    ],
+    "Task Parent-task": [
+      null
+    ],
+    "Task Sub-tasks": [
+      null
+    ],
+    "Task Project name": [
+      [
+        "Ginkgo app testing"
+      ]
+    ],
+    "start time": "09:41",
+    "end time": "10:27",
+    "Roadmap Item": [],
+    "Name": "2024-01-02 09:41"
+  },
+  "2bf4bbf7-57ab-446f-bf7c-e4d3a9a8f30d": {
+    "url": "https://www.notion.so/2024-01-02-10-28-2bf4bbf757ab446fbf7ce4d3a9a8f30d",
+    "created_time": "2024-01-02T18:28:00.000Z",
+    "Task Tag": [
+      "Ginkgo"
+    ],
+    "Flag": null,
+    "Elapsed": 0.15,
+    "Task Name": [
+      "Sync Exercise Library Google Sheet to Retool"
+    ],
+    "Task Project tags": [
+      [
+        "Ginkgo work"
+      ]
+    ],
+    "Task Project": [
+      [
+        "039cb6e3-4399-4083-8e3c-ff01f08d91df"
+      ]
+    ],
+    "Task Parent-task": [
+      null
+    ],
+    "Task Sub-tasks": [
+      null
+    ],
+    "Task Project name": [
+      [
+        "Exercise List"
+      ]
+    ],
+    "start time": "10:27",
+    "end time": "10:36",
+    "Roadmap Item": [],
+    "Name": "2024-01-02 10:28"
+  },
+  "f2d0f4cc-f684-4ec4-a3df-f6997c7bc7fc": {
+    "url": "https://www.notion.so/2024-01-02-10-39-f2d0f4ccf6844ec4a3dff6997c7bc7fc",
+    "created_time": "2024-01-02T18:39:00.000Z",
+    "Task Tag": [
+      "life"
+    ],
+    "Flag": null,
+    "Elapsed": 0.2,
+    "Task Name": [
+      "invoicing OIF"
+    ],
+    "Task Project tags": [
+      [
+        "admin"
+      ]
+    ],
+    "Task Project": [
+      [
+        "feb21887-2f05-462f-b1af-760a358e7ca0"
+      ]
+    ],
+    "Task Parent-task": [
+      null
+    ],
+    "Task Sub-tasks": [
+      null
+    ],
+    "Task Project name": [
+      [
+        "Admin"
+      ]
+    ],
+    "start time": "10:39",
+    "end time": "10:51",
+    "Roadmap Item": [],
+    "Name": "2024-01-02 10:39"
+  },
+  "381f3ca4-fdb1-4369-9f38-8a8e8afa863c": {
+    "url": "https://www.notion.so/2024-01-02-10-51-381f3ca4fdb143699f388a8e8afa863c",
+    "created_time": "2024-01-02T18:51:00.000Z",
+    "Task Tag": [
+      "Defy Time Fitness"
+    ],
+    "Flag": null,
+    "Elapsed": 0.15,
+    "Task Name": [
+      "Coach McLoone client programs"
+    ],
+    "Task Project tags": [
+      [
+        "Defy Time Fitness"
+      ]
+    ],
+    "Task Project": [
+      [
+        "a4ecf100-912a-422f-8ad6-15b903edd579"
+      ]
+    ],
+    "Task Parent-task": [
+      null
+    ],
+    "Task Sub-tasks": [
+      null
+    ],
+    "Task Project name": [
+      [
+        "Coach McLoone"
+      ]
+    ],
+    "start time": "10:51",
+    "end time": "11:00",
+    "Roadmap Item": [],
+    "Name": "2024-01-02 10:51"
+  },
+  "dab6362f-a465-4125-a659-3fe6270d8a80": {
+    "url": "https://www.notion.so/2024-01-02-11-00-dab6362fa4654125a6593fe6270d8a80",
+    "created_time": "2024-01-02T19:00:00.000Z",
+    "Task Tag": [
+      "Ginkgo"
+    ],
+    "Flag": null,
+    "Elapsed": 0.183333333333,
+    "Task Name": [
+      "Ginkgo daily stand up meeting"
+    ],
+    "Task Project tags": [
+      [
+        "Ginkgo work"
+      ]
+    ],
+    "Task Project": [
+      [
+        "dfa60122-de42-401d-9d4d-fb010c170aae"
+      ]
+    ],
+    "Task Parent-task": [
+      null
+    ],
+    "Task Sub-tasks": [
+      null
+    ],
+    "Task Project name": [
+      [
+        "Ginkgo meetings"
+      ]
+    ],
+    "start time": "11:00",
+    "end time": "11:11",
+    "Roadmap Item": [],
+    "Name": "2024-01-02 11:00"
+  },
+  "9d587c31-468c-4237-b322-36b11e3375e1": {
+    "url": "https://www.notion.so/2024-01-02-11-11-9d587c31468c4237b32236b11e3375e1",
+    "created_time": "2024-01-02T19:11:00.000Z",
+    "Task Tag": [
+      "Defy Time Fitness"
+    ],
+    "Flag": null,
+    "Elapsed": 0.216666666667,
+    "Task Name": [
+      "Coach McLoone client programs"
+    ],
+    "Task Project tags": [
+      [
+        "Defy Time Fitness"
+      ]
+    ],
+    "Task Project": [
+      [
+        "a4ecf100-912a-422f-8ad6-15b903edd579"
+      ]
+    ],
+    "Task Parent-task": [
+      null
+    ],
+    "Task Sub-tasks": [
+      null
+    ],
+    "Task Project name": [
+      [
+        "Coach McLoone"
+      ]
+    ],
+    "start time": "11:11",
+    "end time": "11:24",
+    "Roadmap Item": [],
+    "Name": "2024-01-02 11:11"
+  },
+  "97044a1d-7556-4f13-b43c-9fc7ccbedb8b": {
+    "url": "https://www.notion.so/2024-01-02-12-37-97044a1d75564f13b43c9fc7ccbedb8b",
+    "created_time": "2024-01-02T20:37:00.000Z",
+    "Task Tag": [
+      "life"
+    ],
+    "Flag": null,
+    "Elapsed": 0.533333333333,
+    "Task Name": [
+      "LinkedIn networking"
+    ],
+    "Task Project tags": [
+      [
+        "life"
+      ]
+    ],
+    "Task Project": [
+      [
+        "465e460f-f6e8-49a0-b9eb-0411a742e71c"
+      ]
+    ],
+    "Task Parent-task": [
+      null
+    ],
+    "Task Sub-tasks": [
+      null
+    ],
+    "Task Project name": [
+      [
+        "career positioning"
+      ]
+    ],
+    "start time": "12:37",
+    "end time": "13:09",
+    "Roadmap Item": [],
+    "Name": "2024-01-02 12:37"
+  },
+  "aa704c08-b25a-448f-8c6b-3673adc9bff1": {
+    "url": "https://www.notion.so/2024-01-02-13-17-aa704c08b25a448f8c6b3673adc9bff1",
+    "created_time": "2024-01-02T21:17:00.000Z",
+    "Task Tag": [
+      "life"
+    ],
+    "Flag": null,
+    "Elapsed": 0.683333333333,
+    "Task Name": [
+      "Emerging Properties in Self-Supervised Vision Transformers"
+    ],
+    "Task Project tags": [
+      [
+        "tech ed"
+      ]
+    ],
+    "Task Project": [
+      [
+        "8a7f0c8d-2e99-40ce-8209-11a91f577177"
+      ]
+    ],
+    "Task Parent-task": [
+      [
+        "bded61b5-085e-4e43-921e-0c15962474b5"
+      ]
+    ],
+    "Task Sub-tasks": [
+      null
+    ],
+    "Task Project name": [
+      [
+        "Data Science continuing education"
+      ]
+    ],
+    "start time": "13:18",
+    "end time": "13:59",
+    "Roadmap Item": [],
+    "Name": "2024-01-02 13:17"
+  },
+  "ab8e8c58-6e9f-4751-87a7-7c388932141a": {
+    "url": "https://www.notion.so/2024-01-02-14-01-ab8e8c586e9f475187a77c388932141a",
+    "created_time": "2024-01-02T22:01:00.000Z",
+    "Task Tag": [
+      "life"
+    ],
+    "Flag": [
+      {
+        "id": "d9fc9e36-3e3c-49b4-8332-5f9fff407c10",
+        "name": "do not bill",
+        "color": "pink"
+      }
+    ],
+    "Elapsed": 3.083333333333,
+    "Task Name": [
+      "gather lead conversation examples: Coach McLoone"
+    ],
+    "Task Project tags": [
+      [
+        "portfolio"
+      ]
+    ],
+    "Task Project": [
+      [
+        "bedda674-2425-4390-a238-c100da992535"
+      ]
+    ],
+    "Task Parent-task": [
+      null
+    ],
+    "Task Sub-tasks": [
+      null
+    ],
+    "Task Project name": [
+      [
+        "GHL Chatbot"
+      ]
+    ],
+    "start time": "14:02",
+    "end time": "17:07",
+    "Roadmap Item": [],
+    "Name": "2024-01-02 14:01"
+  },
+  "c803e7cf-7601-4174-a3f4-e819d52aa690": {
+    "url": "https://www.notion.so/2024-01-02-18-11s-c803e7cf76014174a3f4e819d52aa690",
+    "created_time": "2024-01-03T02:11:00.000Z",
+    "Task Tag": [
+      "life"
+    ],
+    "Flag": [
+      {
+        "id": "d9fc9e36-3e3c-49b4-8332-5f9fff407c10",
+        "name": "do not bill",
+        "color": "pink"
+      }
+    ],
+    "Elapsed": 0.166666666667,
+    "Task Name": [
+      "Watch FitPro University Charli AI video from Brian"
+    ],
+    "Task Project tags": [
+      [
+        "portfolio"
+      ]
+    ],
+    "Task Project": [
+      [
+        "bedda674-2425-4390-a238-c100da992535"
+      ]
+    ],
+    "Task Parent-task": [
+      null
+    ],
+    "Task Sub-tasks": [
+      null
+    ],
+    "Task Project name": [
+      [
+        "GHL Chatbot"
+      ]
+    ],
+    "start time": "18:11",
+    "end time": "18:21",
+    "Roadmap Item": [],
+    "Name": "2024-01-02 18:11s"
+  }
+}
