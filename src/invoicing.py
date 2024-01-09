@@ -107,8 +107,8 @@ def Page():
     solara.DataFrame(summary_df)
     """
     if save:
-        start_date, end_date = get_payperiod('OIF_payperiods.csv', '../data/', verbose=0)
-        filename = f'{end_date}'
+        start_date, end_date = get_payperiod('OIF_payperiods.csv', csv_path, verbose=0)
+        filename = f'OIF_{end_date}'
         save_text(
             file_string, filename=filename, path=save_path, ext='py'
         )
