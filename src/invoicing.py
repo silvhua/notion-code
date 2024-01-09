@@ -27,6 +27,33 @@ def get_invoice_records(df, start_date, end_date, filter_dict):
     client_df = filter_df_all_conditions(period_df, filter_dict, verbose=False)
     return client_df
 
+def get_payperiod(csv_filename, path, verbose=False, index=0, strip_whitespaces=False):
+    """
+    Get the start date and end date of a pay period from a CSV file.
+
+    Parameters:
+        - csv_filename (str): The name of the CSV file.
+        - path (str): The path to the CSV file.
+        - verbose (bool, optional): If True, print the start date and end date.
+        - index (int, optional): The index of the pay period dates CSV file to retrieve.
+        - strip_whitespaces (bool, optional): If True, strip whitespaces from column names and values.
+
+    Returns:
+        - start_date (datetime): The start date of the pay period.
+        - end_date (datetime): The end date of the pay period.
+    """
+
+    payperiods = load_csv(csv_filename, path)
+    if strip_whitespaces:
+        payperiods.columns = payperiods.columns.str.strip()
+        payperiods = payperiods.apply(lambda x: x.str.strip() if x.dtype == "object" else x)
+    payperiods = payperiods.sort_values(by='end_date', ascending=False)
+    start_date = payperiods['start_date'].iloc[index]
+    end_date = payperiods['end_date'].iloc[index]
+    if verbose:
+        print(f'\nStart date: {start_date}. End date: {end_date}')
+    return start_date, end_date
+
 def time_per_project(client_df, project_column='Task Project name', unbilled_column='Unbilled'):
     """
     Calculates the total time per project for a given client DataFrame.
@@ -54,29 +81,15 @@ def time_per_project(client_df, project_column='Task Project name', unbilled_col
     df = df.fillna(0)
     return df
 
-def get_payperiod(csv_filename, path, verbose=False, index=0, strip_whitespaces=False):
+def create_invoice_pyfile(client_name, save_path, csv_filename, csv_path, filter_dict, **kwargs):
     """
-    Get the start date and end date of a pay period from a CSV file.
+    Creates a Python file that generates an invoice for a given pay period.
 
-    Parameters:
-        - csv_filename (str): The name of the CSV file.
-        - path (str): The path to the CSV file.
-        - verbose (bool, optional): If True, print the start date and end date.
-        - index (int, optional): The index of the pay period dates CSV file to retrieve.
-        - strip_whitespaces (bool, optional): If True, strip whitespaces from column names and values.
-
-    Returns:
-        - start_date (datetime): The start date of the pay period.
-        - end_date (datetime): The end date of the pay period.
     """
 
-    payperiods = load_csv(csv_filename, path)
-    if strip_whitespaces:
-        payperiods.columns = payperiods.columns.str.strip()
-        payperiods = payperiods.apply(lambda x: x.str.strip() if x.dtype == "object" else x)
-    payperiods = payperiods.sort_values(by='end_date', ascending=False)
-    start_date = payperiods['start_date'].iloc[index]
-    end_date = payperiods['end_date'].iloc[index]
-    if verbose:
-        print(f'\nStart date: {start_date}. End date: {end_date}')
-    return start_date, end_date
+    file_string = f"""
+start_date, end_date = get_payperiod('{csv_filename}', '{csv_path}', {kwargs})
+client_df = get_invoice_records(df, start_date, end_date, {filter_dict})
+summary_df = time_per_project(client_df)
+    """
+    return file_string
