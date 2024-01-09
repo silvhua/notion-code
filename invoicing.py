@@ -81,15 +81,36 @@ def time_per_project(client_df, project_column='Task Project name', unbilled_col
     df = df.fillna(0)
     return df
 
-def create_invoice_pyfile(client_name, save_path, csv_filename, csv_path, filter_dict, **kwargs):
+def create_invoice_pyfile(
+    client_name, save_path, csv_filename, csv_path, filter_dict,
+    save=True, **kwargs
+    ):
     """
     Creates a Python file that generates an invoice for a given pay period.
 
     """
 
     file_string = f"""
-start_date, end_date = get_payperiod('{csv_filename}', '{csv_path}', {kwargs})
-client_df = get_invoice_records(df, start_date, end_date, {filter_dict})
-summary_df = time_per_project(client_df)
+import sys
+sys.path.append(r"/home/silvhua/repositories/notion/src")
+from invoicing import *
+import solara
+
+filename = 'notion_df.sav'
+df = loadpickle(filename, '{csv_path}')
+
+@solara.component
+def Page():
+    start_date, end_date = get_payperiod('{csv_filename}', '{csv_path}', {kwargs})
+    client_df = get_invoice_records(df, start_date, end_date, {filter_dict})
+    summary_df = time_per_project(client_df)
+    solara.DataFrame(summary_df)
     """
+    if save:
+        start_date, end_date = get_payperiod('OIF_payperiods.csv', '../data/', verbose=0)
+        filename = f'{end_date}'
+        save_text(
+            file_string, filename=filename, path=save_path, ext='py'
+        )
+    
     return file_string
