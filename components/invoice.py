@@ -13,7 +13,7 @@ def Load_Text(filename, path):
 
 @solara.component
 def Invoice_Header(client: str):
-    solara.Title('hello')
+    # solara.Title(f'Invoice') # Changes the page title from default, which is the cleaned script name
     with solara.Columns([1,1]):
         solara.Markdown('BILL TO:')
         solara.Markdown('FROM:')
