@@ -4,7 +4,7 @@ from components.invoice import *
 from invoicing import *
 import re
 
-client_name = "Own it Fit"
+client_name = "OIF"
 save_path = '/home/silvhua/repositories/notion/src/OIF'
 path = save_path
 csv_filename = 'OIF_payperiods.csv'
@@ -17,14 +17,15 @@ file_string = create_invoice_pyfile(
     client_name, save_path, csv_filename, csv_path, filter_dict, verbose=1
     )
 @solara.component
-def Page(name: str = "foo"):
+def Page():
     subpages = [file for file in os.listdir(path) if os.path.isfile(os.path.join(path, file))]
-    solara.Markdown(f"You are at: {name}")
+    subpages.remove('0_Home.py')
+    subpages.remove('__init__.py')
     # bunch of buttons which navigate to our dynamic route
     with solara.Row():
         for subpage in subpages:
-            with solara.Link(re.sub('_', '-', subpage).lower()):
-                solara.Button(label=f"Go to: {subpage}")
-# @solara.component
-# def Page():
-#     ChartsPerPeriod(category_column)
+            route = re.sub(r'\d+_', '', subpage)
+            route = re.sub('_', '-', route).lower()
+            route = re.sub('.py', '', route)
+            with solara.Link(route):
+                solara.Button(label=f"Go to: {route}")
