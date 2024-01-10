@@ -6,6 +6,7 @@ import re
 
 client_name = "Own it Fit"
 save_path = '/home/silvhua/repositories/notion/src/OIF'
+path = save_path
 csv_filename = 'OIF_payperiods.csv'
 csv_path = '/home/silvhua/repositories/notion/data'
 filter_dict = {
@@ -17,7 +18,7 @@ file_string = create_invoice_pyfile(
     )
 @solara.component
 def Page(name: str = "foo"):
-    subpages = ["oif-2024-01-30"]
+    subpages = [file for file in os.listdir(path) if os.path.isfile(os.path.join(path, file))]
     solara.Markdown(f"You are at: {name}")
     # bunch of buttons which navigate to our dynamic route
     with solara.Row():
