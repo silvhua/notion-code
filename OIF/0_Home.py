@@ -18,7 +18,7 @@ file_string = create_invoice_pyfile(
     )
 @solara.component
 def Page():
-    solara.Title('Home')
+    solara.Title('Silvia Hua Invoicing')
     subpages = [file for file in os.listdir(path) if os.path.isfile(os.path.join(path, file))]
     subpages.remove('0_Home.py')
     subpages.remove('__init__.py')
