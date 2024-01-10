@@ -5,6 +5,7 @@ from silvhua import *
 from wrangling import *
 from data_viz import *
 import os
+import re
 
 def get_invoice_records(df, start_date, end_date, filter_dict):
     """
@@ -108,10 +109,19 @@ def Page():
     solara.DataFrame(summary_df)
     """
     if save:
-        start_date, end_date = get_payperiod('OIF_payperiods.csv', csv_path, verbose=0)
-        filename = f'OIF_{end_date}'
-        save_text(
-            file_string, filename=filename, path=save_path, ext='py'
-        )
+        path = save_path
+        start_date, end_date = get_payperiod(
+            f'{client_name}_payperiods.csv', csv_path, verbose=0
+            )
+        files_in_path = [re.sub(r'\d+_(.*)', r'\1', file) for file in os.listdir(path) if os.path.isfile(os.path.join(path, file))]
+        filename_without_number = f'{client_name}_{end_date}'
+        if f'{filename_without_number}.py' in files_in_path:
+            print(f'\n.py file with end date {end_date} already exists in {path}; no new py file created.')
+        else:
+            number_of_files = len(files_in_path)
+            filename = f'{1000-number_of_files}_{filename_without_number}'
+            save_text(
+                file_string, filename=filename, path=save_path, ext='py'
+            )
     
     return file_string
