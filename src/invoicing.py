@@ -74,14 +74,14 @@ def time_per_project(client_df, project_column='Task Project name', unbilled_col
         client_df[unbilled_column] = client_df[unbilled_column].apply(
             lambda x: 'Billed Hours' if x else 'Unbilled Hours'
         )
-    df = pd.DataFrame(client_df.groupby([project_column, unbilled_column])['Elapsed'].agg('sum'))
+    summary_df = pd.DataFrame(client_df.groupby([project_column, unbilled_column])['Elapsed'].agg('sum'))
 
-    df = df.unstack()
-    df.columns = df.columns.droplevel()
-    df.columns.name = None
-    df = df.reset_index()
-    df = df.fillna(0)
-    return df
+    summary_df = summary_df.unstack()
+    summary_df.columns = summary_df.columns.droplevel()
+    summary_df.columns.name = None
+    summary_df = summary_df.reset_index()
+    summary_df = summary_df.fillna(0)
+    return summary_df
 
 def create_invoice_pyfile(
     client_name, save_path, csv_filename, csv_path, filter_dict,
