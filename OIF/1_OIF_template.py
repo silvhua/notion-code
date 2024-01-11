@@ -15,7 +15,8 @@ pages_path = f'/home/silvhua/repositories/notion/src/'
 path = f'{pages_path}{client_name}'
 start_date, end_date = get_payperiod('OIF_payperiods.csv', '/home/silvhua/repositories/notion/data/', {'index': 0, 'verbose': 1})
 client_df = get_invoice_records(df, start_date, end_date, {'Task Project name': ['Coach McLoone', 'GHL Chatbot']})
-summary_df = time_per_project(client_df).round(2)
+summary_df = time_per_project(client_df)
+
 
 total_hours = summary_df['Billed Hours'].sum() 
 invoice_total = total_hours * rate
@@ -59,7 +60,7 @@ def Page():
     # solara.HTML(tag='p', unsafe_innerHTML=html_table)
     solara.Markdown("")
     solara.Markdown(f'## Time per Project')
-    solara.DataFrame(summary_df)
+    solara.DataFrame(summary_df.round(2))
     with solara.AppBarTitle():
         solara.Text(f'Silvia Hua')
-    
+    Invoice_Timesheet(client_df)
