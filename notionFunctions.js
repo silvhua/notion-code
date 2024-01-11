@@ -168,7 +168,11 @@ async function retrievePage(
           parsed_data['Name'] = data['properties']['Project name']['title'][0]['plain_text'];
           multi_select_rollups = [];
           relations = [];
-        } 
+        } else {
+          parsed_data['Name'] = data['properties']['Name']['title'][0]['plain_text'];
+          multi_select_rollups = [];
+          relations = [];
+        }
         if (multi_select_rollups.length > 0) {
             for (let i = 0; i < multi_select_rollups.length; i++) {
                 const rollup = multi_select_rollups[i];
@@ -194,7 +198,7 @@ async function retrievePage(
     } catch (error) {
         console.log(`Error for database ${database}: ${error}`);
     };
-}
+  }
 
 /**
  * Parses the time tracking data.
@@ -212,7 +216,7 @@ async function parseTimeTracking(
   const relations_list = ['Tasks'];
   const array_types = ['multi_select', 'relation'];
   let properties = Object.keys(data[0]['properties']);
-  const to_ignore = ['Notes', 'Last edited', 'Created time', 'Start min', 'summary', 'End min', 'follow up task', 'URL', 'End hr', 'Start hr', 'Projects', 'Project tag', 'Project (Rollup)'];
+  const to_ignore = ['Last edited', 'Created time', 'Start min', 'summary', 'End min', 'follow up task', 'URL', 'End hr', 'Start hr', 'Projects', 'Project tag', 'Project (Rollup)'];
   properties = properties.filter(item => !to_ignore.includes(item));
   console.log(`Parsing...`);
 
@@ -236,12 +240,11 @@ async function parseTimeTracking(
           if (property_dict[property_type].length === 0) {
             record[property] = null;
           } else {
-            const relationValues = property_dict[property_type];
-        
+            const relationValues = property_dict[property_type];        
         
             if (property === 'Tasks') {
-              const taskProjects = [];
-              const taskProjectTags = [];
+              // const taskProjects = [];
+              // const taskProjectTags = [];
         
               for (let k = 0; k < relationValues.length; k++) {
                 const task_details = await parsePage(relationValues[k]['id'], database='tasks');
@@ -293,8 +296,22 @@ async function parseTimeTracking(
             record[property] = null;
           }
         } else if (property_type === 'rich_text' || property_type === 'title') {
-          if (property_dict[property_type].length > 0) {
-            record[property] = property_dict[property_type][0]['text']['content'];
+          if (property_dict[property_type].length > 0) { 
+            rich_text_array = property_dict[property_type];
+            content_array = [];
+            for (let k = 0; k < rich_text_array.length; k++) {
+                rich_text_type = rich_text_array[k]['type'];
+                if (rich_text_type == 'mention') {
+                  mention_type = rich_text_array[k][rich_text_type]['type'];
+                  mention_id = rich_text_array[k][rich_text_type][mention_type]['id'];
+                  const mention_details = await parsePage(mention_id, database='Unknown');
+                  const mention_name = mention_details['Name']
+                  content_array.push(mention_name);
+                } else {
+                  content_array.push(rich_text_array[k][rich_text_type]['content']);
+                }
+            }
+            record[property] = content_array.join(' ');
           } else {
             record[property] = null;
           }
