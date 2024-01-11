@@ -50,6 +50,7 @@ def Invoice_Timesheet(df, include_notes=True, unbilled_column='Unbilled'):
         'start time',
         'end time',
         'Elapsed',
+        'Unbilled',
         'Task Name'
     ]
     # if include_roadmap_item:
@@ -58,6 +59,8 @@ def Invoice_Timesheet(df, include_notes=True, unbilled_column='Unbilled'):
         invoice_columns.insert(2, 'Roadmap Item')
     if 'Notes' in df.columns:
         invoice_columns.append('Notes')
+    df['Unbilled'] = df[unbilled_column].apply(lambda x: 'unbilled' if x=='Unbilled Hours' else '')
+
     df = df[invoice_columns].round(2)
     df.columns = [f'| {column}' for column in df.columns]
     solara.DataFrame(df)
