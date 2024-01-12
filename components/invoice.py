@@ -63,5 +63,5 @@ def Invoice_Timesheet(df, include_notes=True, unbilled_column='Unbilled'):
 
     df = df[invoice_columns].round(2)
     df.columns = [f'| {column}' for column in df.columns]
-    solara.DataFrame(df)
+    return solara.DataFrame(df)
     
