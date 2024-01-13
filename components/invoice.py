@@ -4,7 +4,9 @@ sys.path.append(r"/home/silvhua/repositories/notion/src")
 sys.path.append(r"/home/silvhua/custom_python")
 import solara
 from silvhua import load_txt
+from invoicing import *
 import re
+from typing import Any, Dict, Optional, cast
 
 address_filepath = '/home/silvhua/repositories/notion/private'
 @solara.component
@@ -23,6 +25,47 @@ def Home_Page(client_name, save_path_root):
             route = re.sub('.py', '', route)
             with solara.Link(f'{route}'):
                 solara.Button(label=f"Go to: {route}")
+@solara.component
+def Body(client_name, filter_dict, rate):
+    filename = 'notion_df.sav'
+    data_path = '/home/silvhua/repositories/notion/data/'
+    pages_path = f'/home/silvhua/repositories/notion/src/'
+    path = f'{pages_path}{client_name}'
+
+    df = loadpickle(filename, data_path)
+    start_date, end_date = get_payperiod(f'{client_name}_payperiods.csv', data_path, {'index': 0, 'verbose': 1})
+    client_df = get_invoice_records(df, start_date, end_date, filter_dict)
+    summary_df = time_per_project(client_df)
+    total_hours = summary_df['Billed Hours'].sum() 
+    invoice_total = total_hours * rate
+
+    Invoice_Header(client_name)
+    Pages_Sidebar(path)
+    solara.Markdown(f'**Service dates**: {start_date} - {end_date}')
+    solara.Markdown(f'## Invoice Items')
+    column_widths = [2, 1]
+    with solara.Columns(column_widths):
+        solara.HTML(tag='p', unsafe_innerHTML='<u>Description')
+        solara.HTML(tag='p', unsafe_innerHTML='<u>Amount')
+    with solara.Columns(column_widths):
+        # solara.Markdown(invoice_table)
+        solara.HTML(tag='p', unsafe_innerHTML=f'{total_hours:.2f} hours billed at ${rate}/hour')
+        solara.HTML(tag='p', unsafe_innerHTML=f'<mark style="background-color: yellow;"><b>${invoice_total:.2f}')
+    # solara.HTML(tag='p', unsafe_innerHTML=html_table)
+    solara.Markdown("")
+    solara.Markdown(f'## Time per Project')
+    Show_Df(summary_df)
+    with solara.AppBarTitle():
+        solara.Text(f'Silvia Hua')
+    # Invoice_Timesheet(client_df)
+        
+@solara.component
+def Show_Df(df, round=2, items_per_page=50):
+    solara.DataFrame(
+        df=df.round(round) if round else df,
+        items_per_page=items_per_page,
+        scrollable=True
+        )
 
 @solara.component
 def Load_Text(filename, path, first_line_tag='h3'):
@@ -90,5 +133,5 @@ def Invoice_Timesheet(df, include_notes=True, unbilled_column='Unbilled'):
 
     df = df[invoice_columns].round(2)
     df.columns = [f'| {column}' for column in df.columns]
-    return solara.DataFrame(df, items_per_page=100)
+    Show_Df(df)
     
