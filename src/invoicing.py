@@ -84,14 +84,15 @@ def time_per_project(client_df, project_column='Task Project name', unbilled_col
     return summary_df
 
 def create_invoice_pyfile(
-    client_name, save_path, csv_filename, csv_path, filter_dict,
+    client_name, save_path_root, csv_path, filter_dict,
     save=True, **kwargs
     ):
     """
     Creates a Python file that generates an invoice for a given pay period.
 
     """
-
+    csv_filename = f'{client_name}_payperiods.csv'
+    save_path = f'{save_path_root}/{client_name}'
     file_string = f"""
 import sys
 sys.path.append(r"/home/silvhua/repositories/notion/src")

@@ -8,7 +8,8 @@ import re
 
 address_filepath = '/home/silvhua/repositories/notion/private'
 @solara.component
-def Home_Page(path):
+def Home_Page(client_name, save_path_root):
+    path = f'{save_path_root}/{client_name}'
     solara.Title('Silvia Hua Invoicing')
     subpages = [file for file in os.listdir(path) if os.path.isfile(os.path.join(path, file))]
     print(f'{subpages}')
