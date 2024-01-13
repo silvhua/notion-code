@@ -8,18 +8,34 @@ import re
 
 address_filepath = '/home/silvhua/repositories/notion/private'
 @solara.component
-def Load_Text(filename, path):
+def Home_Page(path):
+    solara.Title('Silvia Hua Invoicing')
+    subpages = [file for file in os.listdir(path) if os.path.isfile(os.path.join(path, file))]
+    print(f'{subpages}')
+    subpages.remove('0_Home.py')
+    subpages.remove('__init__.py')
+    # bunch of buttons which navigate to our dynamic route
+    with solara.Row():
+        for subpage in subpages:
+            route = re.sub(r'\d+_', '', subpage)
+            route = re.sub('_', '-', route).lower()
+            route = re.sub('.py', '', route)
+            with solara.Link(f'{route}'):
+                solara.Button(label=f"Go to: {route}")
+
+@solara.component
+def Load_Text(filename, path, first_line_tag='h3'):
     text = load_txt(filename, path)
-    # text = text.replace('\n', '\n\n')
-    html_string = '<h3>'
+    if first_line_tag:
+        html_string = f'<{first_line_tag}>'
+    else:
+        html_string = ''
     lines = text.split('\n')
-    # solara.Markdown(lines[0])
-    # solara.Text(''.join([f'{line}\n' for line in lines[1:]]))
     line_no = 0
     for line in lines:
         html_string +=f'<br>{line}' 
-        if line_no == 0:
-            html_string += '</h3>'
+        if first_line_tag and line_no == 0:
+            html_string += f'</{first_line_tag}>'
         line_no += 1
     solara.HTML(tag='p', unsafe_innerHTML=html_string)
 
@@ -30,8 +46,8 @@ def Invoice_Header(client: str):
         solara.Text('BILL TO:')
         solara.Text('FROM:')
     with solara.Columns([1,1]):
-        Load_Text(f'{client}_address.txt', address_filepath)
-        Load_Text('address.txt', address_filepath)
+        Load_Text(f'{client}_address.txt', address_filepath, first_line_tag='h3')
+        Load_Text('address.txt', address_filepath, first_line_tag='h3')
 
 @solara.component
 def Pages_Sidebar(path):
@@ -73,5 +89,5 @@ def Invoice_Timesheet(df, include_notes=True, unbilled_column='Unbilled'):
 
     df = df[invoice_columns].round(2)
     df.columns = [f'| {column}' for column in df.columns]
-    return solara.DataFrame(df)
+    return solara.DataFrame(df, items_per_page=100)
     
