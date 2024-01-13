@@ -10,15 +10,25 @@ address_filepath = '/home/silvhua/repositories/notion/private'
 @solara.component
 def Load_Text(filename, path):
     text = load_txt(filename, path)
-    text = text.replace('\n', '\n\n')
-    return solara.Markdown(text)
+    # text = text.replace('\n', '\n\n')
+    html_string = '<h3>'
+    lines = text.split('\n')
+    # solara.Markdown(lines[0])
+    # solara.Text(''.join([f'{line}\n' for line in lines[1:]]))
+    line_no = 0
+    for line in lines:
+        html_string +=f'<br>{line}' 
+        if line_no == 0:
+            html_string += '</h3>'
+        line_no += 1
+    solara.HTML(tag='p', unsafe_innerHTML=html_string)
 
 @solara.component
 def Invoice_Header(client: str):
     # solara.Title(f'Invoice') # Changes the page title from default, which is the cleaned script name
     with solara.Columns([1,1]):
-        solara.Markdown('BILL TO:')
-        solara.Markdown('FROM:')
+        solara.Text('BILL TO:')
+        solara.Text('FROM:')
     with solara.Columns([1,1]):
         Load_Text(f'{client}_address.txt', address_filepath)
         Load_Text('address.txt', address_filepath)
