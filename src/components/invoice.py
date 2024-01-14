@@ -7,6 +7,7 @@ from silvhua import load_txt
 from invoicing import *
 import re
 from typing import Any, Dict, Optional, cast
+from components.chart import ElapsedTimeChart
 
 address_filepath = '/home/silvhua/repositories/notion/private'
 @solara.component
@@ -57,7 +58,16 @@ def Body(client_name, filter_dict, rate):
     Show_Df(summary_df)
     with solara.AppBarTitle():
         solara.Text(f'Silvia Hua')
+    CustomElapsedTimeChart(
+        client_df, category_column='Task Project name',
+        period=None, start_date=start_date, end_date=end_date, height=100,
+        aspect_ratio=2
+        )
     # Invoice_Timesheet(client_df)
+
+@solara.component
+def CustomElapsedTimeChart(classified_df, **kwargs):
+    fig = plot_by_category(classified_df, **kwargs)
         
 @solara.component
 def Show_Df(df, round=2, items_per_page=50):
