@@ -41,8 +41,8 @@ def get_payperiod(csv_filename, path, verbose=False, index=0, strip_whitespaces=
         - strip_whitespaces (bool, optional): If True, strip whitespaces from column names and values.
 
     Returns:
-        - start_date (datetime): The start date of the pay period.
-        - end_date (datetime): The end date of the pay period.
+        - start_date (str): The start date of the pay period.
+        - end_date (str): The end date of the pay period.
     """
 
     payperiods = load_csv(csv_filename, path)
@@ -85,35 +85,23 @@ def time_per_project(client_df, project_column='Task Project name', unbilled_col
 
 def create_invoice_pyfile(
     client_name, save_path_root, csv_path, filter_dict,
+    hourly_rate, gst_rate,
     save=True, **kwargs
     ):
     """
     Creates a Python file that generates an invoice for a given pay period.
 
     """
-    csv_filename = f'{client_name}_payperiods.csv'
     save_path = f'{save_path_root}/{client_name}'
-    file_string = f"""
-import sys
-sys.path.append(r"/home/silvhua/repositories/notion/src")
-from invoicing import *
-import solara
-
-filename = 'notion_df.sav'
-df = loadpickle(filename, '{csv_path}')
-
-@solara.component
-def Page():
-    start_date, end_date = get_payperiod('{csv_filename}', '{csv_path}', {kwargs})
-    client_df = get_invoice_records(df, start_date, end_date, {filter_dict})
-    summary_df = time_per_project(client_df)
-    solara.DataFrame(summary_df)
-    """
+    print('\n**Replacing placehoolders**\n')
+    template_string = load_txt('invoice_template.txt', '/home/silvhua/repositories/notion/src/')
+    file_string = re.sub(r'(.*)___client_name___(.*)', rf'\1{client_name}\2', template_string)
+    file_string = re.sub(r'(.*)___filter_dict___(.*)', rf'\1{filter_dict}\2', file_string)
+    file_string = re.sub(r'(.*)___hourly_rate___(.*)', rf'\1 {hourly_rate} \2', file_string)
+    file_string = re.sub(r'(.*)___gst_rate___(.*)', rf'\1 {gst_rate} \2', file_string)
+    start_date, end_date = get_payperiod(f'{client_name}_payperiods.csv', csv_path, **kwargs)
     if save:
         path = save_path
-        start_date, end_date = get_payperiod(
-            f'{client_name}_payperiods.csv', csv_path, verbose=0
-            )
         files_in_path = [re.sub(r'\d+_(.*)', r'\1', file) for file in os.listdir(path) if os.path.isfile(os.path.join(path, file))]
         filename_without_number = f'{client_name}_{end_date}'
         if f'{filename_without_number}.py' in files_in_path:
