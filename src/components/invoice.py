@@ -27,7 +27,7 @@ def Home_Page(client_name, save_path_root):
             with solara.Link(f'{route}'):
                 solara.Button(label=f"Go to: {route}")
 @solara.component
-def Body(client_name, filter_dict, rate):
+def Body(client_name, filter_dict, rate, gst_rate=False):
     filename = 'notion_df.sav'
     data_path = '/home/silvhua/repositories/notion/data/'
     pages_path = f'/home/silvhua/repositories/notion/src/'
@@ -42,8 +42,8 @@ def Body(client_name, filter_dict, rate):
         solara.Text(f'Silvia Hua')
     Invoice_Header(client_name)
     Pages_Sidebar(path)
-    solara.Markdown(f'**Service dates**: {start_date} - {end_date}')
-    Itemized_Table(summary_df, rate)
+    solara.HTML('p', unsafe_innerHTML=f'<b>Service dates</b>: {start_date} - {end_date}')
+    Itemized_Table(summary_df, rate, gst_rate)
     with solara.Column(align='start'):
         solara.Markdown("")
         solara.Markdown(f'## Time per Project')
@@ -56,17 +56,39 @@ def Body(client_name, filter_dict, rate):
     # Invoice_Timesheet(client_df)
 
 @solara.component
-def Itemized_Table(summary_df, rate):
+def Itemized_Table(summary_df, rate, gst_rate=5, column_widths=[3, 2, 1]):
     total_hours = summary_df['Billed Hours'].sum()
-    invoice_total = total_hours * rate
-    column_widths = [2, 1]
+    services_total = total_hours * rate
     solara.Markdown(f'## Invoice Items')
+    # items_df = pd.DataFrame(columns=['Description', 'Amount'])
+    # items_df.loc[0] = [f'{total_hours:.2f} hours billed at ${rate}/hour']
+    style = "line-height: 0.001;"
     with solara.Columns(column_widths):
-        solara.HTML(tag='p', unsafe_innerHTML='<u>Description')
-        solara.HTML(tag='p', unsafe_innerHTML='<u>Amount')
+        solara.HTML(tag='h4', style=style, unsafe_innerHTML='<u>Description')
+        with solara.Column(align='end'):
+            solara.HTML(tag='h4', style=style, unsafe_innerHTML='<u>Amount')
+        solara.HTML(tag='div', style=style, unsafe_innerHTML='')
+    highlight_style = '<mark style="background-color: yellow;"><b>'
     with solara.Columns(column_widths):
-        solara.HTML(tag='p', unsafe_innerHTML=f'{total_hours:.2f} hours billed at ${rate}/hour')
-        solara.HTML(tag='p', unsafe_innerHTML=f'<mark style="background-color: yellow;"><b>${invoice_total:.2f}')
+        solara.HTML(tag='div', style=style, unsafe_innerHTML=f'{total_hours:.2f} hours billed at ${rate}/hour')
+        subtotal_text = f'${services_total:.2f}'
+        subtotal_html = f'{highlight_style}{subtotal_text}' if gst_rate==False else subtotal_text
+        with solara.Column(align='end'):
+            solara.HTML(tag='div', style=style, unsafe_innerHTML=subtotal_html)
+        solara.HTML(tag='div', style=style, unsafe_innerHTML='')
+    if gst_rate:
+        with solara.Columns(column_widths):
+            gst_amount = services_total * gst_rate/100
+            solara.HTML(tag='div', style=style, unsafe_innerHTML=f'GST {gst_rate}%')
+            with solara.Column(align='end'):
+                solara.HTML(tag='div', style=style, unsafe_innerHTML=f'${gst_amount:.2f}')
+            solara.HTML(tag='div', style=style, unsafe_innerHTML='')
+        with solara.Columns(column_widths):
+            total = services_total + gst_amount
+            solara.HTML(tag='div', style=style, unsafe_innerHTML=f'<b>TOTAL')
+            with solara.Column(align='end'):
+                solara.HTML(tag='div', style=style, unsafe_innerHTML=f'{highlight_style}${total:.2f}')
+            solara.HTML(tag='div', style=style, unsafe_innerHTML='')
 
 
 @solara.component
