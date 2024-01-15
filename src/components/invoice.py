@@ -26,7 +26,7 @@ def Home_Page(client_name, save_path_root):
             with solara.Link(f'{route}'):
                 solara.Button(label=f"Go to: {route}")
 # @solara.component
-def Body(client_name, start_date, end_date, filter_dict, rate, gst_rate=False):
+def Body(client_name, start_date, end_date, filter_dict, hourly_rate, gst_rate=False):
     filename = 'notion_df.sav'
     pages_path = f'/home/silvhua/repositories/notion/src/'
     path = f'{pages_path}{client_name}'
@@ -41,7 +41,7 @@ def Body(client_name, start_date, end_date, filter_dict, rate, gst_rate=False):
     Invoice_Header(client_name)
     Pages_Sidebar(path)
     solara.HTML('p', unsafe_innerHTML=f'<b>Service dates</b>: {start_date} - {end_date}')
-    Itemized_Table(summary_df, rate, gst_rate)
+    Itemized_Table(summary_df, hourly_rate, gst_rate)
     with solara.Column(align='start'):
         solara.Markdown("")
         solara.Markdown(f'## Time per Project')
