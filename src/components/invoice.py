@@ -33,7 +33,6 @@ def Body(client_name, start_date, end_date, filter_dict, rate, gst_rate=False):
     data_path = '/home/silvhua/repositories/notion/data/'
 
     df = loadpickle(filename, data_path)
-    print(f'Body: Start date: {start_date} . End date: {end_date} .')
     client_df = get_invoice_records(df, start_date, end_date, filter_dict)
     summary_df = time_per_project(client_df) 
 
