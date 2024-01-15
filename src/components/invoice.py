@@ -9,7 +9,7 @@ import re
 from typing import Any, Dict, Optional, cast
 
 address_filepath = '/home/silvhua/repositories/notion/private'
-@solara.component
+# @solara.component
 def Home_Page(client_name, save_path_root):
     path = f'{save_path_root}/{client_name}'
     solara.Title('Silvia Hua Invoicing')
@@ -25,7 +25,7 @@ def Home_Page(client_name, save_path_root):
             route = re.sub('.py', '', route)
             with solara.Link(f'{route}'):
                 solara.Button(label=f"Go to: {route}")
-@solara.component
+# @solara.component
 def Body(client_name, start_date, end_date, filter_dict, rate, gst_rate=False):
     filename = 'notion_df.sav'
     pages_path = f'/home/silvhua/repositories/notion/src/'
@@ -33,6 +33,7 @@ def Body(client_name, start_date, end_date, filter_dict, rate, gst_rate=False):
     data_path = '/home/silvhua/repositories/notion/data/'
 
     df = loadpickle(filename, data_path)
+    print(f'Body: Start date: {start_date} . End date: {end_date} .')
     client_df = get_invoice_records(df, start_date, end_date, filter_dict)
     summary_df = time_per_project(client_df) 
 
@@ -92,7 +93,7 @@ def Itemized_Table(summary_df, rate, gst_rate=5, column_widths=[3, 2, 1]):
 # @solara.component
 def CustomElapsedTimeChart(classified_df, **kwargs):
     fig, aggregate_df = plot_by_category(classified_df, **kwargs)
-    return fig
+    solara.FigurePlotly(fig)
         
 @solara.component
 def Show_Df(df, round=2, items_per_page=50):
