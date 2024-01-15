@@ -35,6 +35,7 @@ def Body(client_name, start_date, end_date, filter_dict, hourly_rate, gst_rate=F
     df = loadpickle(filename, data_path)
     client_df = get_invoice_records(df, start_date, end_date, filter_dict)
     summary_df = time_per_project(client_df) 
+    showlegend = True if len(summary_df.columns) >2 else False
 
     with solara.AppBarTitle():
         solara.Text(f'Silvia Hua')
@@ -46,11 +47,12 @@ def Body(client_name, start_date, end_date, filter_dict, hourly_rate, gst_rate=F
         solara.Markdown("")
         solara.Markdown(f'## Time per Project')
         Df_To_Table(summary_df)
-        CustomElapsedTimeChart(
-            client_df, category_column='Task Project name',
-            period=None, start_date=start_date, end_date=end_date, height=50+summary_df.shape[0]*25,
-            aspect_ratio=2, show=False
-            )
+        if len(summary_df) > 1:
+            CustomElapsedTimeChart(
+                client_df, category_column='Task Project name',
+                period=None, start_date=start_date, end_date=end_date, height=50+summary_df.shape[0]*25,
+                aspect_ratio=2, show=False, showlegend=showlegend
+                )
     # Invoice_Timesheet(client_df)
 
 @solara.component
