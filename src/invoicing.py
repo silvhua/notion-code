@@ -84,8 +84,8 @@ def time_per_project(client_df, project_column='Task Project name', unbilled_col
     return summary_df
 
 def create_invoice_pyfile(
-    client_name, save_path_root, csv_path, filter_dict,
-    hourly_rate, gst_rate,
+    client_name, start_date, end_date, filter_dict, hourly_rate, gst_rate, 
+    save_path_root, csv_path,
     save=True, **kwargs
     ):
     """
@@ -93,13 +93,16 @@ def create_invoice_pyfile(
 
     """
     save_path = f'{save_path_root}/{client_name}'
-    print('\n**Replacing placehoolders**\n')
+    print('**Replacing placeholders**')
     template_string = load_txt('invoice_template.txt', '/home/silvhua/repositories/notion/src/')
     file_string = re.sub(r'(.*)___client_name___(.*)', rf'\1{client_name}\2', template_string)
     file_string = re.sub(r'(.*)___filter_dict___(.*)', rf'\1{filter_dict}\2', file_string)
     file_string = re.sub(r'(.*)___hourly_rate___(.*)', rf'\1 {hourly_rate} \2', file_string)
     file_string = re.sub(r'(.*)___gst_rate___(.*)', rf'\1 {gst_rate} \2', file_string)
-    start_date, end_date = get_payperiod(f'{client_name}_payperiods.csv', csv_path, **kwargs)
+    file_string = re.sub(r'(.*)___start_date___(.*)', rf'\1 {start_date} \2', file_string)
+    file_string = re.sub(r'(.*)___end_date___(.*)', rf'\1 {end_date} \2', file_string)
+    # print(file_string)
+
     if save:
         path = save_path
         files_in_path = [re.sub(r'\d+_(.*)', r'\1', file) for file in os.listdir(path) if os.path.isfile(os.path.join(path, file))]

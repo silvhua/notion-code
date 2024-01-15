@@ -7,7 +7,6 @@ from silvhua import load_txt
 from invoicing import *
 import re
 from typing import Any, Dict, Optional, cast
-from components.chart import ElapsedTimeChart
 
 address_filepath = '/home/silvhua/repositories/notion/private'
 @solara.component
@@ -27,14 +26,13 @@ def Home_Page(client_name, save_path_root):
             with solara.Link(f'{route}'):
                 solara.Button(label=f"Go to: {route}")
 @solara.component
-def Body(client_name, filter_dict, rate, gst_rate=False):
+def Body(client_name, start_date, end_date, filter_dict, rate, gst_rate=False):
     filename = 'notion_df.sav'
-    data_path = '/home/silvhua/repositories/notion/data/'
     pages_path = f'/home/silvhua/repositories/notion/src/'
     path = f'{pages_path}{client_name}'
+    data_path = '/home/silvhua/repositories/notion/data/'
 
     df = loadpickle(filename, data_path)
-    start_date, end_date = get_payperiod(f'{client_name}_payperiods.csv', data_path, {'index': 0, 'verbose': 1})
     client_df = get_invoice_records(df, start_date, end_date, filter_dict)
     summary_df = time_per_project(client_df) 
 
@@ -48,11 +46,11 @@ def Body(client_name, filter_dict, rate, gst_rate=False):
         solara.Markdown("")
         solara.Markdown(f'## Time per Project')
         Df_To_Table(summary_df)
-    CustomElapsedTimeChart(
-        client_df, category_column='Task Project name',
-        period=None, start_date=start_date, end_date=end_date, height=100,
-        aspect_ratio=2
-        )
+        CustomElapsedTimeChart(
+            client_df, category_column='Task Project name',
+            period=None, start_date=start_date, end_date=end_date, height=100,
+            aspect_ratio=2
+            )
     # Invoice_Timesheet(client_df)
 
 @solara.component
@@ -91,9 +89,10 @@ def Itemized_Table(summary_df, rate, gst_rate=5, column_widths=[3, 2, 1]):
             solara.HTML(tag='div', style=style, unsafe_innerHTML='')
 
 
-@solara.component
+# @solara.component
 def CustomElapsedTimeChart(classified_df, **kwargs):
-    fig = plot_by_category(classified_df, **kwargs)
+    fig, aggregate_df = plot_by_category(classified_df, **kwargs)
+    return fig
         
 @solara.component
 def Show_Df(df, round=2, items_per_page=50):
@@ -174,4 +173,26 @@ def Invoice_Timesheet(df, include_notes=True, unbilled_column='Unbilled'):
     df = df[invoice_columns].round(2)
     df.columns = [f'| {column}' for column in df.columns]
     Show_Df(df)
+
+# invoice_table = f"""
+#  Description | Amount
+# --- | ----
+# {total_hours:.2f} hours billed at ${rate}/hour | ${invoice_total:.2f}
+# """
+# html_table = f"""
+# <table>
+#   <thead>
+#     <tr>
+#       <th>Description</th>
+#       <th>Amount</th>
+#     </tr>
+#   </thead>
+#   <tbody>
+#     <tr>
+#       <td>{total_hours:.2f} hours billed at ${rate}/hour</td>
+#       <td>${invoice_total:.2f}</td>
+#     </tr>
+#   </tbody>
+# </table>
+# """
     
