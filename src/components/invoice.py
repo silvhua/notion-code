@@ -145,10 +145,10 @@ def Pages_Sidebar(path):
             route = re.sub(r'\d+_', '', subpage)
             route = re.sub('_', '-', route).lower()
             route = re.sub('.py', '', route)
-            route = f'../{route}'
-            with solara.Link(f'{route if route != "../home" else "/"}'):
-            # with solara.Link(f'{pages_path}{route}'):
-                solara.Button(label=f"{route.strip('./')}")
+            route = solara.resolve_path(route, level=-1)
+            with solara.Link(f'{route if route != "/home" else "/"}'):
+                solara.Button(label=f"{route.split('/')[-1]}")
+                # solara.Button(label=f"{route}")
 
 
 @solara.component
