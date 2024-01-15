@@ -85,7 +85,7 @@ def time_per_project(client_df, project_column='Task Project name', unbilled_col
 
 def create_invoice_pyfile(
     client_name, start_date, end_date, filter_dict, hourly_rate, gst_rate, 
-    save_path_root, csv_path,
+    save_path_root, 
     save=True, **kwargs
     ):
     """
