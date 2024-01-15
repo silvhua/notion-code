@@ -20,5 +20,6 @@ end_date = end_date.strip()
 @solara.component
 def Page():
     Body(
-        client_name, start_date, end_date, filter_dict, hourly_rate, gst_rate=gst_rate
+        client_name=client_name, start_date=start_date, end_date=end_date, 
+        filter_dict=filter_dict, hourly_rate=hourly_rate, gst_rate=gst_rate
         )
