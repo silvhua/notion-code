@@ -26,7 +26,9 @@ def get_invoice_records(df, start_date, end_date, filter_dict, show_indices=Fals
     period_df = filter_by_period(
         classified_df, column='created_time', period=None, start_date=start_date, end_date=end_date
     )
-    client_df = filter_df_all_conditions(period_df, filter_dict, verbose=False, show_indices=show_indices)
+    client_df = filter_df_all_conditions(
+        period_df, filter_dict, verbose=False, show_indices=show_indices
+    )
     return client_df
 
 def get_payperiod(csv_filename, path, verbose=False, index=0, strip_whitespaces=False):
@@ -70,17 +72,23 @@ def time_per_project(client_df, project_column='Task Project name', unbilled_col
     Returns:
         DataFrame: A DataFrame with the total time per project, grouped by project and billed/unbilled hours.
     """
+    # print(f'client_df columns from time_per_project function before processing: {client_df.columns}')
+    # print(f'\n{client_df}')
     if client_df[unbilled_column].dtype == 'bool':
         client_df[unbilled_column] = client_df[unbilled_column].apply(
-            lambda x: 'Billed Hours' if x else 'Unbilled Hours'
+            lambda x: 'Billed Hours' if x==False else 'Unbilled Hours'
         )
     summary_df = pd.DataFrame(client_df.groupby([project_column, unbilled_column])['Elapsed'].agg('sum'))
+    summary_df = summary_df.sort_index(level=1)
+    print(f'summary_df columns from time_per_project function before unstack: {summary_df.columns}')
+    print(f'\n{summary_df}')
 
     summary_df = summary_df.unstack()
     summary_df.columns = summary_df.columns.droplevel()
     summary_df.columns.name = None
     summary_df = summary_df.reset_index()
     summary_df = summary_df.fillna(0)
+    # print(f'summary_df columns from time_per_project function: {summary_df.columns}')
     return summary_df
 
 def create_invoice_pyfile(
@@ -108,7 +116,7 @@ def create_invoice_pyfile(
         files_in_path = [re.sub(r'\d+_(.*)', r'\1', file) for file in os.listdir(path) if os.path.isfile(os.path.join(path, file))]
         filename_without_number = f'{client_name}_{end_date}'
         if f'{filename_without_number}.py' in files_in_path:
-            print(f'\n.py file with end date {end_date} already exists in {path}; no new py file created.')
+            print(f'.py file with end date {end_date} already exists in {path}; no new py file created.\n')
         else:
             number_of_files = len(files_in_path)
             filename = f'{1000-number_of_files}_{filename_without_number}'
