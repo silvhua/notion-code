@@ -105,7 +105,7 @@ def plot_by_category(
     aggregate_df = filtered_df[[sort_column, category_column]].groupby(
         category_column
         ).sum().sort_values(by=[sort_column], ascending=False)
-    fig = plot_int_hist(
+    fig, aggregate_df0 = plot_int_hist(
         filtered_df, 
         groupby=category_column,
         columns=[sort_column],
