@@ -7,7 +7,7 @@ from data_viz import *
 import os
 import re
 
-def get_invoice_records(df, start_date, end_date, filter_dict):
+def get_invoice_records(df, start_date, end_date, filter_dict, show_indices=False):
     """
     Retrieves relevant time tracking records for generating an invoice 
     based on the given DataFrame, start date, end date, and filter criteria.
@@ -26,7 +26,7 @@ def get_invoice_records(df, start_date, end_date, filter_dict):
     period_df = filter_by_period(
         classified_df, column='created_time', period=None, start_date=start_date, end_date=end_date
     )
-    client_df = filter_df_all_conditions(period_df, filter_dict, verbose=False)
+    client_df = filter_df_all_conditions(period_df, filter_dict, verbose=False, show_indices=show_indices)
     return client_df
 
 def get_payperiod(csv_filename, path, verbose=False, index=0, strip_whitespaces=False):
