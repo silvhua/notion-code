@@ -6,7 +6,7 @@ import solara
 from silvhua import load_txt
 from invoicing import *
 import re
-from typing import Any, Dict, Optional, cast
+# from typing import Any, Dict, Optional, cast
 
 address_filepath = '/home/silvhua/repositories/notion/private'
 # @solara.component
@@ -48,8 +48,8 @@ def Body(client_name, start_date, end_date, filter_dict, hourly_rate, gst_rate=F
         Df_To_Table(summary_df)
         CustomElapsedTimeChart(
             client_df, category_column='Task Project name',
-            period=None, start_date=start_date, end_date=end_date, height=100,
-            aspect_ratio=2
+            period=None, start_date=start_date, end_date=end_date, height=50+summary_df.shape[0]*25,
+            aspect_ratio=2, show=False
             )
     # Invoice_Timesheet(client_df)
 
@@ -90,8 +90,8 @@ def Itemized_Table(summary_df, rate, gst_rate=5, column_widths=[3, 2, 1]):
 
 
 # @solara.component
-def CustomElapsedTimeChart(classified_df, **kwargs):
-    fig, aggregate_df = plot_by_category(classified_df, **kwargs)
+def CustomElapsedTimeChart(classified_df, show, **kwargs):
+    fig, aggregate_df = plot_by_category(classified_df, show=show, **kwargs)
     solara.FigurePlotly(fig)
         
 @solara.component
