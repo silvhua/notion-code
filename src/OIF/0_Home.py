@@ -15,7 +15,7 @@ gst_rate = 0
 save_path_root = f'/home/silvhua/repositories/notion/src'
 csv_path = '/home/silvhua/repositories/notion/data'
 start_date, end_date = get_payperiod(f'{client_name}_payperiods.csv', csv_path, verbose=True)
-print(f'\n**Creating invoice .py file***\n')
+print(f'\n**Creating invoice .py file**')
 file_string = create_invoice_pyfile(
     client_name, start_date, end_date, filter_dict, hourly_rate, gst_rate,
     save_path_root, 
