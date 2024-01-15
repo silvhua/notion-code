@@ -74,7 +74,8 @@ def classify_projects(
 def plot_by_category(
     classified_df, category_column='Category', classification='Unbilled', label=True,
     agg='sum', sort_column='Elapsed', date_column='created_time', height=None,
-    period='past_month', start_date=None, end_date=None, verbose=False, aspect_ratio=3
+    period='past_month', start_date=None, end_date=None, verbose=False, aspect_ratio=3, 
+    showlegend=True, show=True
     ):
     """
     Plot the data by category and return an aggregated DataFrame.
@@ -114,7 +115,8 @@ def plot_by_category(
         label=label,
         y_order=True,
         title=f'{"".join([word.title()+" " for word in period.split("_")]).strip()+": " if period else ""}{min_date} to {max_date}',
-        height=height, showlegend=True, aspect_ratio=aspect_ratio
+        height=height, showlegend=showlegend, aspect_ratio=aspect_ratio,
+        show=show
     )
     return fig, aggregate_df
 
