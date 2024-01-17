@@ -15,8 +15,12 @@ file_name=$(cat data/filename.txt)
 # Run Python script with filenames as arguments
 python src/pipeline_analyze.py $file_name notion_df
 
-# Show the dashboard
-solara run src/pages --no-open
+# Check if an additional argument is not provided
+if [[ "$2" ]]; then
+    # Show the dashboard
+    echo "Showing dashboard from runPipeline.sh"
+    solara run src/pages --no-open
+fi
 
 # # ### TEST VERSION
 
