@@ -37,6 +37,7 @@ def Body(client_name, start_date, end_date, filter_dict, hourly_rate, gst_rate=F
     summary_df = time_per_project(client_df) 
     showlegend = True if len(summary_df.columns) >2 else False
 
+    solara.Title(f'Ginkgo_{end_date}')
     with solara.AppBarTitle():
         solara.Text(f'Silvia Hua')
     Invoice_Header(client_name)
@@ -50,7 +51,7 @@ def Body(client_name, start_date, end_date, filter_dict, hourly_rate, gst_rate=F
         if len(summary_df) > 1:
             CustomElapsedTimeChart(
                 client_df, category_column='Task Project name',
-                period=None, start_date=start_date, end_date=end_date, height=50+summary_df.shape[0]*25,
+                period=None, start_date=start_date, end_date=end_date, height=100+summary_df.shape[0]*10,
                 aspect_ratio=2, show=False, showlegend=showlegend
                 )
     # Invoice_Timesheet(client_df)
@@ -68,7 +69,7 @@ def Itemized_Table(summary_df, rate, gst_rate=5, column_widths=[3, 2, 1]):
         with solara.Column(align='end'):
             solara.HTML(tag='h4', style=style, unsafe_innerHTML='<u>Amount')
         solara.HTML(tag='div', style=style, unsafe_innerHTML='')
-    highlight_style = '<mark style="background-color: yellow;"><b>'
+    highlight_style = '<mark style="background-color: yellow; border: 1px solid black;"><b>'
     with solara.Columns(column_widths):
         solara.HTML(tag='div', style=style, unsafe_innerHTML=f'{total_hours:.2f} hours billed at ${rate}/hour')
         subtotal_text = f'${services_total:.2f}'
@@ -87,7 +88,7 @@ def Itemized_Table(summary_df, rate, gst_rate=5, column_widths=[3, 2, 1]):
             total = services_total + gst_amount
             solara.HTML(tag='div', style=style, unsafe_innerHTML=f'<b>TOTAL')
             with solara.Column(align='end'):
-                solara.HTML(tag='div', style=style, unsafe_innerHTML=f'{highlight_style}${total:.2f}')
+                solara.HTML(tag='h3', style=style, unsafe_innerHTML=f'{highlight_style}${total:.2f}')
             solara.HTML(tag='div', style=style, unsafe_innerHTML='')
 
 
