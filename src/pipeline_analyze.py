@@ -37,7 +37,7 @@ def main():
         print(f'DataFrame shape after concatenation and before duplicate removal: {df.shape}')
         df = df.sort_values(by=['created_time'])
         df = df.reset_index(drop=True)
-        df = df.drop_duplicates(subset=['url', 'created_time']) 
+        df = df.drop_duplicates(subset=['url', 'created_time'], keep='last') 
         print(f'\nFinal updated DataFrame shape: {df.shape}\n')
         savepickle(
             df, notion_filename, path=path, append_version=False,
