@@ -1,0 +1,1264 @@
+{
+  "9852492c-9042-4859-adee-45af550bfc34": {
+    "url": "https://www.notion.so/2024-01-19-10-32-9852492c90424859adee45af550bfc34",
+    "created_time": "2024-01-19T18:31:00.000Z",
+    "Task Tag": [
+      "Ginkgo"
+    ],
+    "Flag": null,
+    "Notes": null,
+    "Elapsed": 0.466666666667,
+    "Task Name": [
+      "address TTT issues on Clickup/Slack"
+    ],
+    "Task Project tags": [
+      [
+        "Ginkgo work"
+      ]
+    ],
+    "Task Project": [
+      [
+        "039cb6e3-4399-4083-8e3c-ff01f08d91df"
+      ]
+    ],
+    "Task Parent-task": [
+      null
+    ],
+    "Task Sub-tasks": [
+      null
+    ],
+    "Task Project name": [
+      [
+        "Exercise List"
+      ]
+    ],
+    "start time": "10:32",
+    "end time": "11:00",
+    "Roadmap Item": [],
+    "Name": "2024-01-19 10:32"
+  },
+  "9b69b6dd-2d38-494b-88f2-28f41deb5724": {
+    "url": "https://www.notion.so/2024-01-19-11-00-9b69b6dd2d38494b88f228f41deb5724",
+    "created_time": "2024-01-19T19:01:00.000Z",
+    "Task Tag": [
+      "Ginkgo"
+    ],
+    "Flag": null,
+    "Notes": null,
+    "Elapsed": 0.2,
+    "Task Name": [
+      "Ginkgo daily stand up meeting"
+    ],
+    "Task Project tags": [
+      [
+        "Ginkgo work"
+      ]
+    ],
+    "Task Project": [
+      [
+        "dfa60122-de42-401d-9d4d-fb010c170aae"
+      ]
+    ],
+    "Task Parent-task": [
+      null
+    ],
+    "Task Sub-tasks": [
+      null
+    ],
+    "Task Project name": [
+      [
+        "Ginkgo meetings"
+      ]
+    ],
+    "start time": "11:00",
+    "end time": "11:12",
+    "Roadmap Item": [],
+    "Name": "2024-01-19 11:00"
+  },
+  "4003c832-54e8-4c74-b169-03ea7cee24e1": {
+    "url": "https://www.notion.so/2024-01-19-11-12-4003c83254e84c74b16903ea7cee24e1",
+    "created_time": "2024-01-19T19:12:00.000Z",
+    "Task Tag": [
+      "Ginkgo"
+    ],
+    "Flag": null,
+    "Notes": null,
+    "Elapsed": 0.183333333333,
+    "Task Name": [
+      "Checking Exercises Post Publishing"
+    ],
+    "Task Project tags": [
+      [
+        "Ginkgo work"
+      ]
+    ],
+    "Task Project": [
+      [
+        "8ae55237-e37d-4c4c-a9f0-38aeb1925987"
+      ]
+    ],
+    "Task Parent-task": [
+      null
+    ],
+    "Task Sub-tasks": [
+      null
+    ],
+    "Task Project name": [
+      [
+        "Ginkgo app testing"
+      ]
+    ],
+    "start time": "11:12",
+    "end time": "11:23",
+    "Roadmap Item": [],
+    "Name": "2024-01-19 11:12"
+  },
+  "df157d11-99e0-4fd7-9fc2-5c44a6d50870": {
+    "url": "https://www.notion.so/2024-01-19-11-30-df157d1199e04fd79fc25c44a6d50870",
+    "created_time": "2024-01-19T19:30:00.000Z",
+    "Task Tag": [
+      "Ginkgo"
+    ],
+    "Flag": null,
+    "Notes": "2024-01-19 11:30: \n- Abel Waller’s last day at TTT.\n- Equipment shift when transitioning from left animation to right animation. Can deal with later.\n- Change exercises from time to reps\n- Write a rule on when timer should be reps or timer.\n\n https://app.clickup.com/t/8593845/GIN-1715 \n- Calf raise with balance support: currently set to 14 reps but Noel is requesting that time be set to 30 sec for functional test purposes.  https://app.clickup.com/t/8593845/GIN-1683  —> Rob says to not spend time on this because Rob will change the test.\n- 1 ticket per exercise. If multiple issues, tag Irving.\n\n—\n—",
+    "Elapsed": 0.55,
+    "Task Name": [
+      "TTT stand up meeting"
+    ],
+    "Task Project tags": [
+      [
+        "Ginkgo work"
+      ]
+    ],
+    "Task Project": [
+      [
+        "dfa60122-de42-401d-9d4d-fb010c170aae"
+      ]
+    ],
+    "Task Parent-task": [
+      null
+    ],
+    "Task Sub-tasks": [
+      null
+    ],
+    "Task Project name": [
+      [
+        "Ginkgo meetings"
+      ]
+    ],
+    "start time": "11:30",
+    "end time": "12:03",
+    "Roadmap Item": [],
+    "Name": "2024-01-19 11:30"
+  },
+  "42502f76-a15e-466d-9124-893524974925": {
+    "url": "https://www.notion.so/2024-01-19-12-48-42502f76a15e466d9124893524974925",
+    "created_time": "2024-01-19T20:48:00.000Z",
+    "Task Tag": [
+      "Ginkgo"
+    ],
+    "Flag": null,
+    "Notes": "2024-01-19 12:48\n https://ginkgohealth.slack.com/archives/C04L73GHFM0/p1705698205763929  \nto follow up with today's stand up meeting:\n - If ( Time (sec)  > 0 ) and ( Held for time  is true), then use countdown timer (seconds).\n- Else, use rep countdown.\n\nI will update exercises with ( Time (sec)  > 0 ) and ( Held for time  is false) to have ( Time (sec)  = 0 ) and more reps.\n\n https://ginkgohealth.slack.com/archives/C0283FVGZ2B/p1705698448428999 \nwould it be unreasonable to get people to count their reps for jogging or jump rope? If want them to do 60 sec of it, it would sometimes mean > 60 reps.\n—",
+    "Elapsed": 0.383333333333,
+    "Task Name": [
+      "Ginkgo communication on Slack/email"
+    ],
+    "Task Project tags": [
+      [
+        "Ginkgo work"
+      ]
+    ],
+    "Task Project": [
+      [
+        "caf14c08-d7fb-4a73-80b5-58041af446a2"
+      ]
+    ],
+    "Task Parent-task": [
+      null
+    ],
+    "Task Sub-tasks": [
+      null
+    ],
+    "Task Project name": [
+      [
+        "Ginkgo Admin"
+      ]
+    ],
+    "start time": "12:50",
+    "end time": "13:13",
+    "Roadmap Item": [],
+    "Name": "2024-01-19 12:48"
+  },
+  "df1a934c-a59b-4670-be30-8e70db3157ba": {
+    "url": "https://www.notion.so/2024-01-19-13-08-df1a934ca59b4670be308e70db3157ba",
+    "created_time": "2024-01-19T21:08:00.000Z",
+    "Task Tag": [
+      "Ginkgo"
+    ],
+    "Flag": null,
+    "Notes": null,
+    "Elapsed": 1.633333333333,
+    "Task Name": [
+      "Checking Exercises Post Publishing"
+    ],
+    "Task Project tags": [
+      [
+        "Ginkgo work"
+      ]
+    ],
+    "Task Project": [
+      [
+        "8ae55237-e37d-4c4c-a9f0-38aeb1925987"
+      ]
+    ],
+    "Task Parent-task": [
+      null
+    ],
+    "Task Sub-tasks": [
+      null
+    ],
+    "Task Project name": [
+      [
+        "Ginkgo app testing"
+      ]
+    ],
+    "start time": "13:13",
+    "end time": "14:51",
+    "Roadmap Item": [],
+    "Name": "2024-01-19 13:08"
+  },
+  "76346696-bb5a-4aed-b2bc-41eee00000a2": {
+    "url": "https://www.notion.so/2024-01-19-15-03-76346696bb5a4aedb2bc41eee00000a2",
+    "created_time": "2024-01-19T23:03:00.000Z",
+    "Task Tag": [
+      "Ginkgo"
+    ],
+    "Flag": null,
+    "Notes": null,
+    "Elapsed": 0.1,
+    "Task Name": [
+      "Checking Exercises Post Publishing"
+    ],
+    "Task Project tags": [
+      [
+        "Ginkgo work"
+      ]
+    ],
+    "Task Project": [
+      [
+        "8ae55237-e37d-4c4c-a9f0-38aeb1925987"
+      ]
+    ],
+    "Task Parent-task": [
+      null
+    ],
+    "Task Sub-tasks": [
+      null
+    ],
+    "Task Project name": [
+      [
+        "Ginkgo app testing"
+      ]
+    ],
+    "start time": "15:03",
+    "end time": "15:09",
+    "Roadmap Item": [],
+    "Name": "2024-01-19 15:03"
+  },
+  "87717ff9-0b92-43a4-8123-b6c5654bbdc9": {
+    "url": "https://www.notion.so/2024-01-19-15-20-87717ff90b9243a48123b6c5654bbdc9",
+    "created_time": "2024-01-19T23:20:00.000Z",
+    "Task Tag": [
+      "Ginkgo"
+    ],
+    "Flag": null,
+    "Notes": null,
+    "Elapsed": 0.716666666667,
+    "Task Name": [
+      "Checking Exercises Post Publishing"
+    ],
+    "Task Project tags": [
+      [
+        "Ginkgo work"
+      ]
+    ],
+    "Task Project": [
+      [
+        "8ae55237-e37d-4c4c-a9f0-38aeb1925987"
+      ]
+    ],
+    "Task Parent-task": [
+      null
+    ],
+    "Task Sub-tasks": [
+      null
+    ],
+    "Task Project name": [
+      [
+        "Ginkgo app testing"
+      ]
+    ],
+    "start time": "15:21",
+    "end time": "16:04",
+    "Roadmap Item": [],
+    "Name": "2024-01-19 15:20"
+  },
+  "47b46b02-a342-4f87-b2a6-63fd10615eab": {
+    "url": "https://www.notion.so/2024-01-19-16-28-47b46b02a3424f87b2a663fd10615eab",
+    "created_time": "2024-01-20T00:28:00.000Z",
+    "Task Tag": [
+      "life"
+    ],
+    "Flag": null,
+    "Notes": null,
+    "Elapsed": 0.133333333333,
+    "Task Name": [
+      "LinkedIn networking"
+    ],
+    "Task Project tags": [
+      [
+        "life"
+      ]
+    ],
+    "Task Project": [
+      [
+        "465e460f-f6e8-49a0-b9eb-0411a742e71c"
+      ]
+    ],
+    "Task Parent-task": [
+      null
+    ],
+    "Task Sub-tasks": [
+      null
+    ],
+    "Task Project name": [
+      [
+        "career positioning"
+      ]
+    ],
+    "start time": "16:20",
+    "end time": "16:28",
+    "Roadmap Item": [],
+    "Name": "2024-01-19 16:28"
+  },
+  "7da4b109-e10b-47d0-afa3-093df061841c": {
+    "url": "https://www.notion.so/2024-01-19-gym-7da4b109e10b47d0afa3093df061841c",
+    "created_time": "2024-01-20T03:46:00.000Z",
+    "Task Tag": [
+      "life"
+    ],
+    "Flag": null,
+    "Notes": null,
+    "Elapsed": 1.083333333333,
+    "Task Name": [
+      "gym training"
+    ],
+    "Task Project tags": [
+      [
+        "life"
+      ]
+    ],
+    "Task Project": [
+      [
+        "d28d4e92-c884-49ff-adc6-2c5125146df6"
+      ]
+    ],
+    "Task Parent-task": [
+      null
+    ],
+    "Task Sub-tasks": [
+      null
+    ],
+    "Task Project name": [
+      [
+        "gym training"
+      ]
+    ],
+    "start time": "18:00",
+    "end time": "19:05",
+    "Roadmap Item": [],
+    "Name": "2024-01-19 gym"
+  },
+  "dba1cabb-29a3-4c12-a707-f07ef0fe2073": {
+    "url": "https://www.notion.so/2024-01-19-20-58-dba1cabb29a34c12a707f07ef0fe2073",
+    "created_time": "2024-01-20T04:58:00.000Z",
+    "Task Tag": [
+      "Defy Time Fitness"
+    ],
+    "Flag": null,
+    "Notes": "https://app.asana.com/0/1195521695979971/1206275627490944/f",
+    "Elapsed": 0.133333333333,
+    "Task Name": [
+      "Coach McLoone client programs"
+    ],
+    "Task Project tags": [
+      [
+        "Defy Time Fitness"
+      ]
+    ],
+    "Task Project": [
+      [
+        "a4ecf100-912a-422f-8ad6-15b903edd579"
+      ]
+    ],
+    "Task Parent-task": [
+      null
+    ],
+    "Task Sub-tasks": [
+      null
+    ],
+    "Task Project name": [
+      [
+        "Coach McLoone"
+      ]
+    ],
+    "start time": "21:00",
+    "end time": "21:08",
+    "Roadmap Item": [],
+    "Name": "2024-01-19 20:58"
+  },
+  "9b08b7bd-6bb5-448a-af91-3b1aa13f44c9": {
+    "url": "https://www.notion.so/2024-01-19-21-26-9b08b7bd6bb5448aaf913b1aa13f44c9",
+    "created_time": "2024-01-20T05:26:00.000Z",
+    "Task Tag": [],
+    "Flag": null,
+    "Notes": "2024-01-19:  https://netflixtechblog.medium.com/recsysops-best-practices-for-operating-a-large-scale-recommender-system-95bbe195a841 \n—",
+    "Elapsed": 0.516666666667,
+    "Task Name": [
+      "Netflix articles on recommender systems"
+    ],
+    "Task Project tags": [
+      [
+        "tech ed"
+      ]
+    ],
+    "Task Project": [
+      [
+        "c8f675c4-2b24-40a2-893c-195d244961c4"
+      ]
+    ],
+    "Task Parent-task": [
+      [
+        "89c18f8e-f278-430a-88ec-8e71bae298e5"
+      ]
+    ],
+    "Task Sub-tasks": [
+      null
+    ],
+    "Task Project name": [
+      [
+        "Recommender engines learning"
+      ]
+    ],
+    "start time": "21:20",
+    "end time": "21:51",
+    "Roadmap Item": [],
+    "Name": "2024-01-19 21:26"
+  },
+  "8fa9da75-ebbb-4e69-a7ff-2327115424a1": {
+    "url": "https://www.notion.so/2024-01-19-22-01-8fa9da75ebbb4e69a7ff2327115424a1",
+    "created_time": "2024-01-20T06:01:00.000Z",
+    "Task Tag": [
+      "life"
+    ],
+    "Flag": null,
+    "Notes": null,
+    "Elapsed": 0.183333333333,
+    "Task Name": [
+      "create social media content showing my expertise"
+    ],
+    "Task Project tags": [
+      [
+        "life"
+      ]
+    ],
+    "Task Project": [
+      [
+        "465e460f-f6e8-49a0-b9eb-0411a742e71c"
+      ]
+    ],
+    "Task Parent-task": [
+      null
+    ],
+    "Task Sub-tasks": [
+      [
+        "3d5b9f63-419e-4d4c-904a-f0d66f5951a5",
+        "e545983b-a0f1-40c5-aca5-75982b6a8e66",
+        "e73c55ee-4e6c-4d55-a098-58b0f9a3f064",
+        "c25ab8fc-73db-4f88-8ace-26c5082522c4",
+        "f6f1e7b3-e46d-46c8-acee-6d58bfe42050"
+      ]
+    ],
+    "Task Project name": [
+      [
+        "career positioning"
+      ]
+    ],
+    "start time": "21:51",
+    "end time": "22:02",
+    "Roadmap Item": [],
+    "Name": "2024-01-19 22:01"
+  },
+  "a2fef6bf-b6d4-445f-a8ff-c9ccdc8b87b5": {
+    "url": "https://www.notion.so/2024-01-19-22-06-a2fef6bfb6d4445fa8ffc9ccdc8b87b5",
+    "created_time": "2024-01-20T06:06:00.000Z",
+    "Task Tag": [
+      "life"
+    ],
+    "Flag": null,
+    "Notes": "2024-01-19 There doesn’t seem to be API access for Quickbooks Self-Employed  https://developer.intuit.com/app/developer/search?keywords=self employed \n- Need to complete sandbox steps to generate API credentials.\n—",
+    "Elapsed": 0.75,
+    "Task Name": [
+      "look into Intuit API"
+    ],
+    "Task Project tags": [
+      [
+        "admin",
+        "portfolio"
+      ]
+    ],
+    "Task Project": [
+      [
+        "3a5ab0f5-2fa4-4704-ba2f-337333e9b1a1"
+      ]
+    ],
+    "Task Parent-task": [
+      null
+    ],
+    "Task Sub-tasks": [
+      null
+    ],
+    "Task Project name": [
+      [
+        "create financial dashboard"
+      ]
+    ],
+    "start time": "22:06",
+    "end time": "22:51",
+    "Roadmap Item": [],
+    "Name": ";2024-01-19 22:06"
+  },
+  "a8b3a268-8958-4e81-9102-646408992c73": {
+    "url": "https://www.notion.so/2024-01-20-09-44-a8b3a26889584e819102646408992c73",
+    "created_time": "2024-01-20T17:44:00.000Z",
+    "Task Tag": [
+      "life"
+    ],
+    "Flag": null,
+    "Notes": null,
+    "Elapsed": 0.2,
+    "Task Name": [
+      "trigger a follow up if contact has not responded to SMS after a given period "
+    ],
+    "Task Project tags": [
+      [
+        "portfolio"
+      ]
+    ],
+    "Task Project": [
+      [
+        "bedda674-2425-4390-a238-c100da992535"
+      ]
+    ],
+    "Task Parent-task": [
+      null
+    ],
+    "Task Sub-tasks": [
+      null
+    ],
+    "Task Project name": [
+      [
+        "GHL Chatbot"
+      ]
+    ],
+    "start time": "09:51",
+    "end time": "10:03",
+    "Roadmap Item": [],
+    "Name": "2024-01-20 09:44"
+  },
+  "34ef7cea-2de3-4a69-97fe-00b927ecb422": {
+    "url": "https://www.notion.so/2024-01-20-gym-34ef7cea2de34a6997fe00b927ecb422",
+    "created_time": "2024-01-21T14:01:00.000Z",
+    "Task Tag": [
+      "life"
+    ],
+    "Flag": null,
+    "Notes": null,
+    "Elapsed": 0.833333333333,
+    "Task Name": [
+      "gym training"
+    ],
+    "Task Project tags": [
+      [
+        "life"
+      ]
+    ],
+    "Task Project": [
+      [
+        "d28d4e92-c884-49ff-adc6-2c5125146df6"
+      ]
+    ],
+    "Task Parent-task": [
+      null
+    ],
+    "Task Sub-tasks": [
+      null
+    ],
+    "Task Project name": [
+      [
+        "gym training"
+      ]
+    ],
+    "start time": "11:30",
+    "end time": "12:20",
+    "Roadmap Item": [],
+    "Name": "2024-01-20 gym"
+  },
+  "be0bb10f-2a4a-498d-80d7-6439bd9b1a5c": {
+    "url": "https://www.notion.so/2024-01-20-13-15-be0bb10f2a4a498d80d76439bd9b1a5c",
+    "created_time": "2024-01-21T14:03:00.000Z",
+    "Task Tag": [],
+    "Flag": null,
+    "Notes": null,
+    "Elapsed": 5.75,
+    "Task Name": [
+      "date"
+    ],
+    "Task Project tags": [
+      [
+        "life"
+      ]
+    ],
+    "Task Project": [
+      [
+        "cd80db88-dbd7-46c4-b750-8cbcd7c52fb2"
+      ]
+    ],
+    "Task Parent-task": [
+      null
+    ],
+    "Task Sub-tasks": [
+      null
+    ],
+    "Task Project name": [
+      [
+        "social activities"
+      ]
+    ],
+    "start time": "13:15",
+    "end time": "19:00",
+    "Roadmap Item": [],
+    "Name": "2024-01-20 13:15"
+  },
+  "460b23cc-cdc9-40d2-b199-69432682ab24": {
+    "url": "https://www.notion.so/2024-01-20-19-00-460b23cccdc940d2b19969432682ab24",
+    "created_time": "2024-01-21T14:04:00.000Z",
+    "Task Tag": [],
+    "Flag": null,
+    "Notes": null,
+    "Elapsed": 3,
+    "Task Name": [
+      "seeing friends"
+    ],
+    "Task Project tags": [
+      [
+        "life"
+      ]
+    ],
+    "Task Project": [
+      [
+        "cd80db88-dbd7-46c4-b750-8cbcd7c52fb2"
+      ]
+    ],
+    "Task Parent-task": [
+      null
+    ],
+    "Task Sub-tasks": [
+      null
+    ],
+    "Task Project name": [
+      [
+        "social activities"
+      ]
+    ],
+    "start time": "19:00",
+    "end time": "22:00",
+    "Roadmap Item": [],
+    "Name": "2024-01-20 19:00"
+  },
+  "0560afd4-5246-4274-80fc-37e560173e99": {
+    "url": "https://www.notion.so/2024-01-21-08-04-0560afd45246427480fc37e560173e99",
+    "created_time": "2024-01-21T16:04:00.000Z",
+    "Task Tag": [
+      "life"
+    ],
+    "Flag": null,
+    "Notes": null,
+    "Elapsed": 0.183333333333,
+    "Task Name": [
+      "CloudWolf virtual study session"
+    ],
+    "Task Project tags": [
+      [
+        "tech ed"
+      ]
+    ],
+    "Task Project": [
+      [
+        "2f1c2400-f1a8-4c63-99f2-a85ae57375cb"
+      ]
+    ],
+    "Task Parent-task": [
+      null
+    ],
+    "Task Sub-tasks": [
+      null
+    ],
+    "Task Project name": [
+      [
+        "AWS Certified Cloud Practitioner certification"
+      ]
+    ],
+    "start time": "08:01",
+    "end time": "08:12",
+    "Roadmap Item": [],
+    "Name": "2024-01-21 08:04"
+  },
+  "73d99a60-3fe9-431f-b648-f1152d8ba4a4": {
+    "url": "https://www.notion.so/2024-01-21-08-13-73d99a603fe9431fb648f1152d8ba4a4",
+    "created_time": "2024-01-21T16:13:00.000Z",
+    "Task Tag": [],
+    "Flag": null,
+    "Notes": "2024-01-21 8:13  https://netflixtechblog.com/the-next-step-in-personalization-dynamic-sizzles-4dc4ce2011ef \n—",
+    "Elapsed": 0.45,
+    "Task Name": [
+      "Netflix articles on recommender systems"
+    ],
+    "Task Project tags": [
+      [
+        "tech ed"
+      ]
+    ],
+    "Task Project": [
+      [
+        "c8f675c4-2b24-40a2-893c-195d244961c4"
+      ]
+    ],
+    "Task Parent-task": [
+      [
+        "89c18f8e-f278-430a-88ec-8e71bae298e5"
+      ]
+    ],
+    "Task Sub-tasks": [
+      null
+    ],
+    "Task Project name": [
+      [
+        "Recommender engines learning"
+      ]
+    ],
+    "start time": "08:13",
+    "end time": "08:40",
+    "Roadmap Item": [],
+    "Name": "2024-01-21 08:13"
+  },
+  "4e2757b0-d846-43c4-bc8a-dc1edf07b08d": {
+    "url": "https://www.notion.so/2024-01-21-08-42-4e2757b0d84643c4bc8adc1edf07b08d",
+    "created_time": "2024-01-21T16:42:00.000Z",
+    "Task Tag": [
+      "life"
+    ],
+    "Flag": null,
+    "Notes": null,
+    "Elapsed": 1.166666666667,
+    "Task Name": [
+      "create conda environment for scraping"
+    ],
+    "Task Project tags": [
+      [
+        "admin",
+        "portfolio"
+      ]
+    ],
+    "Task Project": [
+      [
+        "3a5ab0f5-2fa4-4704-ba2f-337333e9b1a1"
+      ]
+    ],
+    "Task Parent-task": [
+      null
+    ],
+    "Task Sub-tasks": [
+      null
+    ],
+    "Task Project name": [
+      [
+        "create financial dashboard"
+      ]
+    ],
+    "start time": "08:40",
+    "end time": "09:50",
+    "Roadmap Item": [],
+    "Name": "2024-01-21 08:42"
+  },
+  "d45fcc4e-3a03-4d0d-8231-deff8daf1ddb": {
+    "url": "https://www.notion.so/2024-01-21-09-53-d45fcc4e3a034d0d8231deff8daf1ddb",
+    "created_time": "2024-01-21T17:53:00.000Z",
+    "Task Tag": [
+      "life"
+    ],
+    "Flag": null,
+    "Notes": null,
+    "Elapsed": 0.15,
+    "Task Name": [
+      "CloudWolf virtual study session"
+    ],
+    "Task Project tags": [
+      [
+        "tech ed"
+      ]
+    ],
+    "Task Project": [
+      [
+        "2f1c2400-f1a8-4c63-99f2-a85ae57375cb"
+      ]
+    ],
+    "Task Parent-task": [
+      null
+    ],
+    "Task Sub-tasks": [
+      null
+    ],
+    "Task Project name": [
+      [
+        "AWS Certified Cloud Practitioner certification"
+      ]
+    ],
+    "start time": "09:50",
+    "end time": "09:59",
+    "Roadmap Item": [],
+    "Name": "2024-01-21 09:53"
+  },
+  "f9c5ee8f-477e-4938-84a1-c336d2965109": {
+    "url": "https://www.notion.so/2024-01-21-session-w-Melissa-f9c5ee8f477e493884a1c336d2965109",
+    "created_time": "2024-01-21T18:13:00.000Z",
+    "Task Tag": [
+      "Defy Time Fitness"
+    ],
+    "Flag": null,
+    "Notes": null,
+    "Elapsed": 0.216666666667,
+    "Task Name": [
+      "PT session: Melissa"
+    ],
+    "Task Project tags": [
+      [
+        "Defy Time Fitness"
+      ]
+    ],
+    "Task Project": [
+      [
+        "dfe7bff5-da21-4a91-a4f8-57964b75a05b"
+      ]
+    ],
+    "Task Parent-task": [
+      [
+        "63d24077-7901-4f43-966d-b0e3c8f9e1e6"
+      ]
+    ],
+    "Task Sub-tasks": [
+      null
+    ],
+    "Task Project name": [
+      [
+        "Defy Time Fitness clients"
+      ]
+    ],
+    "start time": "10:00",
+    "end time": "10:13",
+    "Roadmap Item": [],
+    "Name": "2024-01-21 session w/ Melissa"
+  },
+  "c4494c11-63c0-44da-92c6-c928040f13fb": {
+    "url": "https://www.notion.so/2024-01-21-10-26s-c4494c1163c044da92c6c928040f13fb",
+    "created_time": "2024-01-21T18:26:00.000Z",
+    "Task Tag": [
+      "life"
+    ],
+    "Flag": null,
+    "Notes": null,
+    "Elapsed": 0.166666666667,
+    "Task Name": [
+      "calendar planning"
+    ],
+    "Task Project tags": [
+      [
+        "admin"
+      ]
+    ],
+    "Task Project": [
+      [
+        "feb21887-2f05-462f-b1af-760a358e7ca0"
+      ]
+    ],
+    "Task Parent-task": [
+      null
+    ],
+    "Task Sub-tasks": [
+      null
+    ],
+    "Task Project name": [
+      [
+        "Admin"
+      ]
+    ],
+    "start time": "10:26",
+    "end time": "10:36",
+    "Roadmap Item": [],
+    "Name": "2024-01-21 10:26s"
+  },
+  "7eaf32bb-57c7-4dd1-9fba-7cdff348aa45": {
+    "url": "https://www.notion.so/2024-01-21-10-49-7eaf32bb57c74dd19fba7cdff348aa45",
+    "created_time": "2024-01-21T18:49:00.000Z",
+    "Task Tag": [
+      "Defy Time Fitness"
+    ],
+    "Flag": null,
+    "Notes": null,
+    "Elapsed": 0.05,
+    "Task Name": [
+      "coaching admin: Melissa"
+    ],
+    "Task Project tags": [
+      [
+        "Defy Time Fitness"
+      ]
+    ],
+    "Task Project": [
+      [
+        "dfe7bff5-da21-4a91-a4f8-57964b75a05b"
+      ]
+    ],
+    "Task Parent-task": [
+      [
+        "63d24077-7901-4f43-966d-b0e3c8f9e1e6"
+      ]
+    ],
+    "Task Sub-tasks": [
+      null
+    ],
+    "Task Project name": [
+      [
+        "Defy Time Fitness clients"
+      ]
+    ],
+    "start time": "10:49",
+    "end time": "10:52",
+    "Roadmap Item": [],
+    "Name": "2024-01-21 10:49"
+  },
+  "67c20570-8d8b-44eb-9506-591e50b56dc7": {
+    "url": "https://www.notion.so/2024-01-21-11-03-67c205708d8b44eb9506591e50b56dc7",
+    "created_time": "2024-01-21T19:03:00.000Z",
+    "Task Tag": [],
+    "Flag": null,
+    "Notes": null,
+    "Elapsed": 0.216666666667,
+    "Task Name": [
+      "Keeping in touch with old clients"
+    ],
+    "Task Project tags": [
+      [
+        "life"
+      ]
+    ],
+    "Task Project": [
+      [
+        "465e460f-f6e8-49a0-b9eb-0411a742e71c"
+      ]
+    ],
+    "Task Parent-task": [
+      null
+    ],
+    "Task Sub-tasks": [
+      null
+    ],
+    "Task Project name": [
+      [
+        "career positioning"
+      ]
+    ],
+    "start time": "10:52",
+    "end time": "11:05",
+    "Roadmap Item": [],
+    "Name": "2024-01-21 11:03"
+  },
+  "ed0a243e-c213-4edf-b66d-b132a870f18c": {
+    "url": "https://www.notion.so/2024-01-21-11-23-ed0a243ec2134edfb66db132a870f18c",
+    "created_time": "2024-01-21T19:23:00.000Z",
+    "Task Tag": [
+      "life"
+    ],
+    "Flag": [
+      {
+        "id": "d9fc9e36-3e3c-49b4-8332-5f9fff407c10",
+        "name": "do not bill",
+        "color": "pink"
+      }
+    ],
+    "Notes": "2024-01-21\n- ghl_reply Lambda still working if contact has money_magnet_lead tag\n—",
+    "Elapsed": 1.333333333333,
+    "Task Name": [
+      "trigger a follow up if contact has not responded to SMS after a given period "
+    ],
+    "Task Project tags": [
+      [
+        "portfolio"
+      ]
+    ],
+    "Task Project": [
+      [
+        "bedda674-2425-4390-a238-c100da992535"
+      ]
+    ],
+    "Task Parent-task": [
+      null
+    ],
+    "Task Sub-tasks": [
+      null
+    ],
+    "Task Project name": [
+      [
+        "GHL Chatbot"
+      ]
+    ],
+    "start time": "11:25",
+    "end time": "12:45",
+    "Roadmap Item": [],
+    "Name": "2024-01-21 11:23"
+  },
+  "c9f6df8b-f3fe-4e25-aa2c-54319cc69c7d": {
+    "url": "https://www.notion.so/2024-01-21-13-50-c9f6df8bf3fe4e25aa2c54319cc69c7d",
+    "created_time": "2024-01-21T21:04:00.000Z",
+    "Task Tag": [
+      "life"
+    ],
+    "Flag": null,
+    "Notes": null,
+    "Elapsed": 0.316666666667,
+    "Task Name": [
+      "trigger a follow up if contact has not responded to SMS after a given period "
+    ],
+    "Task Project tags": [
+      [
+        "portfolio"
+      ]
+    ],
+    "Task Project": [
+      [
+        "bedda674-2425-4390-a238-c100da992535"
+      ]
+    ],
+    "Task Parent-task": [
+      null
+    ],
+    "Task Sub-tasks": [
+      null
+    ],
+    "Task Project name": [
+      [
+        "GHL Chatbot"
+      ]
+    ],
+    "start time": "12:45",
+    "end time": "13:04",
+    "Roadmap Item": [],
+    "Name": "2024-01-21 13:50"
+  },
+  "277290e3-b341-4abc-be1a-5e34857bb22b": {
+    "url": "https://www.notion.so/2024-01-21-improv-277290e3b3414abcbe1a5e34857bb22b",
+    "created_time": "2024-01-22T01:56:00.000Z",
+    "Task Tag": [],
+    "Flag": null,
+    "Notes": null,
+    "Elapsed": 2.5,
+    "Task Name": [
+      "improv long form 1 class"
+    ],
+    "Task Project tags": [
+      [
+        "life"
+      ]
+    ],
+    "Task Project": [
+      [
+        "cb6e69d8-ff37-49e4-8a7c-a4a1c8f368d9"
+      ]
+    ],
+    "Task Parent-task": [
+      null
+    ],
+    "Task Sub-tasks": [
+      null
+    ],
+    "Task Project name": [
+      [
+        "improv Long Form 1"
+      ]
+    ],
+    "start time": "14:00",
+    "end time": "16:30",
+    "Roadmap Item": [],
+    "Name": "2024-01-21 improv"
+  },
+  "e2f82e90-3ce4-4363-9326-5f2e41e6db21": {
+    "url": "https://www.notion.so/2024-01-14-improv-e2f82e903ce4436393265f2e41e6db21",
+    "created_time": "2024-01-22T02:00:00.000Z",
+    "Task Tag": [],
+    "Flag": null,
+    "Notes": null,
+    "Elapsed": 2.5,
+    "Task Name": [
+      "improv long form 1 class"
+    ],
+    "Task Project tags": [
+      [
+        "life"
+      ]
+    ],
+    "Task Project": [
+      [
+        "cb6e69d8-ff37-49e4-8a7c-a4a1c8f368d9"
+      ]
+    ],
+    "Task Parent-task": [
+      null
+    ],
+    "Task Sub-tasks": [
+      null
+    ],
+    "Task Project name": [
+      [
+        "improv Long Form 1"
+      ]
+    ],
+    "start time": "14:00",
+    "end time": "16:30",
+    "Roadmap Item": [],
+    "Name": "2024-01-14 improv"
+  },
+  "68f0eec1-ef47-42e6-8c3c-dfd8e2e64dd1": {
+    "url": "https://www.notion.so/2024-01-21-18-53-68f0eec1ef4742e68c3cdfd8e2e64dd1",
+    "created_time": "2024-01-22T02:53:00.000Z",
+    "Task Tag": [
+      "life"
+    ],
+    "Flag": null,
+    "Notes": null,
+    "Elapsed": 0.283333333333,
+    "Task Name": [
+      "trigger a follow up if contact has not responded to SMS after a given period "
+    ],
+    "Task Project tags": [
+      [
+        "portfolio"
+      ]
+    ],
+    "Task Project": [
+      [
+        "bedda674-2425-4390-a238-c100da992535"
+      ]
+    ],
+    "Task Parent-task": [
+      null
+    ],
+    "Task Sub-tasks": [
+      null
+    ],
+    "Task Project name": [
+      [
+        "GHL Chatbot"
+      ]
+    ],
+    "start time": "18:53",
+    "end time": "19:10",
+    "Roadmap Item": [],
+    "Name": "2024-01-21 18:53"
+  },
+  "132adb7b-3456-4475-bad3-dab950c490ee": {
+    "url": "https://www.notion.so/2024-01-21-19-55-132adb7b34564475bad3dab950c490ee",
+    "created_time": "2024-01-22T03:55:00.000Z",
+    "Task Tag": [
+      "life"
+    ],
+    "Flag": null,
+    "Notes": "2024-01-21 19:45\nAdded new contact field “Workflow Follow Ups” under “additional Info” section. Each time a contact goes through the workflow “silvia follow up : 1705772809297”, this value increases by 1. \n—",
+    "Elapsed": 2.35,
+    "Task Name": [
+      "trigger a follow up if contact has not responded to SMS after a given period "
+    ],
+    "Task Project tags": [
+      [
+        "portfolio"
+      ]
+    ],
+    "Task Project": [
+      [
+        "bedda674-2425-4390-a238-c100da992535"
+      ]
+    ],
+    "Task Parent-task": [
+      null
+    ],
+    "Task Sub-tasks": [
+      null
+    ],
+    "Task Project name": [
+      [
+        "GHL Chatbot"
+      ]
+    ],
+    "start time": "19:45",
+    "end time": "22:06",
+    "Roadmap Item": [],
+    "Name": "2024-01-21 19:55"
+  },
+  "18c14190-81a4-4543-83a9-676dbcf70234": {
+    "url": "https://www.notion.so/2024-01-21-22-17-18c1419081a4454383a9676dbcf70234",
+    "created_time": "2024-01-22T06:17:00.000Z",
+    "Task Tag": [
+      "life"
+    ],
+    "Flag": null,
+    "Notes": "2024-01-21 22:17 successfully use ghl_reply_lambda to send a “Hi” follow up message. Next, need to have it cycle through a variety of messages.\n—",
+    "Elapsed": 0.066666666667,
+    "Task Name": [
+      "trigger a follow up if contact has not responded to SMS after a given period "
+    ],
+    "Task Project tags": [
+      [
+        "portfolio"
+      ]
+    ],
+    "Task Project": [
+      [
+        "bedda674-2425-4390-a238-c100da992535"
+      ]
+    ],
+    "Task Parent-task": [
+      null
+    ],
+    "Task Sub-tasks": [
+      null
+    ],
+    "Task Project name": [
+      [
+        "GHL Chatbot"
+      ]
+    ],
+    "start time": "22:17",
+    "end time": "22:21",
+    "Roadmap Item": [],
+    "Name": "2024-01-21 22:17"
+  }
+}

@@ -1,0 +1,894 @@
+[
+  {
+    "object": "page",
+    "id": "47e6bba3-76f1-41dc-93bb-1a4f0e1da75c",
+    "created_time": "2023-12-12T12:01:00.000Z",
+    "last_edited_time": "2023-12-12T13:42:00.000Z",
+    "created_by": {
+      "object": "user",
+      "id": "f4b38e73-d5f6-43c6-99b5-a5cbf1fb60c2"
+    },
+    "last_edited_by": {
+      "object": "user",
+      "id": "f4b38e73-d5f6-43c6-99b5-a5cbf1fb60c2"
+    },
+    "cover": null,
+    "icon": null,
+    "parent": {
+      "type": "database_id",
+      "database_id": "bcd0d296-955b-4b92-8621-e4b96ebad29c"
+    },
+    "archived": false,
+    "properties": {
+      "Task Tag": {
+        "id": "%3BixQ",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [
+            {
+              "type": "multi_select",
+              "multi_select": [
+                {
+                  "id": "b25bcc0d-a83f-4a66-8e1b-ef8d00bc8284",
+                  "name": "life",
+                  "color": "gray"
+                }
+              ]
+            }
+          ],
+          "function": "show_original"
+        }
+      },
+      "Flag": {
+        "id": "B%5DwL",
+        "type": "multi_select",
+        "multi_select": []
+      },
+      "Created time": {
+        "id": "B%60jT",
+        "type": "created_time",
+        "created_time": "2023-12-12T12:01:00.000Z"
+      },
+      "Notes": {
+        "id": "GKD%3C",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "2023-12-12 00:46 ",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "2023-12-12 00:46 ",
+            "href": null
+          },
+          {
+            "type": "mention",
+            "mention": {
+              "type": "page",
+              "page": {
+                "id": "417e1661-087a-4d58-8180-a3f2af85030e"
+              }
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Untitled",
+            "href": "https://www.notion.so/417e1661087a4d588180a3f2af85030e"
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": " \n—",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": " \n—",
+            "href": null
+          }
+        ]
+      },
+      "Elapsed": {
+        "id": "W%5Bxa",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 4.55
+        }
+      },
+      "Projects": {
+        "id": "WgYt",
+        "type": "relation",
+        "relation": [],
+        "has_more": false
+      },
+      "Start min": {
+        "id": "Xun_",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 46
+        }
+      },
+      "summary": {
+        "id": "%5EhRz",
+        "type": "relation",
+        "relation": [],
+        "has_more": false
+      },
+      "End min": {
+        "id": "%60s%3AV",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 19
+        }
+      },
+      "follow up task": {
+        "id": "bMxq",
+        "type": "relation",
+        "relation": [],
+        "has_more": false
+      },
+      "URL": {
+        "id": "bidc",
+        "type": "url",
+        "url": null
+      },
+      "End hr": {
+        "id": "ex%3C%40",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 5
+        }
+      },
+      "Tasks": {
+        "id": "iYKi",
+        "type": "relation",
+        "relation": [
+          {
+            "id": "97c9bb75-3d95-4997-b910-56264885be50"
+          }
+        ],
+        "has_more": false
+      },
+      "Last edited": {
+        "id": "jZsf",
+        "type": "last_edited_time",
+        "last_edited_time": "2023-12-12T13:42:00.000Z"
+      },
+      "Project tag": {
+        "id": "nWB%40",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [],
+          "function": "show_original"
+        }
+      },
+      "start time": {
+        "id": "w%3FoM",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "00:46",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "00:46",
+            "href": null
+          }
+        ]
+      },
+      "Project (Rollup)": {
+        "id": "w%3Ftw",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [
+            {
+              "type": "relation",
+              "relation": []
+            }
+          ],
+          "function": "show_unique"
+        }
+      },
+      "Start hr": {
+        "id": "wZPX",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 0
+        }
+      },
+      "end time": {
+        "id": "xIny",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "05:19",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "05:19",
+            "href": null
+          }
+        ]
+      },
+      "Roadmap Item": {
+        "id": "y%7BQt",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [
+            {
+              "type": "relation",
+              "relation": []
+            }
+          ],
+          "function": "show_original"
+        }
+      },
+      "Name": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "2023-12-12 00:46",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "2023-12-12 00:46",
+            "href": null
+          }
+        ]
+      }
+    },
+    "url": "https://www.notion.so/2023-12-12-00-46-47e6bba376f141dc93bb1a4f0e1da75c",
+    "public_url": "https://sand-gallimimus-e92.notion.site/2023-12-12-00-46-47e6bba376f141dc93bb1a4f0e1da75c"
+  },
+  {
+    "object": "page",
+    "id": "e20d416b-41d8-4d00-8671-d225e349b09f",
+    "created_time": "2023-12-12T05:50:00.000Z",
+    "last_edited_time": "2023-12-12T12:01:00.000Z",
+    "created_by": {
+      "object": "user",
+      "id": "f4b38e73-d5f6-43c6-99b5-a5cbf1fb60c2"
+    },
+    "last_edited_by": {
+      "object": "user",
+      "id": "f4b38e73-d5f6-43c6-99b5-a5cbf1fb60c2"
+    },
+    "cover": null,
+    "icon": null,
+    "parent": {
+      "type": "database_id",
+      "database_id": "bcd0d296-955b-4b92-8621-e4b96ebad29c"
+    },
+    "archived": false,
+    "properties": {
+      "Task Tag": {
+        "id": "%3BixQ",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [
+            {
+              "type": "multi_select",
+              "multi_select": [
+                {
+                  "id": "b25bcc0d-a83f-4a66-8e1b-ef8d00bc8284",
+                  "name": "life",
+                  "color": "gray"
+                }
+              ]
+            }
+          ],
+          "function": "show_original"
+        }
+      },
+      "Flag": {
+        "id": "B%5DwL",
+        "type": "multi_select",
+        "multi_select": []
+      },
+      "Created time": {
+        "id": "B%60jT",
+        "type": "created_time",
+        "created_time": "2023-12-12T05:50:00.000Z"
+      },
+      "Notes": {
+        "id": "GKD%3C",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "2023-12-11 21:50\n- ",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "2023-12-11 21:50\n- ",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "An error occurred on line 100 in /var/task/data_functions.py: module 'os' has no attribute 'add_dll_directory'.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": true,
+              "color": "default"
+            },
+            "plain_text": "An error occurred on line 100 in /var/task/data_functions.py: module 'os' has no attribute 'add_dll_directory'.",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "\n- \n—",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "\n- \n—",
+            "href": null
+          }
+        ]
+      },
+      "Elapsed": {
+        "id": "W%5Bxa",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 2.933333333333
+        }
+      },
+      "Projects": {
+        "id": "WgYt",
+        "type": "relation",
+        "relation": [],
+        "has_more": false
+      },
+      "Start min": {
+        "id": "Xun_",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 50
+        }
+      },
+      "summary": {
+        "id": "%5EhRz",
+        "type": "relation",
+        "relation": [],
+        "has_more": false
+      },
+      "End min": {
+        "id": "%60s%3AV",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 46
+        }
+      },
+      "follow up task": {
+        "id": "bMxq",
+        "type": "relation",
+        "relation": [],
+        "has_more": false
+      },
+      "URL": {
+        "id": "bidc",
+        "type": "url",
+        "url": null
+      },
+      "End hr": {
+        "id": "ex%3C%40",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 24
+        }
+      },
+      "Tasks": {
+        "id": "iYKi",
+        "type": "relation",
+        "relation": [
+          {
+            "id": "87d4f261-9eef-4dec-9b2e-36eabc2fc071"
+          }
+        ],
+        "has_more": false
+      },
+      "Last edited": {
+        "id": "jZsf",
+        "type": "last_edited_time",
+        "last_edited_time": "2023-12-12T12:01:00.000Z"
+      },
+      "Project tag": {
+        "id": "nWB%40",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [],
+          "function": "show_original"
+        }
+      },
+      "start time": {
+        "id": "w%3FoM",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "21:50",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "21:50",
+            "href": null
+          }
+        ]
+      },
+      "Project (Rollup)": {
+        "id": "w%3Ftw",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [
+            {
+              "type": "relation",
+              "relation": []
+            }
+          ],
+          "function": "show_unique"
+        }
+      },
+      "Start hr": {
+        "id": "wZPX",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 21
+        }
+      },
+      "end time": {
+        "id": "xIny",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "24:46",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "24:46",
+            "href": null
+          }
+        ]
+      },
+      "Roadmap Item": {
+        "id": "y%7BQt",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [
+            {
+              "type": "relation",
+              "relation": []
+            }
+          ],
+          "function": "show_original"
+        }
+      },
+      "Name": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "2023-12-11 21:50",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "2023-12-11 21:50",
+            "href": null
+          }
+        ]
+      }
+    },
+    "url": "https://www.notion.so/2023-12-11-21-50-e20d416b41d84d008671d225e349b09f",
+    "public_url": "https://sand-gallimimus-e92.notion.site/2023-12-11-21-50-e20d416b41d84d008671d225e349b09f"
+  },
+  {
+    "object": "page",
+    "id": "c6bd7066-82f4-4e85-ba23-5db2eea7c6ea",
+    "created_time": "2024-01-10T20:00:00.000Z",
+    "last_edited_time": "2024-01-10T20:24:00.000Z",
+    "created_by": {
+      "object": "user",
+      "id": "f4b38e73-d5f6-43c6-99b5-a5cbf1fb60c2"
+    },
+    "last_edited_by": {
+      "object": "user",
+      "id": "f4b38e73-d5f6-43c6-99b5-a5cbf1fb60c2"
+    },
+    "cover": null,
+    "icon": null,
+    "parent": {
+      "type": "database_id",
+      "database_id": "bcd0d296-955b-4b92-8621-e4b96ebad29c"
+    },
+    "archived": false,
+    "properties": {
+      "Task Tag": {
+        "id": "%3BixQ",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [
+            {
+              "type": "multi_select",
+              "multi_select": [
+                {
+                  "id": "6ce47b19-7220-436a-b075-7f16c617d6ba",
+                  "name": "Defy Time Fitness",
+                  "color": "blue"
+                }
+              ]
+            }
+          ],
+          "function": "show_original"
+        }
+      },
+      "Flag": {
+        "id": "B%5DwL",
+        "type": "multi_select",
+        "multi_select": []
+      },
+      "Created time": {
+        "id": "B%60jT",
+        "type": "created_time",
+        "created_time": "2024-01-10T20:00:00.000Z"
+      },
+      "Notes": {
+        "id": "GKD%3C",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "2024-01-10 12:00 ",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "2024-01-10 12:00 ",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "https://app.asana.com/0/1195521695979971/1206304573045450/f",
+              "link": {
+                "url": "https://app.asana.com/0/1195521695979971/1206304573045450/f"
+              }
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "https://app.asana.com/0/1195521695979971/1206304573045450/f",
+            "href": "https://app.asana.com/0/1195521695979971/1206304573045450/f"
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "\n—",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "\n—",
+            "href": null
+          }
+        ]
+      },
+      "Elapsed": {
+        "id": "W%5Bxa",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 0.316666666667
+        }
+      },
+      "Projects": {
+        "id": "WgYt",
+        "type": "relation",
+        "relation": [],
+        "has_more": false
+      },
+      "Start min": {
+        "id": "Xun_",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 4
+        }
+      },
+      "summary": {
+        "id": "%5EhRz",
+        "type": "relation",
+        "relation": [],
+        "has_more": false
+      },
+      "End min": {
+        "id": "%60s%3AV",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 23
+        }
+      },
+      "follow up task": {
+        "id": "bMxq",
+        "type": "relation",
+        "relation": [],
+        "has_more": false
+      },
+      "URL": {
+        "id": "bidc",
+        "type": "url",
+        "url": null
+      },
+      "End hr": {
+        "id": "ex%3C%40",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 12
+        }
+      },
+      "Tasks": {
+        "id": "iYKi",
+        "type": "relation",
+        "relation": [
+          {
+            "id": "6e80d6c7-3ab6-42c2-b241-328ed965645f"
+          }
+        ],
+        "has_more": false
+      },
+      "Last edited": {
+        "id": "jZsf",
+        "type": "last_edited_time",
+        "last_edited_time": "2024-01-10T20:24:00.000Z"
+      },
+      "Project tag": {
+        "id": "nWB%40",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [],
+          "function": "show_original"
+        }
+      },
+      "start time": {
+        "id": "w%3FoM",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "12:04",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "12:04",
+            "href": null
+          }
+        ]
+      },
+      "Project (Rollup)": {
+        "id": "w%3Ftw",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [
+            {
+              "type": "relation",
+              "relation": []
+            }
+          ],
+          "function": "show_unique"
+        }
+      },
+      "Start hr": {
+        "id": "wZPX",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 12
+        }
+      },
+      "end time": {
+        "id": "xIny",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "12:23",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "12:23",
+            "href": null
+          }
+        ]
+      },
+      "Roadmap Item": {
+        "id": "y%7BQt",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [
+            {
+              "type": "relation",
+              "relation": []
+            }
+          ],
+          "function": "show_original"
+        }
+      },
+      "Name": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "2024-01-10 12:00",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "2024-01-10 12:00",
+            "href": null
+          }
+        ]
+      }
+    },
+    "url": "https://www.notion.so/2024-01-10-12-00-c6bd706682f44e85ba235db2eea7c6ea",
+    "public_url": "https://sand-gallimimus-e92.notion.site/2024-01-10-12-00-c6bd706682f44e85ba235db2eea7c6ea"
+  }
+]
