@@ -7,3 +7,6 @@ git commit -m "$1"
 git push --force private cloud
 git update-ref refs/heads/main HEAD^
 git reset HEAD
+git add data
+git commit -m "$1"
+git push private cloud
