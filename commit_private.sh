@@ -1,4 +1,5 @@
 # commit_private.sh
+# test
 git add -f private
 git add -f data
 git commit -m "$1"
