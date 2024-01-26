@@ -1,0 +1,293 @@
+{
+  "object": "page",
+  "id": "4724abef-8c3e-4736-b2b3-33680bd83929",
+  "created_time": "2023-11-22T19:09:00.000Z",
+  "last_edited_time": "2023-12-08T16:03:00.000Z",
+  "created_by": {
+    "object": "user",
+    "id": "f4b38e73-d5f6-43c6-99b5-a5cbf1fb60c2"
+  },
+  "last_edited_by": {
+    "object": "user",
+    "id": "f4b38e73-d5f6-43c6-99b5-a5cbf1fb60c2"
+  },
+  "cover": null,
+  "icon": {
+    "type": "external",
+    "external": {
+      "url": "https://www.notion.so/icons/briefcase_green.svg"
+    }
+  },
+  "parent": {
+    "type": "database_id",
+    "database_id": "b6b0367a-e451-48d3-b985-3464e43c6363"
+  },
+  "archived": false,
+  "properties": {
+    "Project (parent task)": {
+      "id": "%3A%5BBv",
+      "type": "rollup",
+      "rollup": {
+        "type": "array",
+        "array": [],
+        "function": "show_original"
+      }
+    },
+    "Notes": {
+      "id": "HqzX",
+      "type": "rich_text",
+      "rich_text": []
+    },
+    "total subtask time": {
+      "id": "JgvN",
+      "type": "formula",
+      "formula": {
+        "type": "number",
+        "number": 0
+      }
+    },
+    "when initiated": {
+      "id": "PDk%3E",
+      "type": "relation",
+      "relation": [
+        {
+          "id": "308af9f6-ed2d-4e60-9000-c1c2005d6e8d"
+        }
+      ],
+      "has_more": false
+    },
+    "work log": {
+      "id": "W%3CF%7D",
+      "type": "relation",
+      "relation": [],
+      "has_more": false
+    },
+    "initiation notes": {
+      "id": "WWf%7C",
+      "type": "rollup",
+      "rollup": {
+        "type": "array",
+        "array": [
+          {
+            "type": "rich_text",
+            "rich_text": []
+          }
+        ],
+        "function": "show_original"
+      }
+    },
+    "Last edited time": {
+      "id": "YMf~",
+      "type": "last_edited_time",
+      "last_edited_time": "2023-12-08T16:03:00.000Z"
+    },
+    "total time": {
+      "id": "ZbUH",
+      "type": "rollup",
+      "rollup": {
+        "type": "number",
+        "number": 0.15,
+        "function": "sum"
+      }
+    },
+    "Roadmap Item": {
+      "id": "Zjf%3A",
+      "type": "relation",
+      "relation": [],
+      "has_more": false
+    },
+    "Achieve by": {
+      "id": "%5BI%60~",
+      "type": "relation",
+      "relation": [],
+      "has_more": false
+    },
+    "Subtasks completion": {
+      "id": "%60R%5Bd",
+      "type": "rollup",
+      "rollup": {
+        "type": "number",
+        "number": 0,
+        "function": "count_per_group"
+      }
+    },
+    "URL": {
+      "id": "fJSy",
+      "type": "url",
+      "url": null
+    },
+    "Notes from Ginkgo log": {
+      "id": "flG%7D",
+      "type": "rollup",
+      "rollup": {
+        "type": "array",
+        "array": [],
+        "function": "show_original"
+      }
+    },
+    "summarized time tracking": {
+      "id": "iv%3FP",
+      "type": "relation",
+      "relation": [],
+      "has_more": false
+    },
+    "Notes from log": {
+      "id": "k~hM",
+      "type": "rollup",
+      "rollup": {
+        "type": "array",
+        "array": [
+          {
+            "type": "rich_text",
+            "rich_text": []
+          }
+        ],
+        "function": "show_original"
+      }
+    },
+    "Created time": {
+      "id": "l%40Cz",
+      "type": "created_time",
+      "created_time": "2023-11-22T19:09:00.000Z"
+    },
+    "time tracking": {
+      "id": "mnXI",
+      "type": "relation",
+      "relation": [
+        {
+          "id": "01d687ba-93ea-4917-8362-3ae0cea4d003"
+        }
+      ],
+      "has_more": false
+    },
+    "Project tags": {
+      "id": "q%5CDx",
+      "type": "rollup",
+      "rollup": {
+        "type": "array",
+        "array": [
+          {
+            "type": "multi_select",
+            "multi_select": [
+              {
+                "id": "kUME",
+                "name": "Ginkgo work",
+                "color": "orange"
+              }
+            ]
+          }
+        ],
+        "function": "show_original"
+      }
+    },
+    "Initiation": {
+      "id": "uqxf",
+      "type": "relation",
+      "relation": [],
+      "has_more": false
+    },
+    "Name": {
+      "id": "title",
+      "type": "title",
+      "title": [
+        {
+          "type": "text",
+          "text": {
+            "content": "2023-11-22 provide list of published exercise IDs to account for bundle asset updates",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "2023-11-22 provide list of published exercise IDs to account for bundle asset updates",
+          "href": null
+        }
+      ]
+    },
+    "Tags": {
+      "id": "notion%3A%2F%2Ftasks%2Ftags_property",
+      "type": "multi_select",
+      "multi_select": [
+        {
+          "id": "53fc9868-911f-4c97-b5e8-9fd704e81ade",
+          "name": "Ginkgo",
+          "color": "green"
+        }
+      ]
+    },
+    "Assignee": {
+      "id": "notion%3A%2F%2Ftasks%2Fassign_property",
+      "type": "people",
+      "people": []
+    },
+    "Status": {
+      "id": "notion%3A%2F%2Ftasks%2Fstatus_property",
+      "type": "status",
+      "status": {
+        "id": "done",
+        "name": "Done",
+        "color": "green"
+      }
+    },
+    "Due": {
+      "id": "notion%3A%2F%2Ftasks%2Fdue_date_property",
+      "type": "date",
+      "date": null
+    },
+    "Priority": {
+      "id": "notion%3A%2F%2Ftasks%2Fpriority_property",
+      "type": "select",
+      "select": null
+    },
+    "Sub-tasks": {
+      "id": "notion%3A%2F%2Ftasks%2Fsub_task_relation",
+      "type": "relation",
+      "relation": [],
+      "has_more": false
+    },
+    "Parent-task": {
+      "id": "notion%3A%2F%2Ftasks%2Fparent_task_relation",
+      "type": "relation",
+      "relation": [],
+      "has_more": false
+    },
+    "Sprint": {
+      "id": "notion%3A%2F%2Ftasks%2Ftask_sprint_relation",
+      "type": "relation",
+      "relation": [],
+      "has_more": false
+    },
+    "Project": {
+      "id": "notion%3A%2F%2Ftasks%2Ftask_to_project_relation",
+      "type": "relation",
+      "relation": [
+        {
+          "id": "039cb6e3-4399-4083-8e3c-ff01f08d91df"
+        }
+      ],
+      "has_more": false
+    },
+    "Task ID": {
+      "id": "notion%3A%2F%2Ftasks%2Fauto_increment_id_property",
+      "type": "unique_id",
+      "unique_id": {
+        "prefix": "TAS",
+        "number": 574
+      }
+    },
+    "GitHub Pull Requests": {
+      "id": "notion%3A%2F%2Ftasks%2Ftask_to_github_prs_relation",
+      "type": "relation",
+      "relation": [],
+      "has_more": false
+    }
+  },
+  "url": "https://www.notion.so/2023-11-22-provide-list-of-published-exercise-IDs-to-account-for-bundle-asset-updates-4724abef8c3e4736b2b333680bd83929",
+  "public_url": "https://sand-gallimimus-e92.notion.site/2023-11-22-provide-list-of-published-exercise-IDs-to-account-for-bundle-asset-updates-4724abef8c3e4736b2b333680bd83929",
+  "request_id": "5b8c5ca2-6dfd-48d5-bf25-de683195aaef"
+}

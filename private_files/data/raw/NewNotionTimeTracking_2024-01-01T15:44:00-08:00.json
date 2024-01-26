@@ -1,0 +1,4582 @@
+[
+  {
+    "object": "page",
+    "id": "c803e7cf-7601-4174-a3f4-e819d52aa690",
+    "created_time": "2024-01-03T02:11:00.000Z",
+    "last_edited_time": "2024-01-03T02:21:00.000Z",
+    "created_by": {
+      "object": "user",
+      "id": "f4b38e73-d5f6-43c6-99b5-a5cbf1fb60c2"
+    },
+    "last_edited_by": {
+      "object": "user",
+      "id": "f4b38e73-d5f6-43c6-99b5-a5cbf1fb60c2"
+    },
+    "cover": null,
+    "icon": null,
+    "parent": {
+      "type": "database_id",
+      "database_id": "bcd0d296-955b-4b92-8621-e4b96ebad29c"
+    },
+    "archived": false,
+    "properties": {
+      "Task Tag": {
+        "id": "%3BixQ",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [
+            {
+              "type": "multi_select",
+              "multi_select": [
+                {
+                  "id": "b25bcc0d-a83f-4a66-8e1b-ef8d00bc8284",
+                  "name": "life",
+                  "color": "gray"
+                }
+              ]
+            }
+          ],
+          "function": "show_original"
+        }
+      },
+      "Flag": {
+        "id": "B%5DwL",
+        "type": "multi_select",
+        "multi_select": [
+          {
+            "id": "d9fc9e36-3e3c-49b4-8332-5f9fff407c10",
+            "name": "do not bill",
+            "color": "pink"
+          }
+        ]
+      },
+      "Created time": {
+        "id": "B%60jT",
+        "type": "created_time",
+        "created_time": "2024-01-03T02:11:00.000Z"
+      },
+      "Notes": {
+        "id": "GKD%3C",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "2024-01-02 18:11\n- Give examples of:\n   - Follow up messages if a lead stops responding.\n   - How to respond to objections.\n- Run A/B tests to filter leads before doing a sales call.\n24:43\n—",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "2024-01-02 18:11\n- Give examples of:\n   - Follow up messages if a lead stops responding.\n   - How to respond to objections.\n- Run A/B tests to filter leads before doing a sales call.\n24:43\n—",
+            "href": null
+          }
+        ]
+      },
+      "Elapsed": {
+        "id": "W%5Bxa",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 0.166666666667
+        }
+      },
+      "Projects": {
+        "id": "WgYt",
+        "type": "relation",
+        "relation": [],
+        "has_more": false
+      },
+      "Start min": {
+        "id": "Xun_",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 11
+        }
+      },
+      "summary": {
+        "id": "%5EhRz",
+        "type": "relation",
+        "relation": [],
+        "has_more": false
+      },
+      "End min": {
+        "id": "%60s%3AV",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 21
+        }
+      },
+      "follow up task": {
+        "id": "bMxq",
+        "type": "relation",
+        "relation": [],
+        "has_more": false
+      },
+      "URL": {
+        "id": "bidc",
+        "type": "url",
+        "url": null
+      },
+      "End hr": {
+        "id": "ex%3C%40",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 18
+        }
+      },
+      "Tasks": {
+        "id": "iYKi",
+        "type": "relation",
+        "relation": [
+          {
+            "id": "d8ec328d-03ab-434f-902e-3b898ad3e16b"
+          }
+        ],
+        "has_more": false
+      },
+      "Last edited": {
+        "id": "jZsf",
+        "type": "last_edited_time",
+        "last_edited_time": "2024-01-03T02:21:00.000Z"
+      },
+      "Project tag": {
+        "id": "nWB%40",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [],
+          "function": "show_original"
+        }
+      },
+      "start time": {
+        "id": "w%3FoM",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "18:11",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "18:11",
+            "href": null
+          }
+        ]
+      },
+      "Project (Rollup)": {
+        "id": "w%3Ftw",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [
+            {
+              "type": "relation",
+              "relation": []
+            }
+          ],
+          "function": "show_unique"
+        }
+      },
+      "Start hr": {
+        "id": "wZPX",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 18
+        }
+      },
+      "end time": {
+        "id": "xIny",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "18:21",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "18:21",
+            "href": null
+          }
+        ]
+      },
+      "Roadmap Item": {
+        "id": "y%7BQt",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [
+            {
+              "type": "relation",
+              "relation": []
+            }
+          ],
+          "function": "show_original"
+        }
+      },
+      "Name": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "2024-01-02 18:11s",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "2024-01-02 18:11s",
+            "href": null
+          }
+        ]
+      }
+    },
+    "url": "https://www.notion.so/2024-01-02-18-11s-c803e7cf76014174a3f4e819d52aa690",
+    "public_url": "https://sand-gallimimus-e92.notion.site/2024-01-02-18-11s-c803e7cf76014174a3f4e819d52aa690"
+  },
+  {
+    "object": "page",
+    "id": "ab8e8c58-6e9f-4751-87a7-7c388932141a",
+    "created_time": "2024-01-02T22:01:00.000Z",
+    "last_edited_time": "2024-01-03T01:07:00.000Z",
+    "created_by": {
+      "object": "user",
+      "id": "f4b38e73-d5f6-43c6-99b5-a5cbf1fb60c2"
+    },
+    "last_edited_by": {
+      "object": "user",
+      "id": "f4b38e73-d5f6-43c6-99b5-a5cbf1fb60c2"
+    },
+    "cover": null,
+    "icon": null,
+    "parent": {
+      "type": "database_id",
+      "database_id": "bcd0d296-955b-4b92-8621-e4b96ebad29c"
+    },
+    "archived": false,
+    "properties": {
+      "Task Tag": {
+        "id": "%3BixQ",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [
+            {
+              "type": "multi_select",
+              "multi_select": [
+                {
+                  "id": "b25bcc0d-a83f-4a66-8e1b-ef8d00bc8284",
+                  "name": "life",
+                  "color": "gray"
+                }
+              ]
+            }
+          ],
+          "function": "show_original"
+        }
+      },
+      "Flag": {
+        "id": "B%5DwL",
+        "type": "multi_select",
+        "multi_select": [
+          {
+            "id": "d9fc9e36-3e3c-49b4-8332-5f9fff407c10",
+            "name": "do not bill",
+            "color": "pink"
+          }
+        ]
+      },
+      "Created time": {
+        "id": "B%60jT",
+        "type": "created_time",
+        "created_time": "2024-01-02T22:01:00.000Z"
+      },
+      "Notes": {
+        "id": "GKD%3C",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "2024-01-02 14:01 API only can provide last message, not message history. “",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "2024-01-02 14:01 API only can provide last message, not message history. “",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "Get Conversation” endpoint is likely outdated because API version is older than for the “Search Conversatons” endpoint, and “Search Conversatons” endpoint contains the information that should be listed in the ",
+              "link": null
+            },
+            "annotations": {
+              "bold": true,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Get Conversation” endpoint is likely outdated because API version is older than for the “Search Conversatons” endpoint, and “Search Conversatons” endpoint contains the information that should be listed in the ",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "“",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "“",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "Get Conversation” endpoint’s response.",
+              "link": null
+            },
+            "annotations": {
+              "bold": true,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Get Conversation” endpoint’s response.",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "\n—",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "\n—",
+            "href": null
+          }
+        ]
+      },
+      "Elapsed": {
+        "id": "W%5Bxa",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 3.083333333333
+        }
+      },
+      "Projects": {
+        "id": "WgYt",
+        "type": "relation",
+        "relation": [],
+        "has_more": false
+      },
+      "Start min": {
+        "id": "Xun_",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 2
+        }
+      },
+      "summary": {
+        "id": "%5EhRz",
+        "type": "relation",
+        "relation": [],
+        "has_more": false
+      },
+      "End min": {
+        "id": "%60s%3AV",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 7
+        }
+      },
+      "follow up task": {
+        "id": "bMxq",
+        "type": "relation",
+        "relation": [],
+        "has_more": false
+      },
+      "URL": {
+        "id": "bidc",
+        "type": "url",
+        "url": null
+      },
+      "End hr": {
+        "id": "ex%3C%40",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 17
+        }
+      },
+      "Tasks": {
+        "id": "iYKi",
+        "type": "relation",
+        "relation": [
+          {
+            "id": "6277d307-e039-477d-ac65-e3fefe25dc66"
+          }
+        ],
+        "has_more": false
+      },
+      "Last edited": {
+        "id": "jZsf",
+        "type": "last_edited_time",
+        "last_edited_time": "2024-01-03T01:07:00.000Z"
+      },
+      "Project tag": {
+        "id": "nWB%40",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [],
+          "function": "show_original"
+        }
+      },
+      "start time": {
+        "id": "w%3FoM",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "14:02",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "14:02",
+            "href": null
+          }
+        ]
+      },
+      "Project (Rollup)": {
+        "id": "w%3Ftw",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [
+            {
+              "type": "relation",
+              "relation": []
+            }
+          ],
+          "function": "show_unique"
+        }
+      },
+      "Start hr": {
+        "id": "wZPX",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 14
+        }
+      },
+      "end time": {
+        "id": "xIny",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "17:07",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "17:07",
+            "href": null
+          }
+        ]
+      },
+      "Roadmap Item": {
+        "id": "y%7BQt",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [
+            {
+              "type": "relation",
+              "relation": []
+            }
+          ],
+          "function": "show_original"
+        }
+      },
+      "Name": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "2024-01-02 14:01",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "2024-01-02 14:01",
+            "href": null
+          }
+        ]
+      }
+    },
+    "url": "https://www.notion.so/2024-01-02-14-01-ab8e8c586e9f475187a77c388932141a",
+    "public_url": "https://sand-gallimimus-e92.notion.site/2024-01-02-14-01-ab8e8c586e9f475187a77c388932141a"
+  },
+  {
+    "object": "page",
+    "id": "aa704c08-b25a-448f-8c6b-3673adc9bff1",
+    "created_time": "2024-01-02T21:17:00.000Z",
+    "last_edited_time": "2024-01-02T21:59:00.000Z",
+    "created_by": {
+      "object": "user",
+      "id": "f4b38e73-d5f6-43c6-99b5-a5cbf1fb60c2"
+    },
+    "last_edited_by": {
+      "object": "user",
+      "id": "f4b38e73-d5f6-43c6-99b5-a5cbf1fb60c2"
+    },
+    "cover": null,
+    "icon": null,
+    "parent": {
+      "type": "database_id",
+      "database_id": "bcd0d296-955b-4b92-8621-e4b96ebad29c"
+    },
+    "archived": false,
+    "properties": {
+      "Task Tag": {
+        "id": "%3BixQ",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [
+            {
+              "type": "multi_select",
+              "multi_select": [
+                {
+                  "id": "b25bcc0d-a83f-4a66-8e1b-ef8d00bc8284",
+                  "name": "life",
+                  "color": "gray"
+                }
+              ]
+            }
+          ],
+          "function": "show_original"
+        }
+      },
+      "Flag": {
+        "id": "B%5DwL",
+        "type": "multi_select",
+        "multi_select": []
+      },
+      "Created time": {
+        "id": "B%60jT",
+        "type": "created_time",
+        "created_time": "2024-01-02T21:17:00.000Z"
+      },
+      "Notes": {
+        "id": "GKD%3C",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "2024-01-02 13:17\n- Read sections 1-2, and conclusions.\n- Looked at the images in the body and appendix.\n—",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "2024-01-02 13:17\n- Read sections 1-2, and conclusions.\n- Looked at the images in the body and appendix.\n—",
+            "href": null
+          }
+        ]
+      },
+      "Elapsed": {
+        "id": "W%5Bxa",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 0.683333333333
+        }
+      },
+      "Projects": {
+        "id": "WgYt",
+        "type": "relation",
+        "relation": [],
+        "has_more": false
+      },
+      "Start min": {
+        "id": "Xun_",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 18
+        }
+      },
+      "summary": {
+        "id": "%5EhRz",
+        "type": "relation",
+        "relation": [],
+        "has_more": false
+      },
+      "End min": {
+        "id": "%60s%3AV",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 59
+        }
+      },
+      "follow up task": {
+        "id": "bMxq",
+        "type": "relation",
+        "relation": [],
+        "has_more": false
+      },
+      "URL": {
+        "id": "bidc",
+        "type": "url",
+        "url": null
+      },
+      "End hr": {
+        "id": "ex%3C%40",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 13
+        }
+      },
+      "Tasks": {
+        "id": "iYKi",
+        "type": "relation",
+        "relation": [
+          {
+            "id": "3ed1b9aa-9725-4359-b8f1-6da4fde21c02"
+          }
+        ],
+        "has_more": false
+      },
+      "Last edited": {
+        "id": "jZsf",
+        "type": "last_edited_time",
+        "last_edited_time": "2024-01-02T21:59:00.000Z"
+      },
+      "Project tag": {
+        "id": "nWB%40",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [],
+          "function": "show_original"
+        }
+      },
+      "start time": {
+        "id": "w%3FoM",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "13:18",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "13:18",
+            "href": null
+          }
+        ]
+      },
+      "Project (Rollup)": {
+        "id": "w%3Ftw",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [
+            {
+              "type": "relation",
+              "relation": []
+            }
+          ],
+          "function": "show_unique"
+        }
+      },
+      "Start hr": {
+        "id": "wZPX",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 13
+        }
+      },
+      "end time": {
+        "id": "xIny",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "13:59",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "13:59",
+            "href": null
+          }
+        ]
+      },
+      "Roadmap Item": {
+        "id": "y%7BQt",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [
+            {
+              "type": "relation",
+              "relation": []
+            }
+          ],
+          "function": "show_original"
+        }
+      },
+      "Name": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "2024-01-02 13:17",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "2024-01-02 13:17",
+            "href": null
+          }
+        ]
+      }
+    },
+    "url": "https://www.notion.so/2024-01-02-13-17-aa704c08b25a448f8c6b3673adc9bff1",
+    "public_url": "https://sand-gallimimus-e92.notion.site/2024-01-02-13-17-aa704c08b25a448f8c6b3673adc9bff1"
+  },
+  {
+    "object": "page",
+    "id": "97044a1d-7556-4f13-b43c-9fc7ccbedb8b",
+    "created_time": "2024-01-02T20:37:00.000Z",
+    "last_edited_time": "2024-01-02T21:09:00.000Z",
+    "created_by": {
+      "object": "user",
+      "id": "f4b38e73-d5f6-43c6-99b5-a5cbf1fb60c2"
+    },
+    "last_edited_by": {
+      "object": "user",
+      "id": "f4b38e73-d5f6-43c6-99b5-a5cbf1fb60c2"
+    },
+    "cover": null,
+    "icon": null,
+    "parent": {
+      "type": "database_id",
+      "database_id": "bcd0d296-955b-4b92-8621-e4b96ebad29c"
+    },
+    "archived": false,
+    "properties": {
+      "Task Tag": {
+        "id": "%3BixQ",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [
+            {
+              "type": "multi_select",
+              "multi_select": [
+                {
+                  "id": "b25bcc0d-a83f-4a66-8e1b-ef8d00bc8284",
+                  "name": "life",
+                  "color": "gray"
+                }
+              ]
+            }
+          ],
+          "function": "show_original"
+        }
+      },
+      "Flag": {
+        "id": "B%5DwL",
+        "type": "multi_select",
+        "multi_select": []
+      },
+      "Created time": {
+        "id": "B%60jT",
+        "type": "created_time",
+        "created_time": "2024-01-02T20:37:00.000Z"
+      },
+      "Notes": {
+        "id": "GKD%3C",
+        "type": "rich_text",
+        "rich_text": []
+      },
+      "Elapsed": {
+        "id": "W%5Bxa",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 0.533333333333
+        }
+      },
+      "Projects": {
+        "id": "WgYt",
+        "type": "relation",
+        "relation": [],
+        "has_more": false
+      },
+      "Start min": {
+        "id": "Xun_",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 37
+        }
+      },
+      "summary": {
+        "id": "%5EhRz",
+        "type": "relation",
+        "relation": [],
+        "has_more": false
+      },
+      "End min": {
+        "id": "%60s%3AV",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 9
+        }
+      },
+      "follow up task": {
+        "id": "bMxq",
+        "type": "relation",
+        "relation": [],
+        "has_more": false
+      },
+      "URL": {
+        "id": "bidc",
+        "type": "url",
+        "url": null
+      },
+      "End hr": {
+        "id": "ex%3C%40",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 13
+        }
+      },
+      "Tasks": {
+        "id": "iYKi",
+        "type": "relation",
+        "relation": [
+          {
+            "id": "5d77b597-dfab-4b24-90b2-2c8eea059f10"
+          }
+        ],
+        "has_more": false
+      },
+      "Last edited": {
+        "id": "jZsf",
+        "type": "last_edited_time",
+        "last_edited_time": "2024-01-02T21:09:00.000Z"
+      },
+      "Project tag": {
+        "id": "nWB%40",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [],
+          "function": "show_original"
+        }
+      },
+      "start time": {
+        "id": "w%3FoM",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "12:37",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "12:37",
+            "href": null
+          }
+        ]
+      },
+      "Project (Rollup)": {
+        "id": "w%3Ftw",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [
+            {
+              "type": "relation",
+              "relation": []
+            }
+          ],
+          "function": "show_unique"
+        }
+      },
+      "Start hr": {
+        "id": "wZPX",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 12
+        }
+      },
+      "end time": {
+        "id": "xIny",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "13:09",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "13:09",
+            "href": null
+          }
+        ]
+      },
+      "Roadmap Item": {
+        "id": "y%7BQt",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [
+            {
+              "type": "relation",
+              "relation": []
+            }
+          ],
+          "function": "show_original"
+        }
+      },
+      "Name": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "2024-01-02 12:37",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "2024-01-02 12:37",
+            "href": null
+          }
+        ]
+      }
+    },
+    "url": "https://www.notion.so/2024-01-02-12-37-97044a1d75564f13b43c9fc7ccbedb8b",
+    "public_url": "https://sand-gallimimus-e92.notion.site/2024-01-02-12-37-97044a1d75564f13b43c9fc7ccbedb8b"
+  },
+  {
+    "object": "page",
+    "id": "9d587c31-468c-4237-b322-36b11e3375e1",
+    "created_time": "2024-01-02T19:11:00.000Z",
+    "last_edited_time": "2024-01-02T19:25:00.000Z",
+    "created_by": {
+      "object": "user",
+      "id": "f4b38e73-d5f6-43c6-99b5-a5cbf1fb60c2"
+    },
+    "last_edited_by": {
+      "object": "user",
+      "id": "f4b38e73-d5f6-43c6-99b5-a5cbf1fb60c2"
+    },
+    "cover": null,
+    "icon": null,
+    "parent": {
+      "type": "database_id",
+      "database_id": "bcd0d296-955b-4b92-8621-e4b96ebad29c"
+    },
+    "archived": false,
+    "properties": {
+      "Task Tag": {
+        "id": "%3BixQ",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [
+            {
+              "type": "multi_select",
+              "multi_select": [
+                {
+                  "id": "6ce47b19-7220-436a-b075-7f16c617d6ba",
+                  "name": "Defy Time Fitness",
+                  "color": "blue"
+                }
+              ]
+            }
+          ],
+          "function": "show_original"
+        }
+      },
+      "Flag": {
+        "id": "B%5DwL",
+        "type": "multi_select",
+        "multi_select": []
+      },
+      "Created time": {
+        "id": "B%60jT",
+        "type": "created_time",
+        "created_time": "2024-01-02T19:11:00.000Z"
+      },
+      "Notes": {
+        "id": "GKD%3C",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Heidi",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Heidi",
+            "href": null
+          }
+        ]
+      },
+      "Elapsed": {
+        "id": "W%5Bxa",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 0.216666666667
+        }
+      },
+      "Projects": {
+        "id": "WgYt",
+        "type": "relation",
+        "relation": [],
+        "has_more": false
+      },
+      "Start min": {
+        "id": "Xun_",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 11
+        }
+      },
+      "summary": {
+        "id": "%5EhRz",
+        "type": "relation",
+        "relation": [],
+        "has_more": false
+      },
+      "End min": {
+        "id": "%60s%3AV",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 24
+        }
+      },
+      "follow up task": {
+        "id": "bMxq",
+        "type": "relation",
+        "relation": [],
+        "has_more": false
+      },
+      "URL": {
+        "id": "bidc",
+        "type": "url",
+        "url": null
+      },
+      "End hr": {
+        "id": "ex%3C%40",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 11
+        }
+      },
+      "Tasks": {
+        "id": "iYKi",
+        "type": "relation",
+        "relation": [
+          {
+            "id": "6e80d6c7-3ab6-42c2-b241-328ed965645f"
+          }
+        ],
+        "has_more": false
+      },
+      "Last edited": {
+        "id": "jZsf",
+        "type": "last_edited_time",
+        "last_edited_time": "2024-01-02T19:25:00.000Z"
+      },
+      "Project tag": {
+        "id": "nWB%40",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [],
+          "function": "show_original"
+        }
+      },
+      "start time": {
+        "id": "w%3FoM",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "11:11",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "11:11",
+            "href": null
+          }
+        ]
+      },
+      "Project (Rollup)": {
+        "id": "w%3Ftw",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [
+            {
+              "type": "relation",
+              "relation": []
+            }
+          ],
+          "function": "show_unique"
+        }
+      },
+      "Start hr": {
+        "id": "wZPX",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 11
+        }
+      },
+      "end time": {
+        "id": "xIny",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "11:24",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "11:24",
+            "href": null
+          }
+        ]
+      },
+      "Roadmap Item": {
+        "id": "y%7BQt",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [
+            {
+              "type": "relation",
+              "relation": []
+            }
+          ],
+          "function": "show_original"
+        }
+      },
+      "Name": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "2024-01-02 11:11",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "2024-01-02 11:11",
+            "href": null
+          }
+        ]
+      }
+    },
+    "url": "https://www.notion.so/2024-01-02-11-11-9d587c31468c4237b32236b11e3375e1",
+    "public_url": "https://sand-gallimimus-e92.notion.site/2024-01-02-11-11-9d587c31468c4237b32236b11e3375e1"
+  },
+  {
+    "object": "page",
+    "id": "dab6362f-a465-4125-a659-3fe6270d8a80",
+    "created_time": "2024-01-02T19:00:00.000Z",
+    "last_edited_time": "2024-01-02T19:11:00.000Z",
+    "created_by": {
+      "object": "user",
+      "id": "f4b38e73-d5f6-43c6-99b5-a5cbf1fb60c2"
+    },
+    "last_edited_by": {
+      "object": "user",
+      "id": "f4b38e73-d5f6-43c6-99b5-a5cbf1fb60c2"
+    },
+    "cover": null,
+    "icon": null,
+    "parent": {
+      "type": "database_id",
+      "database_id": "bcd0d296-955b-4b92-8621-e4b96ebad29c"
+    },
+    "archived": false,
+    "properties": {
+      "Task Tag": {
+        "id": "%3BixQ",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [
+            {
+              "type": "multi_select",
+              "multi_select": [
+                {
+                  "id": "53fc9868-911f-4c97-b5e8-9fd704e81ade",
+                  "name": "Ginkgo",
+                  "color": "green"
+                }
+              ]
+            }
+          ],
+          "function": "show_original"
+        }
+      },
+      "Flag": {
+        "id": "B%5DwL",
+        "type": "multi_select",
+        "multi_select": []
+      },
+      "Created time": {
+        "id": "B%60jT",
+        "type": "created_time",
+        "created_time": "2024-01-02T19:00:00.000Z"
+      },
+      "Notes": {
+        "id": "GKD%3C",
+        "type": "rich_text",
+        "rich_text": []
+      },
+      "Elapsed": {
+        "id": "W%5Bxa",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 0.183333333333
+        }
+      },
+      "Projects": {
+        "id": "WgYt",
+        "type": "relation",
+        "relation": [],
+        "has_more": false
+      },
+      "Start min": {
+        "id": "Xun_",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 0
+        }
+      },
+      "summary": {
+        "id": "%5EhRz",
+        "type": "relation",
+        "relation": [],
+        "has_more": false
+      },
+      "End min": {
+        "id": "%60s%3AV",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 11
+        }
+      },
+      "follow up task": {
+        "id": "bMxq",
+        "type": "relation",
+        "relation": [],
+        "has_more": false
+      },
+      "URL": {
+        "id": "bidc",
+        "type": "url",
+        "url": null
+      },
+      "End hr": {
+        "id": "ex%3C%40",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 11
+        }
+      },
+      "Tasks": {
+        "id": "iYKi",
+        "type": "relation",
+        "relation": [
+          {
+            "id": "a6405712-c50c-4559-8d1f-e763a5cf7dae"
+          }
+        ],
+        "has_more": false
+      },
+      "Last edited": {
+        "id": "jZsf",
+        "type": "last_edited_time",
+        "last_edited_time": "2024-01-02T19:11:00.000Z"
+      },
+      "Project tag": {
+        "id": "nWB%40",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [],
+          "function": "show_original"
+        }
+      },
+      "start time": {
+        "id": "w%3FoM",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "11:00",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "11:00",
+            "href": null
+          }
+        ]
+      },
+      "Project (Rollup)": {
+        "id": "w%3Ftw",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [
+            {
+              "type": "relation",
+              "relation": []
+            }
+          ],
+          "function": "show_unique"
+        }
+      },
+      "Start hr": {
+        "id": "wZPX",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 11
+        }
+      },
+      "end time": {
+        "id": "xIny",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "11:11",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "11:11",
+            "href": null
+          }
+        ]
+      },
+      "Roadmap Item": {
+        "id": "y%7BQt",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [
+            {
+              "type": "relation",
+              "relation": []
+            }
+          ],
+          "function": "show_original"
+        }
+      },
+      "Name": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "2024-01-02 11:00",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "2024-01-02 11:00",
+            "href": null
+          }
+        ]
+      }
+    },
+    "url": "https://www.notion.so/2024-01-02-11-00-dab6362fa4654125a6593fe6270d8a80",
+    "public_url": "https://sand-gallimimus-e92.notion.site/2024-01-02-11-00-dab6362fa4654125a6593fe6270d8a80"
+  },
+  {
+    "object": "page",
+    "id": "381f3ca4-fdb1-4369-9f38-8a8e8afa863c",
+    "created_time": "2024-01-02T18:51:00.000Z",
+    "last_edited_time": "2024-01-02T19:25:00.000Z",
+    "created_by": {
+      "object": "user",
+      "id": "f4b38e73-d5f6-43c6-99b5-a5cbf1fb60c2"
+    },
+    "last_edited_by": {
+      "object": "user",
+      "id": "f4b38e73-d5f6-43c6-99b5-a5cbf1fb60c2"
+    },
+    "cover": null,
+    "icon": null,
+    "parent": {
+      "type": "database_id",
+      "database_id": "bcd0d296-955b-4b92-8621-e4b96ebad29c"
+    },
+    "archived": false,
+    "properties": {
+      "Task Tag": {
+        "id": "%3BixQ",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [
+            {
+              "type": "multi_select",
+              "multi_select": [
+                {
+                  "id": "6ce47b19-7220-436a-b075-7f16c617d6ba",
+                  "name": "Defy Time Fitness",
+                  "color": "blue"
+                }
+              ]
+            }
+          ],
+          "function": "show_original"
+        }
+      },
+      "Flag": {
+        "id": "B%5DwL",
+        "type": "multi_select",
+        "multi_select": []
+      },
+      "Created time": {
+        "id": "B%60jT",
+        "type": "created_time",
+        "created_time": "2024-01-02T18:51:00.000Z"
+      },
+      "Notes": {
+        "id": "GKD%3C",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Heidi",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Heidi",
+            "href": null
+          }
+        ]
+      },
+      "Elapsed": {
+        "id": "W%5Bxa",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 0.15
+        }
+      },
+      "Projects": {
+        "id": "WgYt",
+        "type": "relation",
+        "relation": [],
+        "has_more": false
+      },
+      "Start min": {
+        "id": "Xun_",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 51
+        }
+      },
+      "summary": {
+        "id": "%5EhRz",
+        "type": "relation",
+        "relation": [],
+        "has_more": false
+      },
+      "End min": {
+        "id": "%60s%3AV",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 0
+        }
+      },
+      "follow up task": {
+        "id": "bMxq",
+        "type": "relation",
+        "relation": [],
+        "has_more": false
+      },
+      "URL": {
+        "id": "bidc",
+        "type": "url",
+        "url": null
+      },
+      "End hr": {
+        "id": "ex%3C%40",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 11
+        }
+      },
+      "Tasks": {
+        "id": "iYKi",
+        "type": "relation",
+        "relation": [
+          {
+            "id": "6e80d6c7-3ab6-42c2-b241-328ed965645f"
+          }
+        ],
+        "has_more": false
+      },
+      "Last edited": {
+        "id": "jZsf",
+        "type": "last_edited_time",
+        "last_edited_time": "2024-01-02T19:25:00.000Z"
+      },
+      "Project tag": {
+        "id": "nWB%40",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [],
+          "function": "show_original"
+        }
+      },
+      "start time": {
+        "id": "w%3FoM",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "10:51",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "10:51",
+            "href": null
+          }
+        ]
+      },
+      "Project (Rollup)": {
+        "id": "w%3Ftw",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [
+            {
+              "type": "relation",
+              "relation": []
+            }
+          ],
+          "function": "show_unique"
+        }
+      },
+      "Start hr": {
+        "id": "wZPX",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 10
+        }
+      },
+      "end time": {
+        "id": "xIny",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "11:00",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "11:00",
+            "href": null
+          }
+        ]
+      },
+      "Roadmap Item": {
+        "id": "y%7BQt",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [
+            {
+              "type": "relation",
+              "relation": []
+            }
+          ],
+          "function": "show_original"
+        }
+      },
+      "Name": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "2024-01-02 10:51",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "2024-01-02 10:51",
+            "href": null
+          }
+        ]
+      }
+    },
+    "url": "https://www.notion.so/2024-01-02-10-51-381f3ca4fdb143699f388a8e8afa863c",
+    "public_url": "https://sand-gallimimus-e92.notion.site/2024-01-02-10-51-381f3ca4fdb143699f388a8e8afa863c"
+  },
+  {
+    "object": "page",
+    "id": "f2d0f4cc-f684-4ec4-a3df-f6997c7bc7fc",
+    "created_time": "2024-01-02T18:39:00.000Z",
+    "last_edited_time": "2024-01-02T18:51:00.000Z",
+    "created_by": {
+      "object": "user",
+      "id": "f4b38e73-d5f6-43c6-99b5-a5cbf1fb60c2"
+    },
+    "last_edited_by": {
+      "object": "user",
+      "id": "f4b38e73-d5f6-43c6-99b5-a5cbf1fb60c2"
+    },
+    "cover": null,
+    "icon": null,
+    "parent": {
+      "type": "database_id",
+      "database_id": "bcd0d296-955b-4b92-8621-e4b96ebad29c"
+    },
+    "archived": false,
+    "properties": {
+      "Task Tag": {
+        "id": "%3BixQ",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [
+            {
+              "type": "multi_select",
+              "multi_select": [
+                {
+                  "id": "b25bcc0d-a83f-4a66-8e1b-ef8d00bc8284",
+                  "name": "life",
+                  "color": "gray"
+                }
+              ]
+            }
+          ],
+          "function": "show_original"
+        }
+      },
+      "Flag": {
+        "id": "B%5DwL",
+        "type": "multi_select",
+        "multi_select": []
+      },
+      "Created time": {
+        "id": "B%60jT",
+        "type": "created_time",
+        "created_time": "2024-01-02T18:39:00.000Z"
+      },
+      "Notes": {
+        "id": "GKD%3C",
+        "type": "rich_text",
+        "rich_text": []
+      },
+      "Elapsed": {
+        "id": "W%5Bxa",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 0.2
+        }
+      },
+      "Projects": {
+        "id": "WgYt",
+        "type": "relation",
+        "relation": [],
+        "has_more": false
+      },
+      "Start min": {
+        "id": "Xun_",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 39
+        }
+      },
+      "summary": {
+        "id": "%5EhRz",
+        "type": "relation",
+        "relation": [],
+        "has_more": false
+      },
+      "End min": {
+        "id": "%60s%3AV",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 51
+        }
+      },
+      "follow up task": {
+        "id": "bMxq",
+        "type": "relation",
+        "relation": [],
+        "has_more": false
+      },
+      "URL": {
+        "id": "bidc",
+        "type": "url",
+        "url": null
+      },
+      "End hr": {
+        "id": "ex%3C%40",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 10
+        }
+      },
+      "Tasks": {
+        "id": "iYKi",
+        "type": "relation",
+        "relation": [
+          {
+            "id": "094b9d53-1c7e-471a-8c1b-a89e71216a2d"
+          }
+        ],
+        "has_more": false
+      },
+      "Last edited": {
+        "id": "jZsf",
+        "type": "last_edited_time",
+        "last_edited_time": "2024-01-02T18:51:00.000Z"
+      },
+      "Project tag": {
+        "id": "nWB%40",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [],
+          "function": "show_original"
+        }
+      },
+      "start time": {
+        "id": "w%3FoM",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "10:39",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "10:39",
+            "href": null
+          }
+        ]
+      },
+      "Project (Rollup)": {
+        "id": "w%3Ftw",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [
+            {
+              "type": "relation",
+              "relation": []
+            }
+          ],
+          "function": "show_unique"
+        }
+      },
+      "Start hr": {
+        "id": "wZPX",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 10
+        }
+      },
+      "end time": {
+        "id": "xIny",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "10:51",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "10:51",
+            "href": null
+          }
+        ]
+      },
+      "Roadmap Item": {
+        "id": "y%7BQt",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [
+            {
+              "type": "relation",
+              "relation": []
+            }
+          ],
+          "function": "show_original"
+        }
+      },
+      "Name": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "2024-01-02 10:39",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "2024-01-02 10:39",
+            "href": null
+          }
+        ]
+      }
+    },
+    "url": "https://www.notion.so/2024-01-02-10-39-f2d0f4ccf6844ec4a3dff6997c7bc7fc",
+    "public_url": "https://sand-gallimimus-e92.notion.site/2024-01-02-10-39-f2d0f4ccf6844ec4a3dff6997c7bc7fc"
+  },
+  {
+    "object": "page",
+    "id": "2bf4bbf7-57ab-446f-bf7c-e4d3a9a8f30d",
+    "created_time": "2024-01-02T18:28:00.000Z",
+    "last_edited_time": "2024-01-02T18:45:00.000Z",
+    "created_by": {
+      "object": "user",
+      "id": "f4b38e73-d5f6-43c6-99b5-a5cbf1fb60c2"
+    },
+    "last_edited_by": {
+      "object": "user",
+      "id": "f4b38e73-d5f6-43c6-99b5-a5cbf1fb60c2"
+    },
+    "cover": null,
+    "icon": null,
+    "parent": {
+      "type": "database_id",
+      "database_id": "bcd0d296-955b-4b92-8621-e4b96ebad29c"
+    },
+    "archived": false,
+    "properties": {
+      "Task Tag": {
+        "id": "%3BixQ",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [
+            {
+              "type": "multi_select",
+              "multi_select": [
+                {
+                  "id": "53fc9868-911f-4c97-b5e8-9fd704e81ade",
+                  "name": "Ginkgo",
+                  "color": "green"
+                }
+              ]
+            }
+          ],
+          "function": "show_original"
+        }
+      },
+      "Flag": {
+        "id": "B%5DwL",
+        "type": "multi_select",
+        "multi_select": []
+      },
+      "Created time": {
+        "id": "B%60jT",
+        "type": "created_time",
+        "created_time": "2024-01-02T18:28:00.000Z"
+      },
+      "Notes": {
+        "id": "GKD%3C",
+        "type": "rich_text",
+        "rich_text": []
+      },
+      "Elapsed": {
+        "id": "W%5Bxa",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 0.15
+        }
+      },
+      "Projects": {
+        "id": "WgYt",
+        "type": "relation",
+        "relation": [],
+        "has_more": false
+      },
+      "Start min": {
+        "id": "Xun_",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 27
+        }
+      },
+      "summary": {
+        "id": "%5EhRz",
+        "type": "relation",
+        "relation": [],
+        "has_more": false
+      },
+      "End min": {
+        "id": "%60s%3AV",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 36
+        }
+      },
+      "follow up task": {
+        "id": "bMxq",
+        "type": "relation",
+        "relation": [],
+        "has_more": false
+      },
+      "URL": {
+        "id": "bidc",
+        "type": "url",
+        "url": null
+      },
+      "End hr": {
+        "id": "ex%3C%40",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 10
+        }
+      },
+      "Tasks": {
+        "id": "iYKi",
+        "type": "relation",
+        "relation": [
+          {
+            "id": "f8ac63ae-1be8-400c-8a6e-2cdccb9a6992"
+          }
+        ],
+        "has_more": false
+      },
+      "Last edited": {
+        "id": "jZsf",
+        "type": "last_edited_time",
+        "last_edited_time": "2024-01-02T18:45:00.000Z"
+      },
+      "Project tag": {
+        "id": "nWB%40",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [],
+          "function": "show_original"
+        }
+      },
+      "start time": {
+        "id": "w%3FoM",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "10:27",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "10:27",
+            "href": null
+          }
+        ]
+      },
+      "Project (Rollup)": {
+        "id": "w%3Ftw",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [
+            {
+              "type": "relation",
+              "relation": []
+            }
+          ],
+          "function": "show_unique"
+        }
+      },
+      "Start hr": {
+        "id": "wZPX",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 10
+        }
+      },
+      "end time": {
+        "id": "xIny",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "10:36",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "10:36",
+            "href": null
+          }
+        ]
+      },
+      "Roadmap Item": {
+        "id": "y%7BQt",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [
+            {
+              "type": "relation",
+              "relation": []
+            }
+          ],
+          "function": "show_original"
+        }
+      },
+      "Name": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "2024-01-02 10:28",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "2024-01-02 10:28",
+            "href": null
+          }
+        ]
+      }
+    },
+    "url": "https://www.notion.so/2024-01-02-10-28-2bf4bbf757ab446fbf7ce4d3a9a8f30d",
+    "public_url": "https://sand-gallimimus-e92.notion.site/2024-01-02-10-28-2bf4bbf757ab446fbf7ce4d3a9a8f30d"
+  },
+  {
+    "object": "page",
+    "id": "ac6534b5-c153-4b3c-a5e3-6e0a0fccbdef",
+    "created_time": "2024-01-02T17:41:00.000Z",
+    "last_edited_time": "2024-01-02T18:27:00.000Z",
+    "created_by": {
+      "object": "user",
+      "id": "f4b38e73-d5f6-43c6-99b5-a5cbf1fb60c2"
+    },
+    "last_edited_by": {
+      "object": "user",
+      "id": "f4b38e73-d5f6-43c6-99b5-a5cbf1fb60c2"
+    },
+    "cover": null,
+    "icon": null,
+    "parent": {
+      "type": "database_id",
+      "database_id": "bcd0d296-955b-4b92-8621-e4b96ebad29c"
+    },
+    "archived": false,
+    "properties": {
+      "Task Tag": {
+        "id": "%3BixQ",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [
+            {
+              "type": "multi_select",
+              "multi_select": [
+                {
+                  "id": "53fc9868-911f-4c97-b5e8-9fd704e81ade",
+                  "name": "Ginkgo",
+                  "color": "green"
+                }
+              ]
+            }
+          ],
+          "function": "show_original"
+        }
+      },
+      "Flag": {
+        "id": "B%5DwL",
+        "type": "multi_select",
+        "multi_select": []
+      },
+      "Created time": {
+        "id": "B%60jT",
+        "type": "created_time",
+        "created_time": "2024-01-02T17:41:00.000Z"
+      },
+      "Notes": {
+        "id": "GKD%3C",
+        "type": "rich_text",
+        "rich_text": []
+      },
+      "Elapsed": {
+        "id": "W%5Bxa",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 0.766666666667
+        }
+      },
+      "Projects": {
+        "id": "WgYt",
+        "type": "relation",
+        "relation": [],
+        "has_more": false
+      },
+      "Start min": {
+        "id": "Xun_",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 41
+        }
+      },
+      "summary": {
+        "id": "%5EhRz",
+        "type": "relation",
+        "relation": [],
+        "has_more": false
+      },
+      "End min": {
+        "id": "%60s%3AV",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 27
+        }
+      },
+      "follow up task": {
+        "id": "bMxq",
+        "type": "relation",
+        "relation": [],
+        "has_more": false
+      },
+      "URL": {
+        "id": "bidc",
+        "type": "url",
+        "url": null
+      },
+      "End hr": {
+        "id": "ex%3C%40",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 10
+        }
+      },
+      "Tasks": {
+        "id": "iYKi",
+        "type": "relation",
+        "relation": [
+          {
+            "id": "4200f0ae-1c8c-4bab-a093-307cfa21b0ad"
+          }
+        ],
+        "has_more": false
+      },
+      "Last edited": {
+        "id": "jZsf",
+        "type": "last_edited_time",
+        "last_edited_time": "2024-01-02T18:27:00.000Z"
+      },
+      "Project tag": {
+        "id": "nWB%40",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [],
+          "function": "show_original"
+        }
+      },
+      "start time": {
+        "id": "w%3FoM",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "09:41",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "09:41",
+            "href": null
+          }
+        ]
+      },
+      "Project (Rollup)": {
+        "id": "w%3Ftw",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [
+            {
+              "type": "relation",
+              "relation": []
+            }
+          ],
+          "function": "show_unique"
+        }
+      },
+      "Start hr": {
+        "id": "wZPX",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 9
+        }
+      },
+      "end time": {
+        "id": "xIny",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "10:27",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "10:27",
+            "href": null
+          }
+        ]
+      },
+      "Roadmap Item": {
+        "id": "y%7BQt",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [
+            {
+              "type": "relation",
+              "relation": []
+            }
+          ],
+          "function": "show_original"
+        }
+      },
+      "Name": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "2024-01-02 09:41",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "2024-01-02 09:41",
+            "href": null
+          }
+        ]
+      }
+    },
+    "url": "https://www.notion.so/2024-01-02-09-41-ac6534b5c1534b3ca5e36e0a0fccbdef",
+    "public_url": "https://sand-gallimimus-e92.notion.site/2024-01-02-09-41-ac6534b5c1534b3ca5e36e0a0fccbdef"
+  },
+  {
+    "object": "page",
+    "id": "d3fd90fc-b460-4158-8efd-ce56b5f19d9b",
+    "created_time": "2024-01-02T07:23:00.000Z",
+    "last_edited_time": "2024-01-02T07:44:00.000Z",
+    "created_by": {
+      "object": "user",
+      "id": "f4b38e73-d5f6-43c6-99b5-a5cbf1fb60c2"
+    },
+    "last_edited_by": {
+      "object": "user",
+      "id": "f4b38e73-d5f6-43c6-99b5-a5cbf1fb60c2"
+    },
+    "cover": null,
+    "icon": null,
+    "parent": {
+      "type": "database_id",
+      "database_id": "bcd0d296-955b-4b92-8621-e4b96ebad29c"
+    },
+    "archived": false,
+    "properties": {
+      "Task Tag": {
+        "id": "%3BixQ",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [
+            {
+              "type": "multi_select",
+              "multi_select": [
+                {
+                  "id": "b25bcc0d-a83f-4a66-8e1b-ef8d00bc8284",
+                  "name": "life",
+                  "color": "gray"
+                }
+              ]
+            }
+          ],
+          "function": "show_original"
+        }
+      },
+      "Flag": {
+        "id": "B%5DwL",
+        "type": "multi_select",
+        "multi_select": []
+      },
+      "Created time": {
+        "id": "B%60jT",
+        "type": "created_time",
+        "created_time": "2024-01-02T07:23:00.000Z"
+      },
+      "Notes": {
+        "id": "GKD%3C",
+        "type": "rich_text",
+        "rich_text": []
+      },
+      "Elapsed": {
+        "id": "W%5Bxa",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 0.35
+        }
+      },
+      "Projects": {
+        "id": "WgYt",
+        "type": "relation",
+        "relation": [],
+        "has_more": false
+      },
+      "Start min": {
+        "id": "Xun_",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 23
+        }
+      },
+      "summary": {
+        "id": "%5EhRz",
+        "type": "relation",
+        "relation": [],
+        "has_more": false
+      },
+      "End min": {
+        "id": "%60s%3AV",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 44
+        }
+      },
+      "follow up task": {
+        "id": "bMxq",
+        "type": "relation",
+        "relation": [],
+        "has_more": false
+      },
+      "URL": {
+        "id": "bidc",
+        "type": "url",
+        "url": null
+      },
+      "End hr": {
+        "id": "ex%3C%40",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 23
+        }
+      },
+      "Tasks": {
+        "id": "iYKi",
+        "type": "relation",
+        "relation": [
+          {
+            "id": "01c856c4-1bb4-4289-b64b-d515955a335d"
+          }
+        ],
+        "has_more": false
+      },
+      "Last edited": {
+        "id": "jZsf",
+        "type": "last_edited_time",
+        "last_edited_time": "2024-01-02T07:44:00.000Z"
+      },
+      "Project tag": {
+        "id": "nWB%40",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [],
+          "function": "show_original"
+        }
+      },
+      "start time": {
+        "id": "w%3FoM",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "23:23",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "23:23",
+            "href": null
+          }
+        ]
+      },
+      "Project (Rollup)": {
+        "id": "w%3Ftw",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [
+            {
+              "type": "relation",
+              "relation": []
+            }
+          ],
+          "function": "show_unique"
+        }
+      },
+      "Start hr": {
+        "id": "wZPX",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 23
+        }
+      },
+      "end time": {
+        "id": "xIny",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "23:44",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "23:44",
+            "href": null
+          }
+        ]
+      },
+      "Roadmap Item": {
+        "id": "y%7BQt",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [
+            {
+              "type": "relation",
+              "relation": []
+            }
+          ],
+          "function": "show_original"
+        }
+      },
+      "Name": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "2024-01-01 23:23",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "2024-01-01 23:23",
+            "href": null
+          }
+        ]
+      }
+    },
+    "url": "https://www.notion.so/2024-01-01-23-23-d3fd90fcb46041588efdce56b5f19d9b",
+    "public_url": "https://sand-gallimimus-e92.notion.site/2024-01-01-23-23-d3fd90fcb46041588efdce56b5f19d9b"
+  },
+  {
+    "object": "page",
+    "id": "812d3113-34ea-45b3-97b9-0dd3b526f562",
+    "created_time": "2024-01-02T05:20:00.000Z",
+    "last_edited_time": "2024-01-02T07:15:00.000Z",
+    "created_by": {
+      "object": "user",
+      "id": "f4b38e73-d5f6-43c6-99b5-a5cbf1fb60c2"
+    },
+    "last_edited_by": {
+      "object": "user",
+      "id": "f4b38e73-d5f6-43c6-99b5-a5cbf1fb60c2"
+    },
+    "cover": null,
+    "icon": null,
+    "parent": {
+      "type": "database_id",
+      "database_id": "bcd0d296-955b-4b92-8621-e4b96ebad29c"
+    },
+    "archived": false,
+    "properties": {
+      "Task Tag": {
+        "id": "%3BixQ",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [
+            {
+              "type": "multi_select",
+              "multi_select": [
+                {
+                  "id": "b25bcc0d-a83f-4a66-8e1b-ef8d00bc8284",
+                  "name": "life",
+                  "color": "gray"
+                }
+              ]
+            }
+          ],
+          "function": "show_original"
+        }
+      },
+      "Flag": {
+        "id": "B%5DwL",
+        "type": "multi_select",
+        "multi_select": []
+      },
+      "Created time": {
+        "id": "B%60jT",
+        "type": "created_time",
+        "created_time": "2024-01-02T05:20:00.000Z"
+      },
+      "Notes": {
+        "id": "GKD%3C",
+        "type": "rich_text",
+        "rich_text": []
+      },
+      "Elapsed": {
+        "id": "W%5Bxa",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 1.9
+        }
+      },
+      "Projects": {
+        "id": "WgYt",
+        "type": "relation",
+        "relation": [],
+        "has_more": false
+      },
+      "Start min": {
+        "id": "Xun_",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 21
+        }
+      },
+      "summary": {
+        "id": "%5EhRz",
+        "type": "relation",
+        "relation": [],
+        "has_more": false
+      },
+      "End min": {
+        "id": "%60s%3AV",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 15
+        }
+      },
+      "follow up task": {
+        "id": "bMxq",
+        "type": "relation",
+        "relation": [],
+        "has_more": false
+      },
+      "URL": {
+        "id": "bidc",
+        "type": "url",
+        "url": null
+      },
+      "End hr": {
+        "id": "ex%3C%40",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 23
+        }
+      },
+      "Tasks": {
+        "id": "iYKi",
+        "type": "relation",
+        "relation": [
+          {
+            "id": "b01b0855-f028-4575-8fa3-2c5d2c6fe4e1"
+          }
+        ],
+        "has_more": false
+      },
+      "Last edited": {
+        "id": "jZsf",
+        "type": "last_edited_time",
+        "last_edited_time": "2024-01-02T07:15:00.000Z"
+      },
+      "Project tag": {
+        "id": "nWB%40",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [],
+          "function": "show_original"
+        }
+      },
+      "start time": {
+        "id": "w%3FoM",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "21:21",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "21:21",
+            "href": null
+          }
+        ]
+      },
+      "Project (Rollup)": {
+        "id": "w%3Ftw",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [
+            {
+              "type": "relation",
+              "relation": []
+            }
+          ],
+          "function": "show_unique"
+        }
+      },
+      "Start hr": {
+        "id": "wZPX",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 21
+        }
+      },
+      "end time": {
+        "id": "xIny",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "23:15",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "23:15",
+            "href": null
+          }
+        ]
+      },
+      "Roadmap Item": {
+        "id": "y%7BQt",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [
+            {
+              "type": "relation",
+              "relation": []
+            }
+          ],
+          "function": "show_original"
+        }
+      },
+      "Name": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "2024-01-01 21:20",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "2024-01-01 21:20",
+            "href": null
+          }
+        ]
+      }
+    },
+    "url": "https://www.notion.so/2024-01-01-21-20-812d311334ea45b397b90dd3b526f562",
+    "public_url": "https://sand-gallimimus-e92.notion.site/2024-01-01-21-20-812d311334ea45b397b90dd3b526f562"
+  },
+  {
+    "object": "page",
+    "id": "c50e44d8-8288-4cda-8955-173d000a32bf",
+    "created_time": "2024-01-02T04:58:00.000Z",
+    "last_edited_time": "2024-01-02T05:11:00.000Z",
+    "created_by": {
+      "object": "user",
+      "id": "f4b38e73-d5f6-43c6-99b5-a5cbf1fb60c2"
+    },
+    "last_edited_by": {
+      "object": "user",
+      "id": "f4b38e73-d5f6-43c6-99b5-a5cbf1fb60c2"
+    },
+    "cover": null,
+    "icon": null,
+    "parent": {
+      "type": "database_id",
+      "database_id": "bcd0d296-955b-4b92-8621-e4b96ebad29c"
+    },
+    "archived": false,
+    "properties": {
+      "Task Tag": {
+        "id": "%3BixQ",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [
+            {
+              "type": "multi_select",
+              "multi_select": [
+                {
+                  "id": "b25bcc0d-a83f-4a66-8e1b-ef8d00bc8284",
+                  "name": "life",
+                  "color": "gray"
+                }
+              ]
+            }
+          ],
+          "function": "show_original"
+        }
+      },
+      "Flag": {
+        "id": "B%5DwL",
+        "type": "multi_select",
+        "multi_select": []
+      },
+      "Created time": {
+        "id": "B%60jT",
+        "type": "created_time",
+        "created_time": "2024-01-02T04:58:00.000Z"
+      },
+      "Notes": {
+        "id": "GKD%3C",
+        "type": "rich_text",
+        "rich_text": []
+      },
+      "Elapsed": {
+        "id": "W%5Bxa",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 0.15
+        }
+      },
+      "Projects": {
+        "id": "WgYt",
+        "type": "relation",
+        "relation": [],
+        "has_more": false
+      },
+      "Start min": {
+        "id": "Xun_",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 59
+        }
+      },
+      "summary": {
+        "id": "%5EhRz",
+        "type": "relation",
+        "relation": [],
+        "has_more": false
+      },
+      "End min": {
+        "id": "%60s%3AV",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 8
+        }
+      },
+      "follow up task": {
+        "id": "bMxq",
+        "type": "relation",
+        "relation": [],
+        "has_more": false
+      },
+      "URL": {
+        "id": "bidc",
+        "type": "url",
+        "url": null
+      },
+      "End hr": {
+        "id": "ex%3C%40",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 21
+        }
+      },
+      "Tasks": {
+        "id": "iYKi",
+        "type": "relation",
+        "relation": [
+          {
+            "id": "6277d307-e039-477d-ac65-e3fefe25dc66"
+          }
+        ],
+        "has_more": false
+      },
+      "Last edited": {
+        "id": "jZsf",
+        "type": "last_edited_time",
+        "last_edited_time": "2024-01-02T05:11:00.000Z"
+      },
+      "Project tag": {
+        "id": "nWB%40",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [],
+          "function": "show_original"
+        }
+      },
+      "start time": {
+        "id": "w%3FoM",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "20:59",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "20:59",
+            "href": null
+          }
+        ]
+      },
+      "Project (Rollup)": {
+        "id": "w%3Ftw",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [
+            {
+              "type": "relation",
+              "relation": []
+            }
+          ],
+          "function": "show_unique"
+        }
+      },
+      "Start hr": {
+        "id": "wZPX",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 20
+        }
+      },
+      "end time": {
+        "id": "xIny",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "21:08",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "21:08",
+            "href": null
+          }
+        ]
+      },
+      "Roadmap Item": {
+        "id": "y%7BQt",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [
+            {
+              "type": "relation",
+              "relation": []
+            }
+          ],
+          "function": "show_original"
+        }
+      },
+      "Name": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "2024-01-01 20:58",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "2024-01-01 20:58",
+            "href": null
+          }
+        ]
+      }
+    },
+    "url": "https://www.notion.so/2024-01-01-20-58-c50e44d882884cda8955173d000a32bf",
+    "public_url": "https://sand-gallimimus-e92.notion.site/2024-01-01-20-58-c50e44d882884cda8955173d000a32bf"
+  },
+  {
+    "object": "page",
+    "id": "64d6b64b-fd9a-41cb-a749-6230ef5787a6",
+    "created_time": "2024-01-02T04:49:00.000Z",
+    "last_edited_time": "2024-01-03T02:20:00.000Z",
+    "created_by": {
+      "object": "user",
+      "id": "f4b38e73-d5f6-43c6-99b5-a5cbf1fb60c2"
+    },
+    "last_edited_by": {
+      "object": "user",
+      "id": "f4b38e73-d5f6-43c6-99b5-a5cbf1fb60c2"
+    },
+    "cover": null,
+    "icon": null,
+    "parent": {
+      "type": "database_id",
+      "database_id": "bcd0d296-955b-4b92-8621-e4b96ebad29c"
+    },
+    "archived": false,
+    "properties": {
+      "Task Tag": {
+        "id": "%3BixQ",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [
+            {
+              "type": "multi_select",
+              "multi_select": [
+                {
+                  "id": "b25bcc0d-a83f-4a66-8e1b-ef8d00bc8284",
+                  "name": "life",
+                  "color": "gray"
+                }
+              ]
+            }
+          ],
+          "function": "show_original"
+        }
+      },
+      "Flag": {
+        "id": "B%5DwL",
+        "type": "multi_select",
+        "multi_select": []
+      },
+      "Created time": {
+        "id": "B%60jT",
+        "type": "created_time",
+        "created_time": "2024-01-02T04:49:00.000Z"
+      },
+      "Notes": {
+        "id": "GKD%3C",
+        "type": "rich_text",
+        "rich_text": []
+      },
+      "Elapsed": {
+        "id": "W%5Bxa",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 0.116666666667
+        }
+      },
+      "Projects": {
+        "id": "WgYt",
+        "type": "relation",
+        "relation": [],
+        "has_more": false
+      },
+      "Start min": {
+        "id": "Xun_",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 49
+        }
+      },
+      "summary": {
+        "id": "%5EhRz",
+        "type": "relation",
+        "relation": [],
+        "has_more": false
+      },
+      "End min": {
+        "id": "%60s%3AV",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 56
+        }
+      },
+      "follow up task": {
+        "id": "bMxq",
+        "type": "relation",
+        "relation": [],
+        "has_more": false
+      },
+      "URL": {
+        "id": "bidc",
+        "type": "url",
+        "url": null
+      },
+      "End hr": {
+        "id": "ex%3C%40",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 20
+        }
+      },
+      "Tasks": {
+        "id": "iYKi",
+        "type": "relation",
+        "relation": [
+          {
+            "id": "d8ec328d-03ab-434f-902e-3b898ad3e16b"
+          }
+        ],
+        "has_more": false
+      },
+      "Last edited": {
+        "id": "jZsf",
+        "type": "last_edited_time",
+        "last_edited_time": "2024-01-03T02:20:00.000Z"
+      },
+      "Project tag": {
+        "id": "nWB%40",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [],
+          "function": "show_original"
+        }
+      },
+      "start time": {
+        "id": "w%3FoM",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "20:49",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "20:49",
+            "href": null
+          }
+        ]
+      },
+      "Project (Rollup)": {
+        "id": "w%3Ftw",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [
+            {
+              "type": "relation",
+              "relation": []
+            }
+          ],
+          "function": "show_unique"
+        }
+      },
+      "Start hr": {
+        "id": "wZPX",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 20
+        }
+      },
+      "end time": {
+        "id": "xIny",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "20:56",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "20:56",
+            "href": null
+          }
+        ]
+      },
+      "Roadmap Item": {
+        "id": "y%7BQt",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [
+            {
+              "type": "relation",
+              "relation": []
+            }
+          ],
+          "function": "show_original"
+        }
+      },
+      "Name": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "2024-01-01 20:49",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "2024-01-01 20:49",
+            "href": null
+          }
+        ]
+      }
+    },
+    "url": "https://www.notion.so/2024-01-01-20-49-64d6b64bfd9a41cba7496230ef5787a6",
+    "public_url": "https://sand-gallimimus-e92.notion.site/2024-01-01-20-49-64d6b64bfd9a41cba7496230ef5787a6"
+  },
+  {
+    "object": "page",
+    "id": "832bf477-8508-4e8f-b49a-606935f9e3ff",
+    "created_time": "2024-01-02T04:13:00.000Z",
+    "last_edited_time": "2024-01-02T04:33:00.000Z",
+    "created_by": {
+      "object": "user",
+      "id": "f4b38e73-d5f6-43c6-99b5-a5cbf1fb60c2"
+    },
+    "last_edited_by": {
+      "object": "user",
+      "id": "f4b38e73-d5f6-43c6-99b5-a5cbf1fb60c2"
+    },
+    "cover": null,
+    "icon": null,
+    "parent": {
+      "type": "database_id",
+      "database_id": "bcd0d296-955b-4b92-8621-e4b96ebad29c"
+    },
+    "archived": false,
+    "properties": {
+      "Task Tag": {
+        "id": "%3BixQ",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [
+            {
+              "type": "multi_select",
+              "multi_select": [
+                {
+                  "id": "b25bcc0d-a83f-4a66-8e1b-ef8d00bc8284",
+                  "name": "life",
+                  "color": "gray"
+                }
+              ]
+            }
+          ],
+          "function": "show_original"
+        }
+      },
+      "Flag": {
+        "id": "B%5DwL",
+        "type": "multi_select",
+        "multi_select": []
+      },
+      "Created time": {
+        "id": "B%60jT",
+        "type": "created_time",
+        "created_time": "2024-01-02T04:13:00.000Z"
+      },
+      "Notes": {
+        "id": "GKD%3C",
+        "type": "rich_text",
+        "rich_text": []
+      },
+      "Elapsed": {
+        "id": "W%5Bxa",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 0.316666666667
+        }
+      },
+      "Projects": {
+        "id": "WgYt",
+        "type": "relation",
+        "relation": [],
+        "has_more": false
+      },
+      "Start min": {
+        "id": "Xun_",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 13
+        }
+      },
+      "summary": {
+        "id": "%5EhRz",
+        "type": "relation",
+        "relation": [],
+        "has_more": false
+      },
+      "End min": {
+        "id": "%60s%3AV",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 32
+        }
+      },
+      "follow up task": {
+        "id": "bMxq",
+        "type": "relation",
+        "relation": [],
+        "has_more": false
+      },
+      "URL": {
+        "id": "bidc",
+        "type": "url",
+        "url": null
+      },
+      "End hr": {
+        "id": "ex%3C%40",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 20
+        }
+      },
+      "Tasks": {
+        "id": "iYKi",
+        "type": "relation",
+        "relation": [
+          {
+            "id": "094b9d53-1c7e-471a-8c1b-a89e71216a2d"
+          }
+        ],
+        "has_more": false
+      },
+      "Last edited": {
+        "id": "jZsf",
+        "type": "last_edited_time",
+        "last_edited_time": "2024-01-02T04:33:00.000Z"
+      },
+      "Project tag": {
+        "id": "nWB%40",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [],
+          "function": "show_original"
+        }
+      },
+      "start time": {
+        "id": "w%3FoM",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "20:13",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "20:13",
+            "href": null
+          }
+        ]
+      },
+      "Project (Rollup)": {
+        "id": "w%3Ftw",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [
+            {
+              "type": "relation",
+              "relation": []
+            }
+          ],
+          "function": "show_unique"
+        }
+      },
+      "Start hr": {
+        "id": "wZPX",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 20
+        }
+      },
+      "end time": {
+        "id": "xIny",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "20:32",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "20:32",
+            "href": null
+          }
+        ]
+      },
+      "Roadmap Item": {
+        "id": "y%7BQt",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [
+            {
+              "type": "relation",
+              "relation": []
+            }
+          ],
+          "function": "show_original"
+        }
+      },
+      "Name": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "2024-01-01 20:13",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "2024-01-01 20:13",
+            "href": null
+          }
+        ]
+      }
+    },
+    "url": "https://www.notion.so/2024-01-01-20-13-832bf47785084e8fb49a606935f9e3ff",
+    "public_url": "https://sand-gallimimus-e92.notion.site/2024-01-01-20-13-832bf47785084e8fb49a606935f9e3ff"
+  },
+  {
+    "object": "page",
+    "id": "2724e206-4aad-43b0-88d1-a2b09abed584",
+    "created_time": "2024-01-02T03:40:00.000Z",
+    "last_edited_time": "2024-01-02T03:49:00.000Z",
+    "created_by": {
+      "object": "user",
+      "id": "f4b38e73-d5f6-43c6-99b5-a5cbf1fb60c2"
+    },
+    "last_edited_by": {
+      "object": "user",
+      "id": "f4b38e73-d5f6-43c6-99b5-a5cbf1fb60c2"
+    },
+    "cover": null,
+    "icon": null,
+    "parent": {
+      "type": "database_id",
+      "database_id": "bcd0d296-955b-4b92-8621-e4b96ebad29c"
+    },
+    "archived": false,
+    "properties": {
+      "Task Tag": {
+        "id": "%3BixQ",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [
+            {
+              "type": "multi_select",
+              "multi_select": [
+                {
+                  "id": "b25bcc0d-a83f-4a66-8e1b-ef8d00bc8284",
+                  "name": "life",
+                  "color": "gray"
+                }
+              ]
+            }
+          ],
+          "function": "show_original"
+        }
+      },
+      "Flag": {
+        "id": "B%5DwL",
+        "type": "multi_select",
+        "multi_select": []
+      },
+      "Created time": {
+        "id": "B%60jT",
+        "type": "created_time",
+        "created_time": "2024-01-02T03:40:00.000Z"
+      },
+      "Notes": {
+        "id": "GKD%3C",
+        "type": "rich_text",
+        "rich_text": []
+      },
+      "Elapsed": {
+        "id": "W%5Bxa",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 0.15
+        }
+      },
+      "Projects": {
+        "id": "WgYt",
+        "type": "relation",
+        "relation": [],
+        "has_more": false
+      },
+      "Start min": {
+        "id": "Xun_",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 40
+        }
+      },
+      "summary": {
+        "id": "%5EhRz",
+        "type": "relation",
+        "relation": [],
+        "has_more": false
+      },
+      "End min": {
+        "id": "%60s%3AV",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 49
+        }
+      },
+      "follow up task": {
+        "id": "bMxq",
+        "type": "relation",
+        "relation": [],
+        "has_more": false
+      },
+      "URL": {
+        "id": "bidc",
+        "type": "url",
+        "url": null
+      },
+      "End hr": {
+        "id": "ex%3C%40",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 19
+        }
+      },
+      "Tasks": {
+        "id": "iYKi",
+        "type": "relation",
+        "relation": [
+          {
+            "id": "01c856c4-1bb4-4289-b64b-d515955a335d"
+          }
+        ],
+        "has_more": false
+      },
+      "Last edited": {
+        "id": "jZsf",
+        "type": "last_edited_time",
+        "last_edited_time": "2024-01-02T03:49:00.000Z"
+      },
+      "Project tag": {
+        "id": "nWB%40",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [],
+          "function": "show_original"
+        }
+      },
+      "start time": {
+        "id": "w%3FoM",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "19:40",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "19:40",
+            "href": null
+          }
+        ]
+      },
+      "Project (Rollup)": {
+        "id": "w%3Ftw",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [
+            {
+              "type": "relation",
+              "relation": []
+            }
+          ],
+          "function": "show_unique"
+        }
+      },
+      "Start hr": {
+        "id": "wZPX",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 19
+        }
+      },
+      "end time": {
+        "id": "xIny",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "19:49",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "19:49",
+            "href": null
+          }
+        ]
+      },
+      "Roadmap Item": {
+        "id": "y%7BQt",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [
+            {
+              "type": "relation",
+              "relation": []
+            }
+          ],
+          "function": "show_original"
+        }
+      },
+      "Name": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "2024-01-01 19:40",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "2024-01-01 19:40",
+            "href": null
+          }
+        ]
+      }
+    },
+    "url": "https://www.notion.so/2024-01-01-19-40-2724e2064aad43b088d1a2b09abed584",
+    "public_url": "https://sand-gallimimus-e92.notion.site/2024-01-01-19-40-2724e2064aad43b088d1a2b09abed584"
+  },
+  {
+    "object": "page",
+    "id": "a2bb9dd8-1baa-4083-9468-53eafe07189c",
+    "created_time": "2024-01-02T02:46:00.000Z",
+    "last_edited_time": "2024-01-02T02:47:00.000Z",
+    "created_by": {
+      "object": "user",
+      "id": "f4b38e73-d5f6-43c6-99b5-a5cbf1fb60c2"
+    },
+    "last_edited_by": {
+      "object": "user",
+      "id": "f4b38e73-d5f6-43c6-99b5-a5cbf1fb60c2"
+    },
+    "cover": null,
+    "icon": null,
+    "parent": {
+      "type": "database_id",
+      "database_id": "bcd0d296-955b-4b92-8621-e4b96ebad29c"
+    },
+    "archived": false,
+    "properties": {
+      "Task Tag": {
+        "id": "%3BixQ",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [
+            {
+              "type": "multi_select",
+              "multi_select": [
+                {
+                  "id": "b25bcc0d-a83f-4a66-8e1b-ef8d00bc8284",
+                  "name": "life",
+                  "color": "gray"
+                }
+              ]
+            }
+          ],
+          "function": "show_original"
+        }
+      },
+      "Flag": {
+        "id": "B%5DwL",
+        "type": "multi_select",
+        "multi_select": []
+      },
+      "Created time": {
+        "id": "B%60jT",
+        "type": "created_time",
+        "created_time": "2024-01-02T02:46:00.000Z"
+      },
+      "Notes": {
+        "id": "GKD%3C",
+        "type": "rich_text",
+        "rich_text": []
+      },
+      "Elapsed": {
+        "id": "W%5Bxa",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 0.65
+        }
+      },
+      "Projects": {
+        "id": "WgYt",
+        "type": "relation",
+        "relation": [],
+        "has_more": false
+      },
+      "Start min": {
+        "id": "Xun_",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 7
+        }
+      },
+      "summary": {
+        "id": "%5EhRz",
+        "type": "relation",
+        "relation": [],
+        "has_more": false
+      },
+      "End min": {
+        "id": "%60s%3AV",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 46
+        }
+      },
+      "follow up task": {
+        "id": "bMxq",
+        "type": "relation",
+        "relation": [],
+        "has_more": false
+      },
+      "URL": {
+        "id": "bidc",
+        "type": "url",
+        "url": null
+      },
+      "End hr": {
+        "id": "ex%3C%40",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 18
+        }
+      },
+      "Tasks": {
+        "id": "iYKi",
+        "type": "relation",
+        "relation": [
+          {
+            "id": "cf9872f2-6c46-47cb-a6a9-f1a9db5634a0"
+          }
+        ],
+        "has_more": false
+      },
+      "Last edited": {
+        "id": "jZsf",
+        "type": "last_edited_time",
+        "last_edited_time": "2024-01-02T02:47:00.000Z"
+      },
+      "Project tag": {
+        "id": "nWB%40",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [],
+          "function": "show_original"
+        }
+      },
+      "start time": {
+        "id": "w%3FoM",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "18:07",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "18:07",
+            "href": null
+          }
+        ]
+      },
+      "Project (Rollup)": {
+        "id": "w%3Ftw",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [
+            {
+              "type": "relation",
+              "relation": []
+            }
+          ],
+          "function": "show_unique"
+        }
+      },
+      "Start hr": {
+        "id": "wZPX",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 18
+        }
+      },
+      "end time": {
+        "id": "xIny",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "18:46",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "18:46",
+            "href": null
+          }
+        ]
+      },
+      "Roadmap Item": {
+        "id": "y%7BQt",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [
+            {
+              "type": "relation",
+              "relation": []
+            }
+          ],
+          "function": "show_original"
+        }
+      },
+      "Name": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "2024-01-01 18:07",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "2024-01-01 18:07",
+            "href": null
+          }
+        ]
+      }
+    },
+    "url": "https://www.notion.so/2024-01-01-18-07-a2bb9dd81baa4083946853eafe07189c",
+    "public_url": "https://sand-gallimimus-e92.notion.site/2024-01-01-18-07-a2bb9dd81baa4083946853eafe07189c"
+  },
+  {
+    "object": "page",
+    "id": "c64f5325-d604-421b-ba56-10bd44a6cc7f",
+    "created_time": "2024-01-01T23:59:00.000Z",
+    "last_edited_time": "2024-01-02T02:08:00.000Z",
+    "created_by": {
+      "object": "user",
+      "id": "f4b38e73-d5f6-43c6-99b5-a5cbf1fb60c2"
+    },
+    "last_edited_by": {
+      "object": "user",
+      "id": "f4b38e73-d5f6-43c6-99b5-a5cbf1fb60c2"
+    },
+    "cover": null,
+    "icon": null,
+    "parent": {
+      "type": "database_id",
+      "database_id": "bcd0d296-955b-4b92-8621-e4b96ebad29c"
+    },
+    "archived": false,
+    "properties": {
+      "Task Tag": {
+        "id": "%3BixQ",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [
+            {
+              "type": "multi_select",
+              "multi_select": [
+                {
+                  "id": "b25bcc0d-a83f-4a66-8e1b-ef8d00bc8284",
+                  "name": "life",
+                  "color": "gray"
+                }
+              ]
+            }
+          ],
+          "function": "show_original"
+        }
+      },
+      "Flag": {
+        "id": "B%5DwL",
+        "type": "multi_select",
+        "multi_select": []
+      },
+      "Created time": {
+        "id": "B%60jT",
+        "type": "created_time",
+        "created_time": "2024-01-01T23:59:00.000Z"
+      },
+      "Notes": {
+        "id": "GKD%3C",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "2024-01-01 17:34 Fixed bug causing duplicate rows to be maintained in the DataFrame.\n—",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "2024-01-01 17:34 Fixed bug causing duplicate rows to be maintained in the DataFrame.\n—",
+            "href": null
+          }
+        ]
+      },
+      "Elapsed": {
+        "id": "W%5Bxa",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 0.55
+        }
+      },
+      "Projects": {
+        "id": "WgYt",
+        "type": "relation",
+        "relation": [],
+        "has_more": false
+      },
+      "Start min": {
+        "id": "Xun_",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 34
+        }
+      },
+      "summary": {
+        "id": "%5EhRz",
+        "type": "relation",
+        "relation": [],
+        "has_more": false
+      },
+      "End min": {
+        "id": "%60s%3AV",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 7
+        }
+      },
+      "follow up task": {
+        "id": "bMxq",
+        "type": "relation",
+        "relation": [],
+        "has_more": false
+      },
+      "URL": {
+        "id": "bidc",
+        "type": "url",
+        "url": null
+      },
+      "End hr": {
+        "id": "ex%3C%40",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 18
+        }
+      },
+      "Tasks": {
+        "id": "iYKi",
+        "type": "relation",
+        "relation": [
+          {
+            "id": "ffdfb65c-793a-4b75-8bb4-d6422c0b95f1"
+          }
+        ],
+        "has_more": false
+      },
+      "Last edited": {
+        "id": "jZsf",
+        "type": "last_edited_time",
+        "last_edited_time": "2024-01-02T02:08:00.000Z"
+      },
+      "Project tag": {
+        "id": "nWB%40",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [],
+          "function": "show_original"
+        }
+      },
+      "start time": {
+        "id": "w%3FoM",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "17:34",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "17:34",
+            "href": null
+          }
+        ]
+      },
+      "Project (Rollup)": {
+        "id": "w%3Ftw",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [
+            {
+              "type": "relation",
+              "relation": []
+            }
+          ],
+          "function": "show_unique"
+        }
+      },
+      "Start hr": {
+        "id": "wZPX",
+        "type": "formula",
+        "formula": {
+          "type": "number",
+          "number": 17
+        }
+      },
+      "end time": {
+        "id": "xIny",
+        "type": "rich_text",
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "18:07",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "18:07",
+            "href": null
+          }
+        ]
+      },
+      "Roadmap Item": {
+        "id": "y%7BQt",
+        "type": "rollup",
+        "rollup": {
+          "type": "array",
+          "array": [
+            {
+              "type": "relation",
+              "relation": []
+            }
+          ],
+          "function": "show_original"
+        }
+      },
+      "Name": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "2024-01-01 17:34",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "2024-01-01 17:34",
+            "href": null
+          }
+        ]
+      }
+    },
+    "url": "https://www.notion.so/2024-01-01-17-34-c64f5325d604421bba5610bd44a6cc7f",
+    "public_url": "https://sand-gallimimus-e92.notion.site/2024-01-01-17-34-c64f5325d604421bba5610bd44a6cc7f"
+  }
+]

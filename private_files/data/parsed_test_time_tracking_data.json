@@ -1,0 +1,116 @@
+{
+  "c6bd7066-82f4-4e85-ba23-5db2eea7c6ea": {
+    "url": "https://www.notion.so/2024-01-10-12-00-c6bd706682f44e85ba235db2eea7c6ea",
+    "created_time": "2024-01-10T20:00:00.000Z",
+    "Task Tag": [
+      "Defy Time Fitness"
+    ],
+    "Flag": null,
+    "Notes": "2024-01-10 12:00  https://app.asana.com/0/1195521695979971/1206304573045450/f \n—",
+    "Elapsed": 0.316666666667,
+    "Task Name": [
+      "Coach McLoone client programs"
+    ],
+    "Task Project tags": [
+      [
+        "Defy Time Fitness"
+      ]
+    ],
+    "Task Project": [
+      [
+        "a4ecf100-912a-422f-8ad6-15b903edd579"
+      ]
+    ],
+    "Task Parent-task": [
+      null
+    ],
+    "Task Sub-tasks": [
+      null
+    ],
+    "Task Project name": [
+      [
+        "Coach McLoone"
+      ]
+    ],
+    "start time": "12:04",
+    "end time": "12:23",
+    "Roadmap Item": [],
+    "Name": "2024-01-10 12:00"
+  },
+  "e20d416b-41d8-4d00-8671-d225e349b09f": {
+    "url": "https://www.notion.so/2023-12-11-21-50-e20d416b41d84d008671d225e349b09f",
+    "created_time": "2023-12-12T05:50:00.000Z",
+    "Task Tag": [
+      "life"
+    ],
+    "Flag": null,
+    "Notes": "2023-12-11 21:50\n-  An error occurred on line 100 in /var/task/data_functions.py: module 'os' has no attribute 'add_dll_directory'. \n- \n—",
+    "Elapsed": 2.933333333333,
+    "Task Name": [
+      "Learn how to use AWS serverless application model (SAM) to test Lambda functions"
+    ],
+    "Task Project tags": [
+      [
+        "tech ed"
+      ]
+    ],
+    "Task Project": [
+      [
+        "8a7f0c8d-2e99-40ce-8209-11a91f577177"
+      ]
+    ],
+    "Task Parent-task": [
+      null
+    ],
+    "Task Sub-tasks": [
+      null
+    ],
+    "Task Project name": [
+      [
+        "Data Science continuing education"
+      ]
+    ],
+    "start time": "21:50",
+    "end time": "24:46",
+    "Roadmap Item": [],
+    "Name": "2023-12-11 21:50"
+  },
+  "47e6bba3-76f1-41dc-93bb-1a4f0e1da75c": {
+    "url": "https://www.notion.so/2023-12-12-00-46-47e6bba376f141dc93bb1a4f0e1da75c",
+    "created_time": "2023-12-12T12:01:00.000Z",
+    "Task Tag": [
+      "life"
+    ],
+    "Flag": null,
+    "Notes": "2023-12-12 00:46  reset Windows after accidental trigger of deletion of all files on computer  \n—",
+    "Elapsed": 4.55,
+    "Task Name": [
+      "personal dev ops"
+    ],
+    "Task Project tags": [
+      [
+        "admin"
+      ]
+    ],
+    "Task Project": [
+      [
+        "feb21887-2f05-462f-b1af-760a358e7ca0"
+      ]
+    ],
+    "Task Parent-task": [
+      null
+    ],
+    "Task Sub-tasks": [
+      null
+    ],
+    "Task Project name": [
+      [
+        "Admin"
+      ]
+    ],
+    "start time": "00:46",
+    "end time": "05:19",
+    "Roadmap Item": [],
+    "Name": "2023-12-12 00:46"
+  }
+}
