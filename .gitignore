@@ -1,6 +1,1 @@
-node_modules
-.ipynb_checkpoints
-data/raw
-private
-data/parsed
-**/__pycache__/
+
