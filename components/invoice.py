@@ -49,6 +49,7 @@ def Body(client_name, start_date, end_date, filter_dict, hourly_rate, gst_rate=F
         solara.Markdown(f'## Time per Project')
         Df_To_Table(summary_df)
         if len(summary_df) > 1:
+            client_df['Unbilled'] = client_df['Unbilled'].apply(lambda x: True if x=='Unbilled Hours' else False)
             CustomElapsedTimeChart(
                 client_df, category_column='Task Project name',
                 period=None, start_date=start_date, end_date=end_date, height=100+summary_df.shape[0]*10,
