@@ -3,6 +3,6 @@
 
 VALUE=$1
 
-source src/runPipeline.sh no-open
+source src/runPipeline.sh --no-open
 python src/"$VALUE"/0_Home.py
 solara run src/"$VALUE" --no-open
