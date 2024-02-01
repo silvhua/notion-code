@@ -37,7 +37,7 @@ def Body(client_name, start_date, end_date, filter_dict, hourly_rate, gst_rate=F
     summary_df = time_per_project(client_df) 
     showlegend = True if len(summary_df.columns) >2 else False
 
-    solara.Title(f'Ginkgo_{end_date}')
+    solara.Title(f'{client_name}_{end_date}')
     with solara.AppBarTitle():
         solara.Text(f'Silvia Hua')
     Invoice_Header(client_name)

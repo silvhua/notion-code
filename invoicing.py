@@ -88,7 +88,7 @@ def time_per_project(client_df, project_column='Task Project name', unbilled_col
     summary_df.columns.name = None
     summary_df = summary_df.reset_index()
     summary_df = summary_df.fillna(0)
-    # print(f'summary_df columns from time_per_project function: {summary_df.columns}')
+    print(f'summary_df columns from time_per_project function: {summary_df.columns}')
     return summary_df
 
 def create_invoice_pyfile(

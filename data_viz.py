@@ -48,7 +48,7 @@ def classify_projects(
             row['Unbilled'] = True
         elif 'defy time fitness' in [tag.lower() for tag in row[tag_column]]:
             row['Category'] = 'personal training work'
-            if 'defy time fitness' not in row[column].lower():
+            if ('defy time fitness' not in row[column].lower()) & (row[column].lower() != 'coach mcloone'):
                 row['Unbilled'] = True
         elif row[column].lower() == 'career positioning':
             row['Category'] = 'career positioning'
