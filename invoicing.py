@@ -22,9 +22,10 @@ def get_invoice_records(df, start_date, end_date, filter_dict, show_indices=Fals
         DataFrame: The filtered DataFrame containing the invoice records.
     """
     classified_df = classify_projects(df)
+    classified_df['Date'] = classified_df['Name'].str.extract(r'(\d{4}-\d{2}-\d{2})', expand=False)
 
     period_df = filter_by_period(
-        classified_df, column='created_time', period=None, start_date=start_date, end_date=end_date
+        classified_df, column='Date', period=None, start_date=start_date, end_date=end_date
     )
     client_df = filter_df_all_conditions(
         period_df, filter_dict, verbose=False, show_indices=show_indices

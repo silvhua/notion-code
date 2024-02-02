@@ -95,7 +95,7 @@ def Itemized_Table(summary_df, rate, gst_rate=5, column_widths=[3, 2, 1]):
 
 # @solara.component
 def CustomElapsedTimeChart(classified_df, show, **kwargs):
-    fig, aggregate_df = plot_by_category(classified_df, show=show, **kwargs)
+    fig, aggregate_df = plot_by_category(classified_df, date_column='Date', show=show, **kwargs)
     solara.FigurePlotly(fig)
         
 @solara.component
@@ -172,7 +172,7 @@ def Invoice_Timesheet(df, include_notes=True, unbilled_column='Unbilled'):
         invoice_columns.insert(2, 'Roadmap Item')
     if 'Notes' in df.columns:
         invoice_columns.append('Notes')
-    df['Unbilled'] = df[unbilled_column].apply(lambda x: 'unbilled' if x=='Unbilled Hours' else '')
+    df['Unbilled'] = df[unbilled_column].apply(lambda x: 'unbilled' if x==True else '')
 
     df = df[invoice_columns].round(2)
     df.columns = [f'| {column}' for column in df.columns]
