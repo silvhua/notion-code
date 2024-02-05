@@ -15,7 +15,9 @@ classified_df = classify_projects(df)
 
 @solara.component
 def ElapsedTimeChart(**kwargs):
-    fig = plot_by_category(classified_df, **kwargs)
+    
+    classified_df['Date'] = classified_df['Name'].str.extract(r'(\d{4}-\d{2}-\d{2})', expand=False)
+    fig = plot_by_category(classified_df, date_column='Date', **kwargs)
 
 @solara.component
 def ChartsPerPeriod(category_column):
@@ -23,5 +25,5 @@ def ChartsPerPeriod(category_column):
     for period in periods:
         ElapsedTimeChart(
             category_column=category_column, classification='Unbilled', period=period, 
-            agg='sum', sort_column='Elapsed', date_column='created_time'
+            agg='sum', sort_column='Elapsed'
             )
