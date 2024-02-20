@@ -36,32 +36,42 @@ def classify_projects(
         verbose=False
         ):
     def classify(row):
-        tag_set = set(row[tag_column]) if len(row[tag_column]) > 0 else {row[tag_column]}
-        if ('ginkgo' in row[column].lower()) | ('ginkgo work' in [tag.lower() for tag in row[tag_column]]):
-            row['Category'] = 'Ginkgo'
-        elif row[column].lower() in ['ghl chatbot', 'tech business']:
-            row['Category'] = 'tech business'
-            if row[column].lower() == 'tech business':
+        try:
+            tag_set = set(row[tag_column]) if len(row[tag_column]) > 0 else set(row[tag_column])
+            if ('ginkgo' in row[column].lower()) | ('ginkgo work' in [tag.lower() for tag in row[tag_column]]):
+                row['Category'] = 'Ginkgo'
+            elif row[column].lower() in ['ghl chatbot', 'tech business']:
+                row['Category'] = 'tech business'
+                if row[column].lower() == 'tech business':
+                    row['Unbilled'] = True
+            elif tag_set.intersection({'portfolio', 'tech ed'}):
+                row['Category'] = 'tech career development'
                 row['Unbilled'] = True
-        elif tag_set.intersection({'portfolio', 'tech ed'}):
-            row['Category'] = 'tech career development'
-            row['Unbilled'] = True
-        elif 'defy time fitness' in [tag.lower() for tag in row[tag_column]]:
-            row['Category'] = 'personal training work'
-            if ('defy time fitness' not in row[column].lower()) & (row[column].lower() != 'coach mcloone'):
+            elif 'defy time fitness' in [tag.lower() for tag in row[tag_column]]:
+                row['Category'] = 'personal training work'
+                if ('defy time fitness' not in row[column].lower()) & (row[column].lower() != 'coach mcloone'):
+                    row['Unbilled'] = True
+            elif row[column].lower() == 'career positioning':
+                row['Category'] = 'career positioning'
                 row['Unbilled'] = True
-        elif row[column].lower() == 'career positioning':
-            row['Category'] = 'career positioning'
-            row['Unbilled'] = True
-        elif 'admin' in [tag.lower() for tag in row[tag_column]]:
-            row['Category'] = 'admin'
-            row['Unbilled'] = True
-        elif 'volunteer' in [tag.lower() for tag in row[tag_column]]:
-            row['Category'] = 'volunteer'
-            row['Unbilled'] = True
-        else:
-            row['Category'] = 'other'
-            row['Unbilled'] = True
+            elif 'admin' in [tag.lower() for tag in row[tag_column]]:
+                row['Category'] = 'admin'
+                row['Unbilled'] = True
+            elif 'volunteer' in [tag.lower() for tag in row[tag_column]]:
+                row['Category'] = 'volunteer'
+                row['Unbilled'] = True
+            else:
+                row['Category'] = 'other'
+                row['Unbilled'] = True
+        except Exception as error:
+            exc_type, exc_obj, tb = sys.exc_info()
+            f = tb.tb_frame
+            lineno = tb.tb_lineno
+            filename = f.f_code.co_filename
+            message = f"Error in line {lineno} of {filename}: {str(error)}."
+            print(message)
+            
+            print(f'Row {tag_column}: {row[tag_column]}')
 
         return row
     
