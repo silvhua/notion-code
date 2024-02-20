@@ -56,6 +56,35 @@ def Body(client_name, start_date, end_date, filter_dict, hourly_rate, gst_rate=F
                 aspect_ratio=2, show=False, showlegend=showlegend
                 )
     # Invoice_Timesheet(client_df)
+def Timesheet(client_name, start_date, end_date, filter_dict, hourly_rate, gst_rate=False):
+    filename = 'notion_df.sav'
+    pages_path = f'/home/silvhua/repositories/notion/src/'
+    path = f'{pages_path}{client_name}'
+    data_path = '/home/silvhua/repositories/notion/data/'
+
+    df = loadpickle(filename, data_path)
+    client_df = get_invoice_records(df, start_date, end_date, filter_dict)
+    summary_df = time_per_project(client_df) 
+    showlegend = True if len(summary_df.columns) >2 else False
+
+    solara.Title(f'{client_name}_{end_date}')
+    with solara.AppBarTitle():
+        solara.Text(f'Silvia Hua')
+    Invoice_Header(client_name)
+    Pages_Sidebar(path)
+    solara.HTML('p', unsafe_innerHTML=f'<b>Service dates</b>: {start_date} - {end_date}')
+    Invoice_Timesheet(client_df)
+    with solara.Column(align='start'):
+        solara.Markdown("")
+        solara.Markdown(f'## Time per Project')
+        Df_To_Table(summary_df)
+        if len(summary_df) > 1:
+            client_df['Unbilled'] = client_df['Unbilled'].apply(lambda x: True if x=='Unbilled Hours' else False)
+            CustomElapsedTimeChart(
+                client_df, category_column='Task Project name',
+                period=None, start_date=start_date, end_date=end_date, height=100+summary_df.shape[0]*10,
+                aspect_ratio=2, show=False, showlegend=showlegend
+                )
 
 @solara.component
 def Itemized_Table(summary_df, rate, gst_rate=5, column_widths=[3, 2, 1]):
