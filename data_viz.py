@@ -40,6 +40,8 @@ def classify_projects(
             tag_set = set(row[tag_column]) if len(row[tag_column]) > 0 else set(row[tag_column])
             if ('ginkgo' in row[column].lower()) | ('ginkgo work' in [tag.lower() for tag in row[tag_column]]):
                 row['Category'] = 'Ginkgo'
+            elif row[column].lower() == 'cascadia':
+                row['Category'] = 'tech business'
             elif row[column].lower() in ['ghl chatbot', 'tech business']:
                 row['Category'] = 'tech business'
                 if row[column].lower() == 'tech business':
