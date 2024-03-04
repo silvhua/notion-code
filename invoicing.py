@@ -126,3 +126,23 @@ def create_invoice_pyfile(
             )
     
     return file_string
+    
+def Create_Invoice_Timesheet(df, include_notes=True, unbilled_column='Unbilled'):
+    df['Date'] = df['Name'].str.extract(r'(\d{4}-\d{2}-\d{2})', expand=False)
+    invoice_columns = [
+        'Date',
+        'Task Project name',
+        'start time',
+        'end time',
+        'Elapsed',
+        'Unbilled',
+        'Task Name'
+    ]
+    if df['Roadmap Item'].apply(lambda x: len(x)>0).sum() > 0:
+        invoice_columns.insert(2, 'Roadmap Item')
+    if 'Notes' in df.columns:
+        invoice_columns.append('Notes')
+    df['Unbilled'] = df[unbilled_column].apply(lambda x: 'unbilled' if x==True else '')
+
+    df = df[invoice_columns].round(2)
+    return df

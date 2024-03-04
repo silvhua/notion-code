@@ -31,6 +31,7 @@ def Body(client_name, start_date, end_date, filter_dict, hourly_rate, gst_rate=F
     pages_path = f'/home/silvhua/repositories/notion/src/'
     path = f'{pages_path}{client_name}'
     data_path = '/home/silvhua/repositories/notion/data/'
+    timesheet_save_path='/mnt/c/Users/silvh/OneDrive/Own It Fit/invoices'
 
     df = loadpickle(filename, data_path)
     client_df = get_invoice_records(df, start_date, end_date, filter_dict)
@@ -56,6 +57,22 @@ def Body(client_name, start_date, end_date, filter_dict, hourly_rate, gst_rate=F
                 aspect_ratio=2, show=False, showlegend=showlegend
                 )
     # Invoice_Timesheet(client_df)
+    timesheet_files = [file for file in os.listdir(timesheet_save_path) if os.path.isfile(os.path.join(timesheet_save_path, file))]
+    timesheet_filename = f'{client_name}_{end_date}_timesheet.xlsx'
+    if timesheet_filename in timesheet_files:
+        print(f'\nTimesheet file with end date {end_date} already exists in {timesheet_save_path}; no new timesheet file created.\n')
+    else:
+        timesheet = Create_Invoice_Timesheet(client_df)
+        save_excel(
+            timesheet, f'{client_name}_{end_date}_timesheet', path=timesheet_save_path, 
+            col_width={
+                0: 12,
+                'B': 20,
+                'G': 30,
+                'H': 40
+            }
+        )
+
 def Timesheet(client_name, start_date, end_date, filter_dict, hourly_rate, gst_rate=False):
     filename = 'notion_df.sav'
     pages_path = f'/home/silvhua/repositories/notion/src/'
@@ -185,26 +202,9 @@ def Pages_Sidebar(path):
 
 @solara.component
 def Invoice_Timesheet(df, include_notes=True, unbilled_column='Unbilled'):
-    df['Date'] = df['Name'].str.extract(r'(\d{4}-\d{2}-\d{2})', expand=False)
-    invoice_columns = [
-        'Date',
-        'Task Project name',
-        'start time',
-        'end time',
-        'Elapsed',
-        'Unbilled',
-        'Task Name'
-    ]
-    # if include_roadmap_item:
-    #     invoice_columns.insert(2, 'Roadmap Item')
-    if df['Roadmap Item'].apply(lambda x: len(x)>0).sum() > 0:
-        invoice_columns.insert(2, 'Roadmap Item')
-    if 'Notes' in df.columns:
-        invoice_columns.append('Notes')
-    df['Unbilled'] = df[unbilled_column].apply(lambda x: 'unbilled' if x==True else '')
-
-    df = df[invoice_columns].round(2)
+    df = Create_Invoice_Timesheet(df, include_notes=include_notes, unbilled_column=unbilled_column)
     df.columns = [f'| {column}' for column in df.columns]
+    df = df.fillna('')
     Show_Df(df)
 
 # invoice_table = f"""
