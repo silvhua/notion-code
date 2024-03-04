@@ -3,7 +3,7 @@ import sys
 sys.path.append(r"/home/silvhua/repositories/notion/src")
 sys.path.append(r"/home/silvhua/custom_python")
 import solara
-from silvhua import load_txt
+from silvhua import load_txt, check_sheet_existence
 from invoicing import *
 import re
 # from typing import Any, Dict, Optional, cast
@@ -26,7 +26,7 @@ def Home_Page(client_name, save_path_root):
             with solara.Link(f'{route}'):
                 solara.Button(label=f"Go to: {route}")
 # @solara.component
-def Body(client_name, start_date, end_date, filter_dict, hourly_rate, gst_rate=False):
+def Body(client_name, start_date, end_date, filter_dict, hourly_rate, gst_rate=False, timesheet_filename='OIF_timesheet', sheet_name=None):
     filename = 'notion_df.sav'
     pages_path = f'/home/silvhua/repositories/notion/src/'
     path = f'{pages_path}{client_name}'
@@ -49,8 +49,8 @@ def Body(client_name, start_date, end_date, filter_dict, hourly_rate, gst_rate=F
         solara.Markdown("")
         solara.Markdown(f'## Time per Project')
         Df_To_Table(summary_df)
+        client_df['Unbilled'] = client_df['Unbilled'].apply(lambda x: True if x=='Unbilled Hours' else False)
         if len(summary_df) > 1:
-            client_df['Unbilled'] = client_df['Unbilled'].apply(lambda x: True if x=='Unbilled Hours' else False)
             CustomElapsedTimeChart(
                 client_df, category_column='Task Project name',
                 period=None, start_date=start_date, end_date=end_date, height=100+summary_df.shape[0]*10,
@@ -58,13 +58,13 @@ def Body(client_name, start_date, end_date, filter_dict, hourly_rate, gst_rate=F
                 )
     # Invoice_Timesheet(client_df)
     timesheet_files = [file for file in os.listdir(timesheet_save_path) if os.path.isfile(os.path.join(timesheet_save_path, file))]
-    timesheet_filename = f'{client_name}_{end_date}_timesheet.xlsx'
-    if timesheet_filename in timesheet_files:
-        print(f'\nTimesheet file with end date {end_date} already exists in {timesheet_save_path}; no new timesheet file created.\n')
-    else:
+    sheet_name = f'{client_name}_{end_date}' if sheet_name == None else sheet_name
+    timesheet_filename = f'{client_name}_{end_date}_timesheet' if timesheet_filename == None else timesheet_filename
+    if check_sheet_existence(timesheet_filename, timesheet_save_path, sheet_name=sheet_name) == False:
         timesheet = Create_Invoice_Timesheet(client_df)
         save_excel(
-            timesheet, f'{client_name}_{end_date}_timesheet', path=timesheet_save_path, 
+            timesheet, 
+            filename=timesheet_filename, path=timesheet_save_path, sheet_name=sheet_name, 
             col_width={
                 0: 12,
                 'B': 20,

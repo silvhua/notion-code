@@ -2,7 +2,7 @@ import sys
 sys.path.append(r"/home/silvhua/repositories/notion/src")
 from components.invoice import *
 from invoicing import *
-import re
+from datetime import datetime
 
 client_name = "OIF"
 filter_dict = {
@@ -23,3 +23,9 @@ file_string = create_invoice_pyfile(
 @solara.component
 def Page():
     Home_Page(client_name, save_path_root)
+    # Total of chatbot project hours
+    Body(
+        client_name=client_name, start_date='2023-01-01', end_date=datetime.now().strftime('%Y-%m-%d'), 
+        filter_dict={'Task Project name': ['GHL Chatbot']}, hourly_rate=hourly_rate, gst_rate=gst_rate,
+        sheet_name='total_chatbot'
+        )
