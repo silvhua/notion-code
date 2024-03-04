@@ -102,6 +102,55 @@ def Timesheet(client_name, start_date, end_date, filter_dict, hourly_rate, gst_r
                 period=None, start_date=start_date, end_date=end_date, height=100+summary_df.shape[0]*10,
                 aspect_ratio=2, show=False, showlegend=showlegend
                 )
+<<<<<<< HEAD
+=======
+    # Invoice_Timesheet(client_df)
+    timesheet_files = [file for file in os.listdir(timesheet_save_path) if os.path.isfile(os.path.join(timesheet_save_path, file))]
+    timesheet_filename = f'{client_name}_{end_date}_timesheet.xlsx'
+    if timesheet_filename in timesheet_files:
+        print(f'\nTimesheet file with end date {end_date} already exists in {timesheet_save_path}; no new timesheet file created.\n')
+    else:
+        timesheet = Create_Invoice_Timesheet(client_df)
+        save_excel(
+            timesheet, f'{client_name}_{end_date}_timesheet', path=timesheet_save_path, 
+            col_width={
+                0: 12,
+                'B': 20,
+                'G': 30,
+                'H': 40
+            }
+        )
+
+def Timesheet(client_name, start_date, end_date, filter_dict, hourly_rate, gst_rate=False):
+    filename = 'notion_df.sav'
+    pages_path = f'/home/silvhua/repositories/notion/src/'
+    path = f'{pages_path}{client_name}'
+    data_path = '/home/silvhua/repositories/notion/data/'
+
+    df = loadpickle(filename, data_path)
+    client_df = get_invoice_records(df, start_date, end_date, filter_dict)
+    summary_df = time_per_project(client_df) 
+    showlegend = True if len(summary_df.columns) >2 else False
+
+    solara.Title(f'{client_name}_{end_date}')
+    with solara.AppBarTitle():
+        solara.Text(f'Silvia Hua')
+    Invoice_Header(client_name)
+    Pages_Sidebar(path)
+    solara.HTML('p', unsafe_innerHTML=f'<b>Service dates</b>: {start_date} - {end_date}')
+    Invoice_Timesheet(client_df)
+    with solara.Column(align='start'):
+        solara.Markdown("")
+        solara.Markdown(f'## Time per Project')
+        Df_To_Table(summary_df)
+        if len(summary_df) > 1:
+            client_df['Unbilled'] = client_df['Unbilled'].apply(lambda x: True if x=='Unbilled Hours' else False)
+            CustomElapsedTimeChart(
+                client_df, category_column='Task Project name',
+                period=None, start_date=start_date, end_date=end_date, height=100+summary_df.shape[0]*10,
+                aspect_ratio=2, show=False, showlegend=showlegend
+                )
+>>>>>>> c33b46e28e17551166e14bd7d88e606a76b58382
 
 @solara.component
 def Itemized_Table(summary_df, rate, gst_rate=5, column_widths=[3, 2, 1]):
