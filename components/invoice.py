@@ -26,7 +26,9 @@ def Home_Page(client_name, save_path_root):
             with solara.Link(f'{route}'):
                 solara.Button(label=f"Go to: {route}")
 # @solara.component
-def Body(client_name, start_date, end_date, filter_dict, hourly_rate, gst_rate=False, timesheet_filename='OIF_timesheet_test2', sheet_name=None):
+def Body(client_name, start_date, end_date, filter_dict, hourly_rate, gst_rate=False, 
+         timesheet_filename=None, sheet_name=None
+         ):
     filename = 'notion_df.sav'
     pages_path = f'/home/silvhua/repositories/notion/src/'
     path = f'{pages_path}{client_name}'
