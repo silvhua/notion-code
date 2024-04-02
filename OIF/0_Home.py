@@ -24,8 +24,9 @@ file_string = create_invoice_pyfile(
 def Page():
     Home_Page(client_name, save_path_root)
     # Total of chatbot project hours
+    current_date = datetime.now().strftime('%Y-%m-%d')
     Body(
-        client_name=client_name, start_date='2023-01-01', end_date=datetime.now().strftime('%Y-%m-%d'), 
+        client_name=client_name, start_date='2023-01-01', end_date=current_date, 
         filter_dict={'Task Project name': ['GHL Chatbot']}, hourly_rate=hourly_rate, gst_rate=gst_rate,
-        sheet_name='total_chatbot'
+        timesheet_filename='OIF_total_chatbot', sheet_name=f'{current_date}'
         )
