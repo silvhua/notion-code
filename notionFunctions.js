@@ -302,17 +302,19 @@ async function parseTimeTracking(
             for (let k = 0; k < rich_text_array.length; k++) {
                 rich_text_type = rich_text_array[k]['type'];
                 if (rich_text_type == 'mention') {
-                  mention_type = rich_text_array[k][rich_text_type]['type'];
-                  mention_id = rich_text_array[k][rich_text_type][mention_type]['id'];
-                  const mention_details = await parsePage(mention_id, database='Unknown');
-                  try {
-                      const mention_name = mention_details['Name'];
-                      content_array.push(mention_name);
-                  } catch (error) {
-                      const mention_url = mention_details['Item'];
-                      content_array.push(mention_details[mention_url]);
-                  }
-                  content_array.push(mention_name);
+                  const mention_text = rich_text_array[k]['plain_text'];
+                  content_array.push(mention_text);
+
+                  // const mention_type = rich_text_array[k][rich_text_type]['type'];
+                  // mention_id = rich_text_array[k][rich_text_type][mention_type]['id'];
+                  // const mention_details = await parsePage(mention_id, database='Unknown');
+                  // try {
+                  //     const mention_name = mention_details['Name'];
+                  //     content_array.push(mention_name);
+                  // } catch (error) {
+                  //     const mention_url = mention_details['Item'];
+                  //     content_array.push(mention_details[mention_url]);
+                  // }
                 } else {
                   content_array.push(rich_text_array[k][rich_text_type]['content']);
                 }
